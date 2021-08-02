@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+
+  .topInfo {
+  }
+  .subTitle,
+  .title {
+    color: #101010;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .originInfo {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .cartButton {
+    height: 64px;
+    background-color: #bed619;
+  }
+}
