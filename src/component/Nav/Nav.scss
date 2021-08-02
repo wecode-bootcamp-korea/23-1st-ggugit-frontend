@@ -1,0 +1,79 @@
+@import '../../styles/variables.scss';
+
+header {
+  @include flex-set(column, center, center);
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  .topNavWrap {
+    @include flex-set(row, center, center);
+    width: 100%;
+    background-color: #202020;
+
+    .topList {
+      @include flex-set(row, flex-end, center);
+      @include size(100%, 35px);
+      max-width: 1920px;
+      min-width: 1260px;
+      padding-top: 7px;
+      background-color: #202020;
+      font-size: 15px;
+
+      > ul {
+        @include flex-set(row, flex-end, center);
+
+        > li {
+          font-size: 13px;
+
+          > a {
+            text-decoration: none;
+            color: white;
+
+            &:after {
+              content: '|';
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottomNavWrap {
+    @include flex-set(row, center, center);
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+
+    .bottomNav {
+      @include flex-set(row, space-between, center);
+      @include size(100%, 81px);
+      max-width: 1920px;
+      min-width: 1260px;
+
+      .logo {
+        font-size: 40px;
+        font-family: ‘Gothic A1’, sans-serif;
+        font-weight: 800;
+      }
+
+      .bottomList {
+        @include flex-set(row, center, center);
+
+        > ul {
+          @include flex-set(row, center, center);
+          font-size: 22px;
+
+          > li {
+            padding: 0 32px;
+
+            > a {
+              text-decoration: none;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}

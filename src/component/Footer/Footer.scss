@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+footer {
+  @include flex-set(row, center, center);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  .footerWrap {
+    @include flex-set(row, center, center);
+    width: 100%;
+    background-color: #202020;
+    color: white;
+    .footerNavWrap {
+      @include flex-set(row, space-between, center);
+      width: 100%;
+      max-width: 1180px;
+      .footerLogo {
+        font-size: 40px;
+        font-family: ‘Gothic A1’, sans-serif;
+        font-weight: 800;
+      }
+      .footerListWrap {
+        @include flex-set(column, center, center);
+        height: 290px;
+
+        .topNav {
+          @include flex-set(row, space-between, center);
+          width: 650px;
+          .topList {
+            @include flex-set(row, space-between, center);
+            > li {
+              margin-right: 10px;
+              font-size: 13px;
+              > a {
+                text-decoration: none;
+                color: white;
+              }
+            }
+          }
+        }
+        .bottomNav {
+          @include flex-set(row, space-between, center);
+          width: 650px;
+          padding-top: 20px;
+          .bottomList {
+            display: flex;
+            flex-wrap: wrap;
+            > li {
+              margin-right: 10px;
+              font-size: 12px;
+              line-height: 20px;
+            }
+          }
+        }
+      }
+      .footerRightSide {
+        @include flex-set(column, center, center);
+
+        > span {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
