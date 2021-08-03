@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.CommonFormBlock {
+  @include flex-set(center, center, column);
+  margin-top: 61px;
+
+  .CommonFormTitle {
+    height: 56px;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .CommonForm {
+    @include flex-set(center, flex-start, column);
+
+    .CommonFormButton {
+      width: 478px;
+      height: 56px;
+      margin-top: 32px;
+      border: none;
+      background-color: #bdd61a;
+      font-size: 18px;
+    }
+  }
+}

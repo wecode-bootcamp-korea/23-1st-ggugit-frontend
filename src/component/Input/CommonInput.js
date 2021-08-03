@@ -1,15 +1,16 @@
 import React from 'react';
-import './LoginInput.scss';
 
-class LoginInput extends React.Component {
+import './CommonInput.scss';
+
+class CommonInput extends React.Component {
   render() {
     const { type, placeholder } = this.props;
     return (
-      <label className="loginLabel">
+      <label className="commonLabel">
         <input type={type} placeholder={placeholder} />
       </label>
     );
   }
 }
 
-export default LoginInput;
+export default CommonInput;

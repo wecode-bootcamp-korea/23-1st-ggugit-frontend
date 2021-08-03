@@ -7,12 +7,9 @@ import './Login.scss';
 class Login extends React.Component {
   render() {
     return (
-      <section>
+      <section className="loginSection">
         <div className="loginWrap">
-          <h1 className="loginTitle">로그인</h1>
-          <section className="loginBlock">
-            <LoginForm />
-          </section>
+          <LoginForm />
           <div className="signUpBlock">
             <h2>GGUGGIT 회원이 아니신가요?</h2>
             <p>

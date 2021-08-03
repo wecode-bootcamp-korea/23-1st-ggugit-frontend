@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-section {
+.loginSection {
   @include flex-set(center, center, column);
   @include size(100%, 100vh);
 
@@ -9,50 +9,15 @@ section {
     width: 100%;
     max-width: 1180px;
 
-    .loginTitle {
-      height: 56px;
-      font-size: 40px;
-      font-weight: 700;
-    }
+    .findId {
+      @include flex-set(flex-end, center, row);
+      width: 100%;
+      margin-top: 25px;
 
-    .loginBlock {
-      margin-top: 61px;
-
-      .loginForm {
-        @include flex-set(center, flex-start, column);
-
-        .loginLabel {
-          margin-top: 15px;
-
-          > input {
-            width: 478px;
-            height: 48px;
-            padding: 16px;
-            border: 1px solid #ccc;
-            font-size: 15px;
-          }
-        }
-
-        .findId {
-          @include flex-set(flex-end, center, row);
-          width: 100%;
-          margin-top: 25px;
-
-          span:last-child {
-            &:before {
-              margin: 0 5px;
-              content: '|';
-            }
-          }
-        }
-
-        .loginButton {
-          width: 478px;
-          height: 56px;
-          margin-top: 32px;
-          border: none;
-          background-color: #bdd61a;
-          font-size: 18px;
+      span:last-child {
+        &:before {
+          margin: 0 5px;
+          content: '|';
         }
       }
     }
