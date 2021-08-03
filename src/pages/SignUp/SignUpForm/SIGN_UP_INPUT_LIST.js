@@ -24,4 +24,10 @@ export const SIGN_UP_INPUT_LIST = [
     name: 'phoneNumber',
     placeholder: '전화번호를 입력해주세요 ex): 010-0000-0000',
   },
+  {
+    id: 6,
+    type: 'text',
+    name: 'birthDay',
+    placeholder: '생년월일을 입력해주세요 ex): YYYY-MM-DD',
+  },
 ];

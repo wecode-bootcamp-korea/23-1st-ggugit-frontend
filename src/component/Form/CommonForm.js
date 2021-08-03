@@ -10,7 +10,8 @@ class CommonForm extends React.Component {
     const { cases, history, userInfo } = this.props;
 
     if (cases === `회원가입`) {
-      const { name, loginId, loginPw, loginPwValid, phoneNumber } = userInfo;
+      const { name, loginId, loginPw, loginPwValid, phoneNumber, birthDay } =
+        userInfo;
       if (loginPwValid === loginPw) {
         fetch(SIGNUP_API, {
           method: 'POST',
@@ -19,6 +20,7 @@ class CommonForm extends React.Component {
             email: loginId,
             password: loginPw,
             phone_number: phoneNumber,
+            birthday: birthDay,
           }),
         })
           .then(res => res.json())
@@ -30,7 +32,7 @@ class CommonForm extends React.Component {
       }
     } else if (cases === `로그인`) {
       const { loginId, loginPw } = userInfo;
-      console.log(`hi`);
+
       fetch(LOGIN_API, {
         method: 'POST',
         body: JSON.stringify({
@@ -38,14 +40,9 @@ class CommonForm extends React.Component {
           password: loginPw,
         }),
       })
-        .then(res => {
-          res.json();
-        })
+        .then(res => res.json())
         .then(data => {
-          // !data.token
-          //   ? history.push(`/`)
-          //   : alert(`ID, 비밀번호를 확인해주세요`);
-          console.log('data >>>>>>>>', data);
+          data.token ? history.push(`/`) : alert(`ID, 비밀번호를 확인해주세요`);
         });
     }
   };

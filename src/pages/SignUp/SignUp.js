@@ -13,6 +13,7 @@ class SignUp extends React.Component {
         loginPw: '',
         loginPwValid: '',
         phoneNumber: '',
+        birthDay: ``,
       },
     };
   }
