@@ -9,12 +9,6 @@ class LoginInput extends React.Component {
         <input type={type} placeholder={placeholder} />
       </label>
     );
-    // <label className="loginLabel">
-    //   <input
-    //     type="password"
-    //     placeholder="비밀번호 영문, 특수문자, 숫자혼합 8~12자"
-    //   />
-    // </label>
   }
 }
 

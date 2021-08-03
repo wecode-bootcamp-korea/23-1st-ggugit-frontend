@@ -3,20 +3,6 @@ import LoginInput from './LoginInput/LoginInput';
 import './LoginForm.scss';
 
 class LoginForm extends React.Component {
-  // constuctor() {
-  //   super();
-  //   this.state = {
-  //     idValue: ``,
-  //     pwValue: ``,
-  //   };
-  // }
-
-  // setInputValue = value => {
-  //   this.setState(prevState => {
-  //     return { ...prevState };
-  //   });
-  // };
-
   render() {
     return (
       <form className="loginForm">
