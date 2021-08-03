@@ -6,15 +6,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <form className="loginForm">
-        <LoginInput
-          type="text"
-          placeholder="E-mail 형식 GGUGIT ID"
-          // value={idValue}
-        />
+        <LoginInput type="text" placeholder="E-mail 형식 GGUGIT ID" />
         <LoginInput
           type="password"
           placeholder="비밀번호는 영문, 숫자, 특수문자 혼합 8~12자"
-          // value={pwValue}
         />
         <div className="findId">
           <span>아이디 찾기</span>

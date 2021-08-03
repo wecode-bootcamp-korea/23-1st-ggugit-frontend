@@ -10,9 +10,9 @@ class Login extends React.Component {
       <section>
         <div className="loginWrap">
           <h1 className="loginTitle">로그인</h1>
-          <article className="loginBlock">
+          <section className="loginBlock">
             <LoginForm />
-          </article>
+          </section>
           <div className="signUpBlock">
             <h2>GGUGGIT 회원이 아니신가요?</h2>
             <p>
