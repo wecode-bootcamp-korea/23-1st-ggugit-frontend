@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LoginForm from './LoginForm/LoginForm';
 
 import './Login.scss';
 
@@ -9,24 +10,9 @@ class Login extends React.Component {
       <section>
         <div className="loginWrap">
           <h1 className="loginTitle">로그인</h1>
-          <div className="loginBlock">
-            <form className="loginForm">
-              <label className="loginLabel">
-                <input type="text" placeholder="아이디" />
-              </label>
-              <label className="loginLabel">
-                <input
-                  type="password"
-                  placeholder="비밀번호 영문, 특수문자, 숫자혼합 8~12자"
-                />
-              </label>
-              <div className="findId">
-                <span>아이디 찾기</span>
-                <span>비밀번호 찾기</span>
-              </div>
-              <button className="loginButton">로그인</button>
-            </form>
-          </div>
+          <article className="loginBlock">
+            <LoginForm />
+          </article>
           <div className="signUpBlock">
             <h2>GGUGGIT 회원이 아니신가요?</h2>
             <p>

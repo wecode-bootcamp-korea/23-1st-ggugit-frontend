@@ -1,12 +1,12 @@
 @mixin flex-set(
-  $flex-direction: row,
   $justify-content: initial,
-  $align-items: initial
+  $align-items: initial,
+  $flex-direction: row
 ) {
   display: flex;
-  flex-direction: $flex-direction;
   justify-content: $justify-content;
   align-items: $align-items;
+  flex-direction: $flex-direction;
 }
 
 @mixin size($width: 0px, $height: 0px) {

@@ -7,9 +7,10 @@ import './Footer.scss';
 class Footer extends React.Component {
   render() {
     const topList = FOOTER_LIST_TOP.map(elem => {
+      const { id, text, url } = elem;
       return (
-        <li key={elem.id}>
-          <Link to={elem.url}>{elem.text}</Link>
+        <li key={id}>
+          <Link to={url}>{text}</Link>
         </li>
       );
     });
@@ -23,7 +24,7 @@ class Footer extends React.Component {
     });
 
     return (
-      <footer>
+      <footer className="publicFooter">
         <div className="footerWrap">
           <div className="footerNavWrap">
             <div className="footerLogo">GGUGIT</div>

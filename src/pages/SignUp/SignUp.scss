@@ -1,11 +1,11 @@
 @import '../../styles/variables.scss';
 
 section {
-  @include flex-set(column, center, center);
+  @include flex-set(center, center, column);
   @include size(100%, 100vh);
 
   .loginWrap {
-    @include flex-set(column, center, center);
+    @include flex-set(center, center, column);
     width: 100%;
     max-width: 1180px;
 
@@ -19,7 +19,7 @@ section {
       margin-top: 61px;
 
       .loginForm {
-        @include flex-set(column, center, flex-start);
+        @include flex-set(center, flex-start, column);
 
         .loginLabel {
           margin-top: 15px;
@@ -34,7 +34,7 @@ section {
         }
 
         .findId {
-          @include flex-set(row, flex-end, center);
+          @include flex-set(flex-end, center, row);
           width: 100%;
           margin-top: 25px;
 
@@ -74,7 +74,7 @@ section {
       }
 
       .signUpButton {
-        @include flex-set(row, center, center);
+        @include flex-set(center, center, row);
         @include size(140px, 47px);
         border: 1px solid #ccc;
         background-color: white;

@@ -21,7 +21,7 @@ class Nav extends React.Component {
       );
     });
     return (
-      <header>
+      <nav className="navWrap">
         <div className="topNavWrap">
           <nav className="topList">
             <ul>{topList}</ul>
@@ -39,7 +39,7 @@ class Nav extends React.Component {
             </div>
           </nav>
         </div>
-      </header>
+      </nav>
     );
   }
 }

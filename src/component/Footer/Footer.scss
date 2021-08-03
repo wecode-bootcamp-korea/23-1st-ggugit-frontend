@@ -1,34 +1,40 @@
 @import '../../styles/variables.scss';
 
-footer {
-  @include flex-set(row, center, center);
-  width: 100%;
+.publicFooter {
+  @include flex-set(center, center, row);
+
   .footerWrap {
-    @include flex-set(row, center, center);
+    @include flex-set(center, center, row);
     width: 100%;
     background-color: #202020;
     color: white;
+
     .footerNavWrap {
-      @include flex-set(row, space-between, center);
+      @include flex-set(space-between, center, row);
       width: 100%;
       max-width: 1180px;
+
       .footerLogo {
         font-size: 40px;
         font-family: ‘Gothic A1’, sans-serif;
         font-weight: 800;
       }
+
       .footerListWrap {
-        @include flex-set(column, center, center);
+        @include flex-set(center, center, column);
         height: 290px;
 
         .topNav {
-          @include flex-set(row, space-between, center);
+          @include flex-set(space-between, center, row);
           width: 650px;
+
           .topList {
-            @include flex-set(row, space-between, center);
+            @include flex-set(space-between, center, row);
+
             > li {
               margin-right: 10px;
               font-size: 13px;
+
               > a {
                 text-decoration: none;
                 color: white;
@@ -37,12 +43,14 @@ footer {
           }
         }
         .bottomNav {
-          @include flex-set(row, space-between, center);
+          @include flex-set(space-between, center, row);
           width: 650px;
           padding-top: 20px;
+
           .bottomList {
             display: flex;
             flex-wrap: wrap;
+
             > li {
               margin-right: 10px;
               font-size: 12px;
@@ -51,8 +59,9 @@ footer {
           }
         }
       }
+
       .footerRightSide {
-        @include flex-set(column, center, center);
+        @include flex-set(center, center, column);
 
         > span {
           margin-bottom: 20px;
