@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './component/Nav';
 import Footer from './component/Footer';
 import Main from './pages/Main/Main';
+import Menu from './pages/Menu/Menu';
 
 class Routes extends React.Component {
   render() {
@@ -10,7 +11,8 @@ class Routes extends React.Component {
       <Router>
         <Nav />
         <Switch>
-          <Route exac path="/" component={Main} />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/menu" component={Menu} />
         </Switch>
         <Footer />
       </Router>

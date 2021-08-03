@@ -1,0 +1,100 @@
+// @mixin flex-set(
+//   $justify-content: initial,
+//   $align-items: initial,
+//   $flex-direction: row
+// ) {
+//   display: flex;
+//   justify-content: $justify-content;
+//   align-items: $align-items;
+//   flex-direction: $flex-direction;
+// }
+
+$lgray: #ebebeb;
+$gray: #e0e0e0;
+$dgray: #606060;
+$ddgray: #212121;
+
+@import '../../styles/variables.scss';
+@import '../../styles/common.scss';
+
+* {
+  font-family: ‘Gothic A1’, sans-serif;
+}
+
+.menuWrap {
+  width: 1180px;
+  margin: auto;
+  padding-top: 52px;
+
+  .menuFilterBox {
+    h1 {
+      padding: 15px 0;
+      width: 100%;
+      font-size: 40px;
+      font-weight: 800;
+      word-spacing: 5px;
+    }
+
+    .menuCategories {
+      @include flex-set(space-between, center);
+      height: 70px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid $gray;
+      a {
+        font-size: 24px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .categoryContainer {
+        display: flex;
+        height: 80px;
+        line-height: 80px;
+        a {
+          font-size: 20px;
+          text-decoration: none;
+        }
+        .category {
+          a {
+            margin: 0 10px;
+            font-size: 16px;
+            text-decoration: none;
+          }
+        }
+        button {
+          width: 20px;
+          margin: 0 10px;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .filterBox {
+    padding-top: 48px;
+    h2 {
+      font-size: 28px;
+      line-height: 42px;
+    }
+    .filterMenuBox {
+      @include flex-set(space-between, center, row);
+      padding-top: 4px;
+
+      p {
+        font-size: 18px;
+      }
+
+      span {
+        margin: 0 10px;
+      }
+    }
+    .filterMenu {
+      font-size: 16px;
+      @include flex-set(space-between, center, row);
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+}
