@@ -5,11 +5,29 @@ import LoginForm from './LoginForm/LoginForm';
 import './Login.scss';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      userInfo: { loginId: '', loginPw: '' },
+    };
+  }
+
+  setLoginInfo = (name, value) => {
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        userInfo: { ...prevState.userInfo, [name]: value },
+      };
+    });
+  };
+
   render() {
+    const { setLoginInfo } = this;
+    const { userInfo } = this.state;
     return (
       <section className="loginSection">
         <div className="loginWrap">
-          <LoginForm />
+          <LoginForm setLoginInfo={setLoginInfo} userInfo={userInfo} />
           <div className="signUpBlock">
             <h2>GGUGGIT 회원이 아니신가요?</h2>
             <p>

@@ -8,11 +8,23 @@ import './LoginForm.scss';
 class LoginForm extends React.Component {
   render() {
     const loginInpuList = LOGIN_INPUT_LIST.map(elem => {
-      const { type, name, placeholder } = elem;
-      return <CommonInput type={type} name={name} placeholder={placeholder} />;
+      const { id, type, name, placeholder } = elem;
+      const { setLoginInfo } = this.props;
+
+      return (
+        <CommonInput
+          key={id}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          setUserInfo={setLoginInfo}
+        />
+      );
     });
+    const { userInfo } = this.props;
+
     return (
-      <CommonForm cases="로그인">
+      <CommonForm cases="로그인" userInfo={userInfo}>
         {loginInpuList}
         <div className="findId">
           <span>아이디 찾기</span>

@@ -7,12 +7,23 @@ import './SignUpForm.scss';
 
 class SignUpForm extends React.Component {
   render() {
+    const { setSignUpInfo, userInfo } = this.props;
     const signUpInputList = SIGN_UP_INPUT_LIST.map(elem => {
-      const { type, name, placeholder } = elem;
-      return <CommonInput type={type} name={name} placeholder={placeholder} />;
+      const { id, type, name, placeholder } = elem;
+      return (
+        <CommonInput
+          key={id}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          setUserInfo={setSignUpInfo}
+        />
+      );
     });
+    console.log(userInfo);
+
     return (
-      <CommonForm cases="회원가입">
+      <CommonForm cases="회원가입" userInfo={userInfo}>
         {signUpInputList}
         <div className="findId">
           <span>아이디 찾기</span>
