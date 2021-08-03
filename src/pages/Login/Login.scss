@@ -1,0 +1,6 @@
+@import '../../styles/variables.scss';
+
+section {
+  @include flex-set(column, center, center);
+  @include size(100%, 100vh);
+}
