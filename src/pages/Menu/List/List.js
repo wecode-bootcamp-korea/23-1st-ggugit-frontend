@@ -12,20 +12,26 @@ class List extends React.Component {
           />
         </div>
         <div className="listInfoContainer">
+          <div className="newBox">
+            <span>한정수량</span>
+            <span>NEW</span>
+          </div>
+
           <div className="listInfo">
             <span className="makingTime">조리 20분</span>
             <span className="menuName">수제불고기버거와 콘스프</span>
             <span className="menuPrice">27,800원</span>
             <span className="starRivew">별별별별별</span>
             <span className="rivew">리뷰0</span>
-          </div>
-          <div className="goToLikeContainer">
-            <button>
-              <i class="far fa-heart"></i>
-            </button>
-            <button>
-              <i class="fas fa-cart-arrow-down"></i>
-            </button>
+
+            <div className="goToLikeContainer">
+              <button>
+                <i class="far fa-heart"></i>
+              </button>
+              <button>
+                <i class="fas fa-cart-arrow-down"></i>
+              </button>
+            </div>
           </div>
         </div>
       </li>

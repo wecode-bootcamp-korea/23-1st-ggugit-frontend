@@ -1,8 +1,23 @@
+$lgray: #ebebeb;
+$gray: #e0e0e0;
+$dgray: #606060;
+$ddgray: #212121;
+
+@import '../../../styles/common.scss';
+@import '../../../styles/reset.scss';
+@import '../../../styles/variables.scss';
+
+.hidden {
+  visibility: hidden;
+  margin-top: -20px;
+}
+
 .listContainer {
   width: 268px;
+  height: 560px;
   min-height: 540px;
-  padding-top: 40px;
-  background-color: darkseagreen;
+  margin-top: 40px;
+
   .listImg {
     width: 268px;
     height: 320px;
@@ -13,26 +28,48 @@
     }
   }
   .listInfoContainer {
-    width: 280px;
     padding-top: 16px;
+
+    .newBox {
+      span {
+        display: inline-block;
+        width: 55px;
+        height: 25px;
+        font-size: 12px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 25px;
+
+        &:nth-child(1) {
+          background-color: #ed0b02;
+          color: white;
+        }
+        &:nth-child(2) {
+          background-color: #bdd619;
+        }
+      }
+    }
+
     .listInfo {
       .makingTime {
         display: inline-block;
-        width: 100%;
-        margin-top: 8px;
+        margin: 10px 0;
+        color: $dgray;
         font-size: 13px;
       }
       .menuName {
         display: inline-block;
         width: 100%;
         font-size: 17px;
+        font-weight: 600;
         line-height: 24px;
       }
       .menuPrice {
         display: inline-block;
         width: 100%;
         margin: 8px 0;
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 800;
         line-height: 27px;
       }
       .starRivew {
@@ -41,20 +78,31 @@
         height: 16px;
       }
       .rivew {
+        width: 70px;
         display: inline-block;
+        color: $dgray;
         font-size: 14px;
+        border-left: 1px solid $gray;
+        text-align: center;
       }
-    }
-  }
-  .goToLikeContainer {
-    height: 40px;
-    margin-top: 24px;
-    button {
-      border: none;
-      margin: 0 10px;
-      background-color: transparent;
-      svg {
-        font-size: 20px;
+
+      .goToLikeContainer {
+        height: 40px;
+        margin-top: 24px;
+
+        button {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid $gray;
+          margin-right: 15px;
+          background-color: $gray;
+
+          svg {
+            font-size: 20px;
+            color: $dgray;
+          }
+        }
       }
     }
   }

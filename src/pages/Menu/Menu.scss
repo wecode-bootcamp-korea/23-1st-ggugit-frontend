@@ -16,7 +16,7 @@ $ddgray: #212121;
 
 @import '../../styles/variables.scss';
 @import '../../styles/common.scss';
-
+@import '../../styles/reset.scss';
 * {
   font-family: ‘Gothic A1’, sans-serif;
 }
@@ -24,7 +24,7 @@ $ddgray: #212121;
 .menuWrap {
   width: 1180px;
   margin: auto;
-  padding-top: 52px;
+  padding-top: 160px;
 
   .menuFilterBox {
     h1 {
@@ -75,14 +75,17 @@ $ddgray: #212121;
     padding-top: 48px;
     h2 {
       font-size: 28px;
+      font-weight: 800;
       line-height: 42px;
     }
     .filterMenuBox {
       @include flex-set(space-between, center, row);
-      padding-top: 4px;
+      padding-top: 8px;
 
       p {
         font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
       }
 
       span {
