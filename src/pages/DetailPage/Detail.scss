@@ -1,18 +1,16 @@
 @import '../../styles/variables.scss';
+@import '../../styles/common.scss';
+@import '../../styles/reset.scss';
 
-.container {
-  display: flex;
+main {
+  z-index: -1;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 1180px;
+  padding-top: 180px;
+  max-width: 1180px;
 
   .detailWrap {
-    display: flex;
-    flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-
     .topInfo {
       display: flex;
       position: relative;
@@ -23,7 +21,8 @@
       }
 
       .dishInfoWrap {
-        padding-left: 50px;
+        width: 100%;
+        padding-left: 90px;
 
         .titleWrap {
           padding-bottom: 30px;
@@ -31,36 +30,102 @@
           .subTitle,
           .title {
             font-size: 30px;
-            line-height: 40px;
             font-weight: 700px;
+            line-height: 40px;
           }
 
           .originInfo {
             font-size: 30px;
-            line-height: 40px;
             font-weight: 400px;
+            line-height: 40px;
           }
         }
 
         .cartButton {
           padding-top: 50px;
           button {
-            width: 100%;
-            background-color: #bed619;
+            width: 490px;
             padding: 15px;
+            background-color: #bed619;
             border: 1px solid transparent;
             font-size: 20px;
             color: black;
-            text-decoration: none;
             cursor: pointer;
           }
         }
       }
     }
-    main {
-      .infoDetail {
-        display: flex;
-        flex-direction: column;
+    .tabWrap {
+      padding: 30px 0 10px 30px;
+      border-bottom: solid 1px #dbdbdb;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .infoWrap {
+    .infoDetail {
+      display: flex;
+
+      .detailDescriptionBox {
+        min-height: 100vh;
+        margin-top: 100px;
+
+        .subTitle {
+          padding-top: 50px;
+          font-size: 40px;
+          text-align: center;
+        }
+        .subText {
+          padding-bottom: 30px;
+          font-size: 24px;
+        }
+      }
+
+      .cartStickBar {
+        position: sticky;
+        width: 376px;
+        height: 400px;
+        margin: 100px 0 0 20px;
+        border: solid 1px #dbdbdb;
+        text-align: center;
+
+        .deliveryDateNotification {
+          .notiTitle {
+            padding: 40px 0;
+            border-bottom: solid 1px #dbdbdb;
+            font-size: 20px;
+            font-weight: 700;
+          }
+          .notiContent {
+            padding-top: 100px;
+            color: #606060;
+            font-size: 12px;
+          }
+        }
+
+        .stickyCartButton {
+          padding: 50px 10px 0 10px;
+
+          button {
+            width: 310px;
+            right: 100px;
+            padding: 15px;
+            border: 1px solid transparent;
+            background-color: #bed619;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+          }
+        }
+        .totalPrice {
+          padding: 10px 5px 0 0;
+          float: right;
+          color: #ee0700;
+          font-size: 32px;
+          line-height: 48px;
+          font-weight: 700;
+        }
       }
     }
   }
