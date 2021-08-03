@@ -1,0 +1,89 @@
+@import '../../styles/variables.scss';
+
+section {
+  @include flex-set(center, center, column);
+  @include size(100%, 100vh);
+
+  .loginWrap {
+    @include flex-set(center, center, column);
+    width: 100%;
+    max-width: 1180px;
+
+    .loginTitle {
+      height: 56px;
+      font-size: 40px;
+      font-weight: 700;
+    }
+
+    .loginBlock {
+      margin-top: 61px;
+
+      .loginForm {
+        @include flex-set(center, flex-start, column);
+
+        .loginLabel {
+          margin-top: 15px;
+
+          > input {
+            width: 478px;
+            height: 48px;
+            padding: 16px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+          }
+        }
+
+        .findId {
+          @include flex-set(flex-end, center, row);
+          width: 100%;
+          margin-top: 25px;
+
+          span:last-child {
+            &:before {
+              margin: 0 5px;
+              content: '|';
+            }
+          }
+        }
+
+        .loginButton {
+          width: 478px;
+          height: 56px;
+          margin-top: 32px;
+          border: none;
+          background-color: #bdd61a;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .signUpBlock {
+      width: 478px;
+      margin-top: 64px;
+      padding: 20px 32px;
+      background-color: #f7f7f7;
+
+      > h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      > p {
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+
+      .signUpButton {
+        @include flex-set(center, center, row);
+        @include size(140px, 47px);
+        border: 1px solid #ccc;
+        background-color: white;
+
+        > a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
