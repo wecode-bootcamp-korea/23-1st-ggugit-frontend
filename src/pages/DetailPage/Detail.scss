@@ -1,22 +1,67 @@
+@import '../../styles/variables.scss';
+
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  width: 1180px;
 
-  .topInfo {
-  }
-  .subTitle,
-  .title {
-    color: #101010;
-    font-size: 30px;
-    line-height: 40px;
-  }
+  .detailWrap {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
 
-  .originInfo {
-    font-size: 30px;
-    line-height: 40px;
-  }
+    .topInfo {
+      display: flex;
+      position: relative;
 
-  .cartButton {
-    height: 64px;
-    background-color: #bed619;
+      .imgDetailWrap {
+        position: relative;
+        flex-direction: column;
+      }
+
+      .dishInfoWrap {
+        padding-left: 50px;
+
+        .titleWrap {
+          padding-bottom: 30px;
+
+          .subTitle,
+          .title {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 700px;
+          }
+
+          .originInfo {
+            font-size: 30px;
+            line-height: 40px;
+            font-weight: 400px;
+          }
+        }
+
+        .cartButton {
+          padding-top: 50px;
+          button {
+            width: 100%;
+            background-color: #bed619;
+            padding: 15px;
+            border: 1px solid transparent;
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    main {
+      .infoDetail {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }

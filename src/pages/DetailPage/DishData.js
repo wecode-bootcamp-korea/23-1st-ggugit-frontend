@@ -10,13 +10,17 @@ class DishData extends React.Component {
           <dl>
             <dt>판매가</dt>
             <dd>
-              <span className="ttxt">{/* 판매가격 api로 받아올 예정 */}</span>
+              <span className="ttxt">
+                ?가격{/* 판매가격 api로 받아올 예정 */}
+              </span>
             </dd>
           </dl>
           <dl>
             <dt>할인가</dt>
             <dd>
-              <span className="ttxt">{/* 할인가격 api로 받아올 예정 */}</span>
+              <span className="ttxt">
+                ?가격{/* 할인가격 api로 받아올 예정 */}
+              </span>
             </dd>
           </dl>
         </div>
@@ -25,7 +29,7 @@ class DishData extends React.Component {
             <dt>할인쿠폰</dt>
             <dd>
               <span className="ttxt">
-                {/* 쿠폰적용제외 하는 텍스트 api로 받아올 예정 */}
+                ?할인쿠폰{/* 쿠폰적용제외 하는 텍스트 api로 받아올 예정 */}
               </span>
             </dd>
           </dl>
@@ -33,7 +37,7 @@ class DishData extends React.Component {
             <dt>포인트적립</dt>
             <dd>
               <span className="ttxt">
-                {/* 포인트적립 제외 텍스트 api로 받아올 예정 */}
+                ?포인트적립{/* 포인트적립 제외 텍스트 api로 받아올 예정 */}
               </span>
             </dd>
           </dl>
@@ -43,7 +47,7 @@ class DishData extends React.Component {
             <dt>배송방법</dt>
             <dd>
               <span className="ttxt">
-                {/* 새벽배송 이라는 텍스트 api로 받아올 예정 */}
+                ?배송방법{/* 새벽배송 이라는 텍스트 api로 받아올 예정 */}
               </span>
             </dd>
           </dl>
@@ -51,7 +55,7 @@ class DishData extends React.Component {
             <dt>배송비</dt>
             <dd>
               <span className="ttxt">
-                {/* 3000원이라는 텍스트 api로 받아올 예정 */}
+                ?배송비{/* 3000원이라는 텍스트 api로 받아올 예정 */}
               </span>
             </dd>
           </dl>
