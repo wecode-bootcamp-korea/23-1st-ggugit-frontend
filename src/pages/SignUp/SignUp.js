@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import './Login.scss';
+import './SignUp.scss';
 
-class Login extends React.Component {
+class SignUp extends React.Component {
   render() {
     return (
       <section>
         <div className="loginWrap">
-          <h1 className="loginTitle">로그인</h1>
+          <h1 className="loginTitle">회원가입</h1>
           <div className="loginBlock">
             <form className="loginForm">
               <label className="loginLabel">
@@ -24,18 +23,8 @@ class Login extends React.Component {
                 <span>아이디 찾기</span>
                 <span>비밀번호 찾기</span>
               </div>
-              <button className="loginButton">로그인</button>
+              <button className="loginButton">회원가입</button>
             </form>
-          </div>
-          <div className="signUpBlock">
-            <h2>GGUGGIT 회원이 아니신가요?</h2>
-            <p>
-              GGUGIT에 가입하시면 GGUGIT의 다양한 혜택 및 서비스를 이용하실 수
-              있습니다.
-            </p>
-            <div className="signUpButton">
-              <Link to="/signUp">GGUGIT 회원가입</Link>
-            </div>
           </div>
         </div>
       </section>
@@ -43,4 +32,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default SignUp;

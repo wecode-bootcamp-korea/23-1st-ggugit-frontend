@@ -2,9 +2,7 @@
 
 footer {
   @include flex-set(row, center, center);
-  position: absolute;
   width: 100%;
-  bottom: 0;
   .footerWrap {
     @include flex-set(row, center, center);
     width: 100%;
