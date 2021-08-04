@@ -1,66 +1,51 @@
-// @mixin flex-set(
-//   $justify-content: initial,
-//   $align-items: initial,
-//   $flex-direction: row
-// ) {
-//   display: flex;
-//   justify-content: $justify-content;
-//   align-items: $align-items;
-//   flex-direction: $flex-direction;
-// }
-
-$lgray: #ebebeb;
-$gray: #e0e0e0;
-$dgray: #606060;
-$ddgray: #212121;
-
 @import '../../styles/variables.scss';
-@import '../../styles/common.scss';
-@import '../../styles/reset.scss';
-* {
-  font-family: ‘Gothic A1’, sans-serif;
-}
 
-.menuWrap {
+.wrap {
   width: 1180px;
   margin: auto;
   padding-top: 160px;
 
-  .menuFilterBox {
+  .menuWrap {
     h1 {
       padding: 15px 0;
       width: 100%;
-      font-size: 40px;
-      font-weight: 800;
+      @include fontsize(40px, 800);
       word-spacing: 5px;
     }
 
-    .menuCategories {
+    .categoriesBox {
       @include flex-set(space-between, center);
       height: 70px;
       padding-bottom: 14px;
-      border-bottom: 1px solid $gray;
+      border-bottom: 1px solid #ebebeb;
       a {
-        font-size: 24px;
-        font-weight: 600;
+        @include fontsize(24px, 600);
         text-decoration: none;
+        color: #606060;
       }
 
-      .categoryContainer {
+      .category {
         display: flex;
-        height: 80px;
-        line-height: 80px;
+        line-height: 70px;
+
         a {
-          font-size: 20px;
-          text-decoration: none;
+          width: 60px;
+          text-align: center;
         }
-        .category {
-          a {
-            margin: 0 10px;
-            font-size: 16px;
-            text-decoration: none;
+
+        ul {
+          display: flex;
+          li {
+            a {
+              margin: 0 12px;
+              font-size: 16px;
+              text-decoration: none;
+            }
           }
         }
+      }
+
+      .categoriesBtn {
         button {
           width: 20px;
           margin: 0 10px;
@@ -70,33 +55,36 @@ $ddgray: #212121;
       }
     }
   }
+}
 
-  .filterBox {
-    padding-top: 48px;
-    h2 {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 42px;
+.filterWrap {
+  padding-top: 48px;
+  h2 {
+    @include fontsize(28px, 800);
+    line-height: 42px;
+  }
+  .filterMenuBox {
+    @include flex-set(space-between, center, row);
+    padding-top: 8px;
+
+    p {
+      @include fontsize(18px, 600);
+      line-height: 25px;
     }
-    .filterMenuBox {
-      @include flex-set(space-between, center, row);
-      padding-top: 8px;
 
-      p {
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 25px;
-      }
-
-      span {
-        margin: 0 10px;
-      }
+    span {
+      margin: 0 10px;
     }
-    .filterMenu {
-      font-size: 16px;
-      @include flex-set(space-between, center, row);
-      li {
-        margin: 0 10px;
+  }
+  .filterMenu {
+    font-size: 16px;
+    @include flex-set(space-between, center, row);
+
+    li {
+      margin: 0 10px;
+      a {
+        text-decoration: none;
+        color: #212121;
       }
     }
   }

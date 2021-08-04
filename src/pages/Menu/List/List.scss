@@ -1,44 +1,33 @@
-$lgray: #ebebeb;
-$gray: #e0e0e0;
-$dgray: #606060;
-$ddgray: #212121;
-
-@import '../../../styles/common.scss';
-@import '../../../styles/reset.scss';
 @import '../../../styles/variables.scss';
 
-.hidden {
-  visibility: hidden;
-  margin-top: -20px;
-}
+// 기능구현시 사용 class .hidden {
+//   visibility: hidden;
+//   margin-top: -20px;
+// }
 
 .listContainer {
-  width: 268px;
-  height: 560px;
+  @include size(268px, 560px);
   min-height: 540px;
   margin-top: 40px;
 
   .listImg {
-    width: 268px;
-    height: 320px;
+    @include size(268px, 320px);
 
     img {
-      width: 100%;
-      height: 100%;
+      @include size(100%, 100%);
     }
   }
+
   .listInfoContainer {
     padding-top: 16px;
 
     .newBox {
       span {
         display: inline-block;
-        width: 55px;
-        height: 25px;
-        font-size: 12px;
-        font-weight: 600;
-        text-align: center;
+        @include size(55px, 25px);
+        @include fontsize(12px, 600);
         line-height: 25px;
+        text-align: center;
 
         &:nth-child(1) {
           background-color: #ed0b02;
@@ -54,35 +43,32 @@ $ddgray: #212121;
       .makingTime {
         display: inline-block;
         margin: 10px 0;
-        color: $dgray;
+        color: #212121;
         font-size: 13px;
       }
       .menuName {
         display: inline-block;
         width: 100%;
-        font-size: 17px;
-        font-weight: 600;
+        @include fontsize(17px, 600);
         line-height: 24px;
       }
       .menuPrice {
         display: inline-block;
         width: 100%;
         margin: 8px 0;
-        font-size: 20px;
-        font-weight: 800;
+        @include fontsize(20px, 800);
         line-height: 27px;
       }
       .starRivew {
         display: inline-block;
-        width: 88px;
-        height: 16px;
+        @include size(88px, 16px);
       }
       .rivew {
         width: 70px;
         display: inline-block;
-        color: $dgray;
+        color: #212121;
         font-size: 14px;
-        border-left: 1px solid $gray;
+        border-left: 1px solid #e0e0e0;
         text-align: center;
       }
 
@@ -91,16 +77,15 @@ $ddgray: #212121;
         margin-top: 24px;
 
         button {
-          width: 40px;
-          height: 40px;
+          @include size(40px, 40px);
           border-radius: 50%;
-          border: 2px solid $gray;
+          border: 2px solid #e0e0e0;
           margin-right: 15px;
-          background-color: $gray;
+          background-color: #e0e0e0;
 
           svg {
             font-size: 20px;
-            color: $dgray;
+            color: #606060;
           }
         }
       }
