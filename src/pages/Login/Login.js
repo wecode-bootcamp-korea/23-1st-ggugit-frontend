@@ -24,7 +24,7 @@ class Login extends React.Component {
   render() {
     const { setLoginInfo } = this;
     const { userInfo } = this.state;
-    console.log(userInfo);
+
     return (
       <section className="loginSection">
         <div className="loginWrap">

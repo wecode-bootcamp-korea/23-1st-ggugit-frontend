@@ -1,11 +1,36 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import CommonForm from '../../../component/Form/CommonForm';
 import CommonInput from '../../../component/Input/CommonInput';
 import { LOGIN_INPUT_LIST } from './LOGIN_INPUT_LIST';
+import { LOGIN_API } from '../../../config';
 
 import './LoginForm.scss';
 
 class LoginForm extends React.Component {
+  loginSubmit = e => {
+    e.preventDefault();
+    const { history } = this.props;
+    const { loginId, loginPw } = this.props.userInfo;
+
+    fetch(LOGIN_API, {
+      method: 'POST',
+      body: JSON.stringify({
+        email: loginId,
+        password: loginPw,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.token) {
+          history.push(`/`);
+          localStorage.setItem(`loginToken`, data.token);
+        } else {
+          alert(`ID, 비밀번호를 확인해주세요`);
+        }
+      });
+  };
+
   render() {
     const loginInpuList = LOGIN_INPUT_LIST.map(
       ({ id, type, name, placeholder }) => {
@@ -24,10 +49,17 @@ class LoginForm extends React.Component {
         );
       }
     );
+
+    const { loginSubmit } = this;
     const { userInfo } = this.props;
 
     return (
-      <CommonForm type="signIn" cases="로그인" userInfo={userInfo}>
+      <CommonForm
+        type="signIn"
+        cases="로그인"
+        userInfo={userInfo}
+        handleSubmit={e => loginSubmit(e)}
+      >
         {loginInpuList}
         <div className="findId">
           <span>아이디 찾기</span>
@@ -38,4 +70,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
