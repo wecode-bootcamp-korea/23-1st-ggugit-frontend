@@ -7,9 +7,16 @@ import './SignUpForm.scss';
 
 class SignUpForm extends React.Component {
   render() {
-    const signUpInputList = SIGN_UP_INPUT_LIST.map(elem => {
+    const signUpInputList = SIGN_UP_INPUT_LIST.map((elem, idx) => {
       const { type, name, placeholder } = elem;
-      return <CommonInput type={type} name={name} placeholder={placeholder} />;
+      return (
+        <CommonInput
+          key={idx}
+          type={type}
+          name={name}
+          placeholder={placeholder}
+        />
+      );
     });
     return (
       <CommonForm cases="회원가입">
