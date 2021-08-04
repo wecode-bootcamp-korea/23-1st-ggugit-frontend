@@ -5,6 +5,8 @@
   position: fixed;
   width: calc(100vw - (100vw - 100%));
   top: 0;
+  background-color: white;
+  z-index: 100;
 
   .topNavWrap {
     @include flex-set(center, center, row);
