@@ -17,7 +17,9 @@ class LoginForm extends React.Component {
             type={type}
             name={name}
             placeholder={placeholder}
-            setUserInfo={setLoginInfo}
+            handleOnChange={e => {
+              setLoginInfo(name, e.target.value);
+            }}
           />
         );
       }

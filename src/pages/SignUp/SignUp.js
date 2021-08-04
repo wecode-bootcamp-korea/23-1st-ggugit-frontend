@@ -31,6 +31,7 @@ class SignUp extends React.Component {
   render() {
     const { setSignUpInfo } = this;
     const { userInfo } = this.state;
+    console.log(userInfo);
 
     return (
       <section>
