@@ -2,8 +2,13 @@ import React from 'react';
 import './Detail.scss';
 import DishData from './Components/DishData';
 import TitleData from './Components/TitleData';
+import { withRouter } from 'react-router-dom';
 
 class Detail extends React.Component {
+  goToCart = () => {
+    this.props.history.push('/Cart');
+  };
+
   render() {
     return (
       <main>
@@ -25,7 +30,12 @@ class Detail extends React.Component {
               <TitleData />
               <DishData />
               <div className="cartButton">
-                <button>장바구니 담기</button>
+                <button
+                  // onClick={this.goToCart}
+                  ㅜ
+                >
+                  장바구니 담기
+                </button>
               </div>
             </div>
           </div>
@@ -50,14 +60,20 @@ class Detail extends React.Component {
 
             <div className="cartStickBar">
               <div className="deliveryDateNotification">
-                <div className="notiTitle">주문정보 안내</div>
+                <div className="notiTitle" onClick={this.goToCart}>
+                  주문정보 안내
+                </div>
                 <div className="notiContent">
                   오전 7시 이전에 구매하시면 다음날 새벽에 집 앞으로 신선하게
                   받아보실 수 있습니다.
                 </div>
               </div>
               <div className="stickyCartButton">
-                <button>장바구니 담기</button>
+                <button
+                // onClick={this.goToCart}
+                >
+                  장바구니 담기
+                </button>
               </div>
               <span className="totalPrice">총 0원</span>
             </div>

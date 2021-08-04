@@ -5,6 +5,7 @@ import Nav from './component/Nav/Nav';
 import Footer from './component/Footer/Footer';
 import Main from './pages/Main/Main';
 import Detail from './pages/DetailPage/Detail';
+// import Cart from '';
 
 class Routes extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/detail" component={Detail} />
+          {/* <Route exact path="/cart" component={Cart}> */}
         </Switch>
         <Footer />
       </Router>
