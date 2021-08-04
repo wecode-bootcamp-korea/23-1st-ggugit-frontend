@@ -7,9 +7,9 @@ import './CommonForm.scss';
 class CommonForm extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
-    const { cases, history, userInfo } = this.props;
+    const { type, history, userInfo } = this.props;
 
-    if (cases === `회원가입`) {
+    if (type === `signUp`) {
       const { name, loginId, loginPw, loginPwValid, phoneNumber, birthDay } =
         userInfo;
       if (loginPwValid === loginPw) {
@@ -30,7 +30,7 @@ class CommonForm extends React.Component {
       } else {
         alert(`비밀번호를 확인해주세요`);
       }
-    } else if (cases === `로그인`) {
+    } else if (type === `signIn`) {
       const { loginId, loginPw } = userInfo;
 
       fetch(LOGIN_API, {

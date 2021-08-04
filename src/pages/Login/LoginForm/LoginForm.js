@@ -7,24 +7,25 @@ import './LoginForm.scss';
 
 class LoginForm extends React.Component {
   render() {
-    const loginInpuList = LOGIN_INPUT_LIST.map(elem => {
-      const { id, type, name, placeholder } = elem;
-      const { setLoginInfo } = this.props;
+    const loginInpuList = LOGIN_INPUT_LIST.map(
+      ({ id, type, name, placeholder }) => {
+        const { setLoginInfo } = this.props;
 
-      return (
-        <CommonInput
-          key={id}
-          type={type}
-          name={name}
-          placeholder={placeholder}
-          setUserInfo={setLoginInfo}
-        />
-      );
-    });
+        return (
+          <CommonInput
+            key={id}
+            type={type}
+            name={name}
+            placeholder={placeholder}
+            setUserInfo={setLoginInfo}
+          />
+        );
+      }
+    );
     const { userInfo } = this.props;
 
     return (
-      <CommonForm cases="로그인" userInfo={userInfo}>
+      <CommonForm type="signIn" cases="로그인" userInfo={userInfo}>
         {loginInpuList}
         <div className="findId">
           <span>아이디 찾기</span>

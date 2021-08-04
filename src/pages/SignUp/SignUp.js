@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SignUpForm from './SignUpForm/SignUpForm';
 
 import './SignUp.scss';
@@ -33,8 +34,12 @@ class SignUp extends React.Component {
 
     return (
       <section>
-        <div className="loginWrap">
+        <div className="signUpWrap">
           <SignUpForm setSignUpInfo={setSignUpInfo} userInfo={userInfo} />
+          <div className="toLogin">
+            <span>이미 계정이 있으신가요?</span>
+            <Link to="/login">로그인하기</Link>
+          </div>
         </div>
       </section>
     );
