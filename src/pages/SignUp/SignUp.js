@@ -20,18 +20,12 @@ class SignUp extends React.Component {
   }
 
   setSignUpInfo = (name, value) => {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        userInfo: { ...prevState.userInfo, [name]: value },
-      };
-    });
+    this.setState({ userInfo: { ...this.state.userInfo, [name]: value } });
   };
 
   render() {
     const { setSignUpInfo } = this;
     const { userInfo } = this.state;
-    console.log(userInfo);
 
     return (
       <section>

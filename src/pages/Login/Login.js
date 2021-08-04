@@ -12,13 +12,17 @@ class Login extends React.Component {
     };
   }
 
+  // setLoginInfo = (name, value) => {
+  //   this.setState(prevState => {
+  //     return {
+  //       ...prevState,
+  //       userInfo: { ...prevState.userInfo, [name]: value },
+  //     };
+  //   });
+  // };
+
   setLoginInfo = (name, value) => {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        userInfo: { ...prevState.userInfo, [name]: value },
-      };
-    });
+    this.setState({ userInfo: { ...this.state.userInfo, [name]: value } });
   };
 
   render() {
