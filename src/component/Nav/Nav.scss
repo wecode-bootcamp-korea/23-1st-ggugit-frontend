@@ -5,6 +5,8 @@
   position: fixed;
   width: calc(100vw - (100vw - 100%));
   top: 0;
+  z-index: 100;
+  font-family: ‘Gothic A1’, sans-serif;
 
   .topNavWrap {
     @include flex-set(center, center, row);
@@ -51,7 +53,6 @@
 
       .logo {
         font-size: 40px;
-        font-family: ‘Gothic A1’, sans-serif;
         font-weight: 800;
       }
 
