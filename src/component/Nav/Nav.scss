@@ -44,6 +44,7 @@
   .bottomNavWrap {
     @include flex-set(center, center, row);
     border-bottom: 1px solid #ccc;
+    background-color: white;
 
     .bottomNav {
       @include flex-set(space-between, center, row);
