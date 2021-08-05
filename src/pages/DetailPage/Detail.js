@@ -2,7 +2,6 @@ import React from 'react';
 import './Detail.scss';
 import DishData from './Components/DishData';
 import TitleData from './Components/TitleData';
-import { withRouter } from 'react-router-dom';
 
 class Detail extends React.Component {
   goToCart = () => {
