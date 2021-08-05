@@ -35,7 +35,7 @@ class Nav extends React.Component {
             </div>
             <div>
               <span>장바구니</span>
-              <span>매뉴찾기</span>
+              <span>메뉴찾기</span>
             </div>
           </nav>
         </div>

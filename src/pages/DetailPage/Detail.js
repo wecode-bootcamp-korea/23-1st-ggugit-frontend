@@ -11,7 +11,7 @@ class Detail extends React.Component {
 
   render() {
     return (
-      <main>
+      <main className="wholeWrap">
         <div className="detailWrap">
           <div className="topInfo">
             <div className="imgDetailWrap">
@@ -29,17 +29,24 @@ class Detail extends React.Component {
             <div className="dishInfoWrap">
               <TitleData />
               <DishData />
-              <div className="cartButton">
-                <button
+
+              <div className="cartWrap">
+                <div className="totalPrice">
+                  <span> 수량 :</span>
+                  <span> 총 0원 </span>
+                </div>
+                <div className="cartButton">
+                  <button
                   // onClick={this.goToCart}
-                  ㅜ
-                >
-                  장바구니 담기
-                </button>
+                  >
+                    {' '}
+                    장바구니 담기
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="tabWrap">상세설명</div> <a></a>
+          <div className="tabWrap">상세설명</div>
         </div>
 
         <div className="infoWrap">
@@ -75,7 +82,6 @@ class Detail extends React.Component {
                   장바구니 담기
                 </button>
               </div>
-              <span className="totalPrice">총 0원</span>
             </div>
           </div>
         </div>

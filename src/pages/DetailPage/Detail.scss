@@ -1,8 +1,6 @@
 @import '../../styles/variables.scss';
-@import '../../styles/common.scss';
-@import '../../styles/reset.scss';
 
-main {
+.wholeWrap {
   max-width: 1180px;
   padding-top: 180px;
   margin: 0 auto;
@@ -22,10 +20,23 @@ main {
 
       .dishInfoWrap {
         @include size(580px, initial);
-        padding: 70px 0 0 90px;
+        padding: 27px 0 0 91px;
 
+        .totalPrice {
+          display: flex;
+          justify-content: space-between;
+
+          span {
+            float: right;
+            padding: 10px 5px 0 0;
+            color: #ee0700;
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: 700;
+          }
+        }
         .cartButton {
-          padding-top: 50px;
+          padding-top: 19px;
 
           button {
             @include size(490px, initial);
@@ -44,9 +55,6 @@ main {
       border-bottom: solid 1px #dbdbdb;
       font-size: 30px;
       font-weight: 700;
-
-      > a {
-      }
 
       &:after,
       &:before {
@@ -113,14 +121,6 @@ main {
             color: black;
             cursor: pointer;
           }
-        }
-        .totalPrice {
-          float: right;
-          padding: 10px 5px 0 0;
-          color: #ee0700;
-          font-size: 32px;
-          line-height: 48px;
-          font-weight: 700;
         }
       }
     }
