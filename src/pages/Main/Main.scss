@@ -7,9 +7,11 @@
   .mainWrap {
     @include flex-set(center, center, column);
     margin-top: 117px;
+
     .imgSlider {
       position: relative;
       max-width: 1920px;
+
       > img {
         width: 1920px;
         height: 640px;
@@ -20,6 +22,7 @@
         width: 600px;
         top: 80px;
         left: 360px;
+
         .imgFlag {
           display: block;
           padding: 5px 18px;
@@ -28,16 +31,19 @@
           color: white;
           font-size: 22px;
         }
+
         .imgDescTitle {
           color: white;
           margin-bottom: 20px;
           font-size: 68px;
         }
+
         .imgDescText {
           color: white;
           font-size: 24px;
         }
       }
+
       .moveButton {
         @include size(62px, 80px);
         position: absolute;
@@ -46,6 +52,7 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 70px;
       }
+
       .leftButton {
         top: 260px;
         left: 250px;
@@ -56,17 +63,19 @@
         right: 250px;
       }
     }
+
     .tasteRecommendWrap {
-      @include flex-set(center, center, row);
+      @include flex-set(flex-start, center, row);
       width: 100%;
       max-width: 1180px;
-      margin-top: 165px;
+      margin-top: 80px;
       position: relative;
 
       .tasteListBlock {
         @include flex-set(center, flex-start, column);
         width: 339px;
         margin-right: 65px;
+
         > button {
           border: none;
           background-color: white;
@@ -78,6 +87,7 @@
           }
           margin-bottom: 15px;
         }
+
         > span {
           margin-bottom: 15px;
           font-size: 40px;
@@ -88,16 +98,17 @@
           line-height: 20px;
         }
       }
+
       .imgSlider {
         @include flex-set(center, center, row);
+
         .imgBlock {
           @include flex-set(center, center, row);
-          > span {
-          }
+
           .recommendImgDescription {
             @include flex-set(center, flex-start, column);
             margin-left: 20px;
-            margin-right: 95px;
+
             .productTitle {
               font-size: 20px;
             }
@@ -105,31 +116,50 @@
             .productDescription {
               margin-top: 40px;
               font-size: 20px;
+
+              > span {
+                margin-right: 10px;
+              }
+
               .productPrice {
                 font-size: 28px;
+              }
+
+              .productServing {
+                color: #606060;
+              }
+
+              .productServing:before {
+                content: '/';
+                margin-right: 3px;
+              }
+
+              i {
+                color: #606060;
               }
             }
           }
         }
-        .shader {
-          @include size(424px, 520px);
-          position: absolute;
-          right: -370px;
-        }
+      }
+
+      .shader {
+        @include size(424px, 520px);
+        position: absolute;
+        right: -424px;
       }
     }
+  }
 
-    .imgSlider {
-    }
-    .onTimeBest {
-    }
-    .onTimeReview {
-    }
-    .productWrap {
-    }
-    .pdLeftWrap {
-    }
-    .pdRightWrap {
-    }
+  .imgSlider {
+  }
+  .onTimeBest {
+  }
+  .onTimeReview {
+  }
+  .productWrap {
+  }
+  .pdLeftWrap {
+  }
+  .pdRightWrap {
   }
 }

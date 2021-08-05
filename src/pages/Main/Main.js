@@ -45,7 +45,7 @@ class Main extends React.Component {
                   </div>
                   <div className="productDescription">
                     <span className="productPrice">10억원</span>
-                    <span>1인분</span>
+                    <span className="productServing">1인분</span>
                     <i className="fas fa-cart-plus"></i>
                   </div>
                 </div>
