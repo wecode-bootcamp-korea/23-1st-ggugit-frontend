@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-// import { LOGIN_API, SIGNUP_API } from '../../config';
 
 import './CommonForm.scss';
 

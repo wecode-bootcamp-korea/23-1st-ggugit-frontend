@@ -7,7 +7,8 @@ import { SIGNUP_API } from '../../../config';
 import './SignUpForm.scss';
 
 class SignUpForm extends React.Component {
-  signUpSubmit = () => {
+  signUpSubmit = e => {
+    e.preventDefault();
     const { name, loginId, loginPw, loginPwValid, phoneNumber, birthDay } =
       this.props.userInfo;
 
@@ -21,11 +22,7 @@ class SignUpForm extends React.Component {
           phone_number: phoneNumber,
           birthday: birthDay,
         }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log('data >>>>>>>', data);
-        });
+      }).then(res => res.json());
     } else {
       alert(`비밀번호를 확인해주세요`);
     }
@@ -34,31 +31,25 @@ class SignUpForm extends React.Component {
   render() {
     const { signUpSubmit } = this;
     const { setSignUpInfo, userInfo } = this.props;
-    const signUpInputList = SIGN_UP_INPUT_LIST.map(
-      ({ id, type, name, placeholder }) => {
-        return (
-          <CommonInput
-            key={id}
-            type={type}
-            name={name}
-            placeholder={placeholder}
-            handleOnChange={e => {
-              setSignUpInfo(name, e.target.value);
-            }}
-          />
-        );
-      }
-    );
+    const signUpInputList = SIGN_UP_INPUT_LIST.map(({ id, name, ...rest }) => {
+      return (
+        <CommonInput
+          key={id}
+          name={name}
+          {...rest}
+          handleOnChange={e => {
+            setSignUpInfo(name, e.target.value);
+          }}
+        />
+      );
+    });
 
     return (
       <CommonForm
         type="signUp"
         cases="회원가입"
         userInfo={userInfo}
-        handleSubmit={e => {
-          e.preventDefault();
-          signUpSubmit();
-        }}
+        handleSubmit={signUpSubmit}
       >
         {signUpInputList}
         <div className="findId">

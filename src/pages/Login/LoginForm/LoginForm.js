@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
       .then(data => {
         if (data.token) {
           history.push(`/`);
-          localStorage.setItem(`loginToken`, data.token);
+          localStorage.setItem(TOKEN_KEY, data.token);
         } else {
           alert(`ID, 비밀번호를 확인해주세요`);
         }
@@ -32,23 +32,20 @@ class LoginForm extends React.Component {
   };
 
   render() {
-    const loginInpuList = LOGIN_INPUT_LIST.map(
-      ({ id, type, name, placeholder }) => {
-        const { setLoginInfo } = this.props;
+    const loginInpuList = LOGIN_INPUT_LIST.map(({ id, name, ...rest }) => {
+      const { setLoginInfo } = this.props;
 
-        return (
-          <CommonInput
-            key={id}
-            type={type}
-            name={name}
-            placeholder={placeholder}
-            handleOnChange={e => {
-              setLoginInfo(name, e.target.value);
-            }}
-          />
-        );
-      }
-    );
+      return (
+        <CommonInput
+          key={id}
+          name={name}
+          {...rest}
+          handleOnChange={e => {
+            setLoginInfo(name, e.target.value);
+          }}
+        />
+      );
+    });
 
     const { loginSubmit } = this;
     const { userInfo } = this.props;
@@ -58,7 +55,7 @@ class LoginForm extends React.Component {
         type="signIn"
         cases="로그인"
         userInfo={userInfo}
-        handleSubmit={e => loginSubmit(e)}
+        handleSubmit={loginSubmit}
       >
         {loginInpuList}
         <div className="findId">
@@ -69,5 +66,7 @@ class LoginForm extends React.Component {
     );
   }
 }
+
+const TOKEN_KEY = 'loginToken';
 
 export default withRouter(LoginForm);
