@@ -1,9 +1,22 @@
 @import '../../../styles/variables.scss';
 
-.imgSlider {
+.imgSliderWrap {
   @include flex-set(center, center, row);
-  flex-wrap: nowrap;
   position: relative;
+  width: calc(100vw - (100vw - 100%));
   max-width: 1920px;
   overflow: hidden;
+
+  .imgSlider {
+    @include flex-set(center, center, row);
+    flex-wrap: nowrap;
+
+    .imgWrap {
+      @include size(100%, 100%);
+
+      > img {
+        object-fit: fill;
+      }
+    }
+  }
 }

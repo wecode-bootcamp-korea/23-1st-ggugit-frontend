@@ -28,7 +28,7 @@ class SignUp extends React.Component {
     const { userInfo } = this.state;
 
     return (
-      <section>
+      <section className="signUpContainer">
         <div className="signUpWrap">
           <SignUpForm setSignUpInfo={setSignUpInfo} userInfo={userInfo} />
           <div className="toLogin">

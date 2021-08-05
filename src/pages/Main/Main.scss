@@ -36,23 +36,19 @@
       }
     }
 
-    .moveButton {
-      @include size(62px, 80px);
+    .moveButtonWrap {
+      @include flex-set(space-between, center, row);
       position: absolute;
-      border: none;
-      background-color: rgba(0, 0, 0, 0.2);
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 70px;
-    }
+      width: 100%;
 
-    .leftButton {
-      top: 260px;
-      left: 250px;
-    }
-
-    .rightButton {
-      top: 260px;
-      right: 250px;
+      .moveButton {
+        @include size(62px, 80px);
+        margin: 0 200px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 70px;
+      }
     }
 
     .tasteRecommendWrap {

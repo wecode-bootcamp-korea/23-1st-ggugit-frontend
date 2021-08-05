@@ -4,12 +4,66 @@ import ImageSlider from './Asides/ImageSlider';
 import './Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      imageCounter: 0,
+    };
+  }
+
+  setImageCounter = (e, arr) => {
+    this.setState(prevState => {
+      const { imageCounter } = prevState;
+      const newCounter = { ...prevState };
+
+      if (e.target.innerText.includes(`<`) && imageCounter > 0) {
+        newCounter.imageCounter = imageCounter - 1;
+      } else if (e.target.innerText.includes(`<`) && imageCounter === 0) {
+        newCounter.imageCounter = imageCounter + (arr.length - 1);
+      }
+
+      if (e.target.innerText.includes(`>`) && imageCounter < arr.length - 1) {
+        newCounter.imageCounter = imageCounter + 1;
+      } else if (e.target.innerText.includes(`>`) && imageCounter === 5) {
+        newCounter.imageCounter = imageCounter - (arr.length - 1);
+      }
+
+      return newCounter;
+    });
+  };
+
+  // resetImageSlide = (arr, imageCounter) => {
+  //   if (imageCounter < 0) {
+  //     this.setState({ imageCounter: arr.length - 1 });
+  //   } else if (imageCounter > arr.length - 1) {
+  //     this.setState({ imageCounter: 0 });
+  //   }
+  // };
+
   render() {
+    const { setImageCounter } = this;
+    const { imageCounter } = this.state;
+
+    const buttonText = { left: '<', right: '>' };
+    const imgSize = { width: '1920px', height: '640px' };
+
     return (
       <section className="mainContainer">
         <div className="mainWrap">
-          {/* <div className="imgSlider">
-            <img alt="stake" src="/images/Main/stake.jpg" />
+          <ImageSlider
+            imageList={IMAGE_LIST}
+            imageCounter={imageCounter}
+            handleClick={e => {
+              console.log(this.state.imageCounter);
+              setImageCounter(e, IMAGE_LIST);
+              // resetImageSlide(IMAGE_LIST, imageCounter);
+            }}
+            buttonRender={true}
+            buttonWrapClassName="moveButtonWrap"
+            buttonClassName="moveButton"
+            buttonText={buttonText}
+            imgSize={imgSize}
+          >
             <div className="imgDescription">
               <span className="imgFlag">신메뉴 오픈</span>
               <span className="imgDescTitle">
@@ -17,19 +71,6 @@ class Main extends React.Component {
               </span>
               <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
             </div>
-            <button className="moveButton leftButton">{`<`}</button>
-            <button className="moveButton rightButton">{`>`}</button>
-          </div> */}
-          <ImageSlider>
-            <div className="imgDescription">
-              <span className="imgFlag">신메뉴 오픈</span>
-              <span className="imgDescTitle">
-                한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
-              </span>
-              <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
-            </div>
-            <button className="moveButton leftButton">{`<`}</button>
-            <button className="moveButton rightButton">{`>`}</button>
           </ImageSlider>
           <div className="tasteRecommendWrap">
             <div className="tasteListBlock">
@@ -80,3 +121,12 @@ class Main extends React.Component {
 }
 
 export default Main;
+
+const IMAGE_LIST = [
+  { name: 'stake', url: '/images/Main/stake.jpg' },
+  { name: 'stake', url: '/images/Main/food2.jpg' },
+  { name: 'stake', url: '/images/Main/food3.jpg' },
+  { name: 'stake', url: '/images/Main/stake.jpg' },
+  { name: 'stake', url: '/images/Main/food2.jpg' },
+  { name: 'stake', url: '/images/Main/food3.jpg' },
+];
