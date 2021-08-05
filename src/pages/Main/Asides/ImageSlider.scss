@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.imgSlider {
+  @include flex-set(center, center, row);
+  flex-wrap: nowrap;
+  position: relative;
+  max-width: 1920px;
+  overflow: hidden;
+}
