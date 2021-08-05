@@ -4,10 +4,15 @@ import './CommonInput.scss';
 
 class CommonInput extends React.Component {
   render() {
-    const { type, placeholder } = this.props;
+    const { type, placeholder, handleOnChange } = this.props;
+
     return (
       <label className="commonLabel">
-        <input type={type} placeholder={placeholder} />
+        <input
+          type={type}
+          placeholder={placeholder}
+          onChange={handleOnChange}
+        />
       </label>
     );
   }
