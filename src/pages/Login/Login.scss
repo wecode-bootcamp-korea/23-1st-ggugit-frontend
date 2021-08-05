@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.loginSection {
+  @include flex-set(center, center, column);
+  @include size(100%, 100vh);
+
+  .loginWrap {
+    @include flex-set(center, center, column);
+    width: 100%;
+    max-width: 1180px;
+
+    .findId {
+      @include flex-set(flex-end, center, row);
+      width: 100%;
+      margin-top: 25px;
+
+      span:last-child {
+        &:before {
+          margin: 0 5px;
+          content: '|';
+        }
+      }
+    }
+
+    .signUpBlock {
+      width: 478px;
+      margin-top: 64px;
+      padding: 20px 32px;
+      background-color: #f7f7f7;
+
+      > h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      > p {
+        font-size: 13px;
+        margin-bottom: 16px;
+      }
+
+      .signUpButton {
+        @include flex-set(center, center, row);
+        @include size(140px, 47px);
+        border: 1px solid #ccc;
+        background-color: white;
+
+        > a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
