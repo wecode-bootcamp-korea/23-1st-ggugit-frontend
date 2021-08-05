@@ -6,15 +6,19 @@ import { Link } from 'react-router-dom';
 class Menu extends React.Component {
   render() {
     return (
-      <>
-        <div className="wrap">
+      <nav>
+        <div className="menu">
           <div className="menuWrap">
-            <h1>GGUGIT 메뉴</h1>
-            <div className="categoriesBox">
-              <Link to>테마별</Link>
+            <h1 className="title1">GGUGIT 메뉴</h1>
+            <div className="categoriesFlexBox">
+              <Link to className="titleFont">
+                테마별
+              </Link>
               <div className="category">
-                <Link to>전체</Link>
-                <ul>
+                <Link to className="font">
+                  전체
+                </Link>
+                <ul className="categoriesBox">
                   <li>
                     <Link to>KIDS</Link>
                   </li>
@@ -33,21 +37,21 @@ class Menu extends React.Component {
                 </ul>
                 <div className="categoriesBtn">
                   <button>
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-arrow-left" />
                   </button>
                   <button>
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right" />
                   </button>
                 </div>
               </div>
             </div>
           </div>
           <div className="filterWrap">
-            <h2>
+            <h2 className="title2">
               #<span>신메뉴</span>추천 메뉴입니다.
             </h2>
             <div className="filterMenuBox">
-              <p>GGUGIT의 주문 마감은 오전 7시입니다.</p>
+              <p className="desc">GGUGIT의 주문 마감은 오전 7시입니다.</p>
               <ul className="filterMenu">
                 <li>
                   <Link to>신메뉴순</Link>
@@ -73,7 +77,7 @@ class Menu extends React.Component {
             </ul>
           </main>
         </div>
-      </>
+      </nav>
     );
   }
 }

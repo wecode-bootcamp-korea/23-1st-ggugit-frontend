@@ -24,10 +24,10 @@ class List extends React.Component {
             <span className="rivew">리뷰0</span>
             <div className="goToLikeContainer">
               <button>
-                <i class="far fa-heart"></i>
+                <i class="far fa-heart" />
               </button>
               <button>
-                <i class="fas fa-cart-arrow-down"></i>
+                <i class="fas fa-cart-arrow-down" />
               </button>
             </div>
           </div>

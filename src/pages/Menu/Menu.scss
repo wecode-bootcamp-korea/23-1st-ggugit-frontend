@@ -1,25 +1,26 @@
 @import '../../styles/variables.scss';
 
-.wrap {
+.menu {
   width: 1180px;
   margin: auto;
   padding-top: 160px;
 
   .menuWrap {
-    h1 {
+    .title1 {
       padding: 15px 0;
       width: 100%;
       @include fontsize(40px, 800);
       word-spacing: 5px;
     }
 
-    .categoriesBox {
+    .categoriesFlexBox {
       @include flex-set(space-between, center);
       height: 70px;
       padding-bottom: 14px;
       border-bottom: 1px solid #ebebeb;
-      a {
-        @include fontsize(24px, 600);
+
+      .titleFont {
+        @include fontsize(24px);
         text-decoration: none;
         color: #606060;
       }
@@ -28,19 +29,22 @@
         display: flex;
         line-height: 70px;
 
-        a {
+        .font {
+          @include fontsize(20px);
           width: 60px;
           text-align: center;
+          text-decoration: none;
+          color: #606060;
         }
 
-        ul {
+        .categoriesBox {
           display: flex;
-          li {
-            a {
-              margin: 0 12px;
-              font-size: 16px;
-              text-decoration: none;
-            }
+
+          a {
+            margin: 0 12px;
+            @include fontsize();
+            text-decoration: none;
+            color: #606060;
           }
         }
       }
@@ -59,33 +63,29 @@
 
 .filterWrap {
   padding-top: 48px;
-  h2 {
+
+  .title2 {
     @include fontsize(28px, 800);
     line-height: 42px;
   }
+
   .filterMenuBox {
     @include flex-set(space-between, center, row);
     padding-top: 8px;
 
-    p {
-      @include fontsize(18px, 600);
+    .desc {
+      @include fontsize(18px);
       line-height: 25px;
-    }
-
-    span {
-      margin: 0 10px;
     }
   }
   .filterMenu {
     font-size: 16px;
     @include flex-set(space-between, center, row);
 
-    li {
+    a {
       margin: 0 10px;
-      a {
-        text-decoration: none;
-        color: #212121;
-      }
+      text-decoration: none;
+      color: #212121;
     }
   }
 }

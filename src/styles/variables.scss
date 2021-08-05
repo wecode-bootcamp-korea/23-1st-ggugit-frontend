@@ -18,7 +18,7 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin fontsize($size: 0px, $weight: 0) {
+@mixin fontsize($size: 16px, $weight: 600) {
   font-size: $size;
   font-weight: $weight;
 }
