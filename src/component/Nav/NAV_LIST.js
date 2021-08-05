@@ -10,5 +10,5 @@ export const NAV_LIST_BOTTOM = [
   { id: 2, text: 'GGUGIT 메뉴', url: '/' },
   { id: 3, text: '리뷰', url: '/' },
   { id: 4, text: '이벤트', url: '/' },
-  { id: 5, text: 'MT꾸깃', url: '/' },
+  { id: 5, text: 'MY꾸깃', url: '/' },
 ];
