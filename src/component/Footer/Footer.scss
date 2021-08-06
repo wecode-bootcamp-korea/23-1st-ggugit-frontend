@@ -3,7 +3,6 @@
 .publicFooter {
   @include flex-set(center, center, row);
   font-family: ‘Gothic A1’, sans-serif;
-  /*머지 이후 삭제할 계획. 글씨크기가 전체적으로 안먹히는 이슈*/
 
   .footerWrap {
     @include flex-set(center, center, row);

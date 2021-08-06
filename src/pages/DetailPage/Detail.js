@@ -2,6 +2,7 @@ import React from 'react';
 import './Detail.scss';
 import DishData from './Components/DishData';
 import TitleData from './Components/TitleData';
+import CartStickBar from './Components/CartStickBar';
 
 class Detail extends React.Component {
   goToCart = () => {
@@ -63,25 +64,7 @@ class Detail extends React.Component {
                 quisquam sequi? Tempora, ad.
               </p>
             </div>
-
-            <div className="cartStickBar">
-              <div className="deliveryDateNotification">
-                <div className="notiTitle" onClick={this.goToCart}>
-                  주문정보 안내
-                </div>
-                <div className="notiContent">
-                  오전 7시 이전에 구매하시면 다음날 새벽에 집 앞으로 신선하게
-                  받아보실 수 있습니다.
-                </div>
-              </div>
-              <div className="stickyCartButton">
-                <button
-                // onClick={this.goToCart}
-                >
-                  장바구니 담기
-                </button>
-              </div>
-            </div>
+            <CartStickBar />
           </div>
         </div>
       </main>
