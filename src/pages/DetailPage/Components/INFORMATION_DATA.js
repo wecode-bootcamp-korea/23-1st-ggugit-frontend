@@ -40,5 +40,3 @@ export const INFO_DATA = {
     },
   ],
 };
-
-// export default INFO_DATA;

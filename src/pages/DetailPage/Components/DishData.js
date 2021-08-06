@@ -8,25 +8,14 @@ class DishData extends React.Component {
       data: {},
     };
   }
-
-  // componentDidMount() {
-  //   fetch('./data/data.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         mockData: data,
-  //       });
-  //     });
-  // }
-
   render() {
     const makeList = category =>
-      INFO_DATA[category].map(data => {
+      INFO_DATA[category].map(priceInfoData => {
         return (
-          <dl key={data.id}>
-            <dt>{data.title}</dt>
+          <dl key={priceInfoData.id}>
+            <dt>{priceInfoData.title}</dt>
             <dd>
-              <span className="ttxt">{data.content}</span>
+              <span className="ttxt">{priceInfoData.content}</span>
             </dd>
           </dl>
         );
