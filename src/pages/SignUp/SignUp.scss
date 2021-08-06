@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-section {
+.signUpContainer {
   @include flex-set(center, center, column);
   @include size(100%, 100vh);
 
