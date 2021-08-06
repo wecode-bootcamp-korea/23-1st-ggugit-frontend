@@ -21,7 +21,7 @@ class DishData extends React.Component {
           </dl>
         );
       });
-    console.log(makeList);
+
     return (
       <div className="DishData">
         <div className="cookTime"> 조리 30분</div>
