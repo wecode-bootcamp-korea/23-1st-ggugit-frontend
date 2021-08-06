@@ -1,5 +1,47 @@
 @import '../../../styles/variables.scss';
 
+@mixin animation($delay, $duration, $name) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
+@mixin keyframes($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@include keyframes(move) {
+  0% {
+    transform: translateX(1920px);
+    display: flex;
+  }
+  100% {
+    transform: translateX(0px);
+    display: none;
+  }
+}
+
+@include keyframes(move2) {
+  0% {
+    transform: translateX(-1920px);
+    display: flex;
+  }
+  100% {
+    transform: translateX(0px);
+    display: none;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
 .imgSliderWrap {
   @include flex-set(center, center, row);
   position: relative;
@@ -13,6 +55,7 @@
 
     .imgWrap {
       @include size(100%, 100%);
+      transition: all cubic-bezier(0, 0.71, 0.58, 1);
 
       > img {
         object-fit: fill;

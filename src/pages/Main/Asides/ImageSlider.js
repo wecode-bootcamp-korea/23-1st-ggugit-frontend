@@ -4,7 +4,7 @@ import './ImageSlider.scss';
 
 class ImageSlider extends React.Component {
   render() {
-    const { imageList, imageCounter, imgSize } = this.props;
+    const { imageList, imageCounter, imgSize, animation } = this.props;
 
     const _imageList = imageList.map((image, idx) => {
       const { name, url } = image;
@@ -12,21 +12,10 @@ class ImageSlider extends React.Component {
       return (
         <div
           key={idx}
-          className="imgWrap"
-          aria-hidden={
-            idx === imageCounter - 1 ||
-            idx === imageCounter ||
-            idx === imageCounter + 1
-              ? 'false'
-              : 'true'
-          }
-          style={
-            idx === imageCounter - 1 ||
-            idx === imageCounter ||
-            idx === imageCounter + 1
-              ? { display: 'flex' }
-              : { display: 'none' }
-          }
+          // className={idx === imageCounter ? 'imgWrap flex' : 'imgWrap none'}
+          className={'imgWrap'}
+          aria-hidden={idx === imageCounter ? 'false' : 'true'}
+          style={animation}
         >
           <img
             alt={name}
@@ -62,27 +51,25 @@ class ImageSlider extends React.Component {
       }
     };
 
-    let tempStyle = {};
-    let imgWidth = parseInt(imgSize.width, 10);
-
-    if (imageList.length % 2 === 0) {
-      tempStyle = {
-        transition: 'all 500ms cubic-bezier(0, 0.71, 0.58, 1)',
-        transform: `translateX(${
-          (imageList.length / 2 - 0.5 + imageCounter) * imgWidth
-        }px)`,
-      };
-    } else {
-      tempStyle = {
-        transition: 'all 500ms cubic-bezier(0, 0.71, 0.58, 1)',
-        transform: `translateX(${((imageList.length - 1) / 2) * imgWidth}px)`,
-      };
-    }
-
-    console.log(_imageList);
+    console.log(_imageList, imageCounter);
     return (
       <div className="imgSliderWrap">
-        <div className="imgSlider" style={tempStyle}>
+        <div className="imgSlider">
+          {/* <div
+            key={-1}
+            className="imgWrap"
+            aria-hidden={imageCounter === -1 ? 'false' : 'true'}
+            style={
+              imageCounter === -1 ? { display: 'flex' } : { display: 'none' }
+            }
+          >
+            <img
+              alt={imageList[imageList.length - 1].name}
+              src={imageList[imageList.length - 1].url}
+              width={imgSize.width}
+              height={imgSize.height}
+            />
+          </div> */}
           {_imageList}
           {children}
         </div>

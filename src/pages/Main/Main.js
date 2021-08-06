@@ -8,6 +8,12 @@ class Main extends React.Component {
     super();
     this.state = {
       imageCounter: 0,
+      animation: {
+        animationName: ``,
+        animationDuration: ``,
+        animationDelay: ``,
+        transform: 'translateX(+4800px)',
+      },
     };
   }
 
@@ -16,16 +22,36 @@ class Main extends React.Component {
       const { imageCounter } = prevState;
       const newCounter = { ...prevState };
 
-      if (e.target.innerText.includes(`<`) && imageCounter > 0) {
-        newCounter.imageCounter = imageCounter - 1;
-      } else if (e.target.innerText.includes(`<`) && imageCounter === 0) {
-        newCounter.imageCounter = imageCounter + (arr.length - 1);
+      if (e.target.innerText.includes('<')) {
+        if (imageCounter > 0) {
+          newCounter.imageCounter = imageCounter - 1;
+        } else if (imageCounter === 0) {
+          newCounter.imageCounter = imageCounter + (arr.length - 1);
+        }
+        return {
+          ...newCounter,
+          animation: {
+            ...newCounter.animation,
+            transform: `translateX(${4800 - (imageCounter + 1) * 1920 + 'px'})`,
+          },
+        };
       }
 
-      if (e.target.innerText.includes(`>`) && imageCounter < arr.length - 1) {
-        newCounter.imageCounter = imageCounter + 1;
-      } else if (e.target.innerText.includes(`>`) && imageCounter === 5) {
-        newCounter.imageCounter = imageCounter - (arr.length - 1);
+      if (e.target.innerText.includes('>')) {
+        if (imageCounter < arr.length - 1) {
+          newCounter.imageCounter = imageCounter + 1;
+        } else if (imageCounter === 5) {
+          newCounter.imageCounter = imageCounter - (arr.length - 1);
+        }
+        return {
+          ...newCounter,
+          animation: {
+            ...newCounter.animation,
+            animationName: 'move',
+            animationDuration: `3s`,
+            animationDelay: `0`,
+          },
+        };
       }
 
       return newCounter;
@@ -43,6 +69,7 @@ class Main extends React.Component {
   render() {
     const { setImageCounter } = this;
     const { imageCounter } = this.state;
+    const { animation } = this.state;
 
     const buttonText = { left: '<', right: '>' };
     const imgSize = { width: '1920px', height: '640px' };
@@ -54,7 +81,6 @@ class Main extends React.Component {
             imageList={IMAGE_LIST}
             imageCounter={imageCounter}
             handleClick={e => {
-              console.log(this.state.imageCounter);
               setImageCounter(e, IMAGE_LIST);
               // resetImageSlide(IMAGE_LIST, imageCounter);
             }}
@@ -63,6 +89,7 @@ class Main extends React.Component {
             buttonClassName="moveButton"
             buttonText={buttonText}
             imgSize={imgSize}
+            animation={animation}
           >
             <div className="imgDescription">
               <span className="imgFlag">신메뉴 오픈</span>
