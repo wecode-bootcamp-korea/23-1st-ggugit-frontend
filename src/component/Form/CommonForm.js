@@ -9,7 +9,6 @@ class CommonForm extends React.Component {
       <div className="CommonFormBlock">
         <h1 className="CommonFormTitle">{cases}</h1>
         <form className="CommonForm">
-          {this.props.children}
           <button className="CommonFormButton">{cases}</button>
         </form>
       </div>
