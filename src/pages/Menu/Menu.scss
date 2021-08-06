@@ -5,87 +5,96 @@
   margin: auto;
   padding-top: 160px;
 
-  .menuWrap {
-    .title1 {
-      padding: 15px 0;
-      width: 100%;
-      @include fontsize(40px, 800);
-      word-spacing: 5px;
-    }
+  .title1 {
+    padding: 15px 0;
+    width: 100%;
+    @include fontsize(40px, 800);
+    word-spacing: 5px;
+  }
 
-    .categoriesFlexBox {
-      @include flex-set(space-between, center);
-      height: 70px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #ebebeb;
+  .categoriesFlexBox {
+    @include flex-set(space-between, center);
+    height: 70px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #ebebeb;
+
+    .titleBox {
+      display: flex;
 
       .titleFont {
+        margin-left: 10px;
         @include fontsize(24px);
         text-decoration: none;
         color: #606060;
       }
+    }
 
-      .category {
+    .category {
+      display: flex;
+      line-height: 70px;
+
+      .font {
+        @include fontsize(20px);
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        color: #606060;
+      }
+
+      .categoriesBox {
         display: flex;
-        line-height: 70px;
 
-        .font {
-          @include fontsize(20px);
-          width: 60px;
-          text-align: center;
+        a {
+          margin: 0 12px;
+          @include fontsize();
           text-decoration: none;
           color: #606060;
         }
+      }
+    }
 
-        .categoriesBox {
-          display: flex;
+    .categoriesBtn {
+      button {
+        width: 20px;
+        margin: 0 10px;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
 
-          a {
-            margin: 0 12px;
-            @include fontsize();
-            text-decoration: none;
-            color: #606060;
-          }
-        }
+  .filterWrap {
+    padding-top: 48px;
+
+    .title2 {
+      @include fontsize(28px, 800);
+      line-height: 42px;
+    }
+
+    .filterMenuBox {
+      @include flex-set(space-between, center, row);
+      padding-top: 8px;
+
+      .desc {
+        @include fontsize(18px);
+        line-height: 25px;
       }
 
-      .categoriesBtn {
-        button {
-          width: 20px;
+      .filterMenu {
+        font-size: 16px;
+        @include flex-set(space-between, center, row);
+
+        a {
           margin: 0 10px;
-          border: none;
-          background-color: transparent;
+          text-decoration: none;
+          color: #212121;
         }
       }
     }
   }
-}
 
-.filterWrap {
-  padding-top: 48px;
-
-  .title2 {
-    @include fontsize(28px, 800);
-    line-height: 42px;
-  }
-
-  .filterMenuBox {
-    @include flex-set(space-between, center, row);
-    padding-top: 8px;
-
-    .desc {
-      @include fontsize(18px);
-      line-height: 25px;
-    }
-  }
-  .filterMenu {
-    font-size: 16px;
-    @include flex-set(space-between, center, row);
-
-    a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #212121;
-    }
+  .productListBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }

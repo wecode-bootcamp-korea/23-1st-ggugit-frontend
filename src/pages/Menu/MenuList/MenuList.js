@@ -1,15 +1,13 @@
 import React from 'react';
-import '../List/List.scss';
+import './MenuList.scss';
 
-class List extends React.Component {
+class MenuList extends React.Component {
   render() {
+    const { name, image_url, cooking_time, price } = this.props;
     return (
       <li className="listContainer">
         <div className="listImg">
-          <img
-            src="https://openimage.interpark.com/goods_image_big/4/0/0/7/6806514007_l.jpg"
-            alt="monster"
-          />
+          <img src={image_url} alt="menu" />
         </div>
         <div className="listInfoContainer">
           <div className="newBox">
@@ -17,11 +15,13 @@ class List extends React.Component {
             <span>NEW</span>
           </div>
           <div className="listInfo">
-            <span className="makingTime">조리 20분</span>
-            <span className="menuName">수제불고기버거와 콘스프</span>
-            <span className="menuPrice">27,800원</span>
-            <span className="starRivew">별별별별별</span>
-            <span className="rivew">리뷰0</span>
+            <span className="makingTime">조리시간{cooking_time}</span>
+            <span className="menuName">{name}</span>
+            <span className="menuPrice">{price}원</span>
+            <div>
+              <span className="starRivew">별별별별별</span>
+              <span className="rivew">리뷰0</span>
+            </div>
             <div className="goToLikeContainer">
               <button>
                 <i class="far fa-heart" />
@@ -36,4 +36,4 @@ class List extends React.Component {
     );
   }
 }
-export default List;
+export default MenuList;
