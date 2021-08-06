@@ -12,7 +12,7 @@ class Detail extends React.Component {
           <div className="topInfo">
             <div className="imgDetailWrap">
               <img
-                src="../images/DetailPage/pasta_above.jpeg"
+                src="/images/DetailPage/pasta_above.jpeg"
                 alt="파스타"
                 witdh="600px;"
                 height="600px;"
@@ -44,7 +44,7 @@ class Detail extends React.Component {
           <div className="infoDetail">
             <div className="detailDescriptionBox">
               <img
-                src="../images/DetailPage/mainboxImg.jpeg"
+                src="/images/DetailPage/mainboxImg.jpeg"
                 alt="키트 상세설명을 위한 파스타 사진"
               ></img>
               <div className="subTitle">투움바 파스타</div>

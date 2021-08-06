@@ -5,18 +5,18 @@ class DishData extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
+      asideData: {},
     };
   }
 
   render() {
     const makeList = category =>
-      INFO_DATA[category].map(data => {
+      INFO_DATA[category].map(asideData => {
         return (
-          <dl key={data.id}>
-            <dt>{data.title}</dt>
+          <dl key={asideData.id}>
+            <dt>{asideData.title}</dt>
             <dd>
-              <span className="ttxt">{data.content}</span>
+              <span className="ttxt">{asideData.content}</span>
             </dd>
           </dl>
         );
