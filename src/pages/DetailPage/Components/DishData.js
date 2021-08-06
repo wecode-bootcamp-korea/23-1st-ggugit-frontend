@@ -9,16 +9,6 @@ class DishData extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetch('./data/data.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState({
-  //         mockData: data,
-  //       });
-  //     });
-  // }
-
   render() {
     const makeList = category =>
       INFO_DATA[category].map(data => {

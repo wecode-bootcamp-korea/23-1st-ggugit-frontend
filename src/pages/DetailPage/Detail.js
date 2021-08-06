@@ -5,10 +5,6 @@ import TitleData from './Components/TitleData';
 import CartStickBar from './Components/CartStickBar';
 
 class Detail extends React.Component {
-  goToCart = () => {
-    this.props.history.push('/Cart');
-  };
-
   render() {
     return (
       <main className="wholeWrap">
@@ -36,12 +32,7 @@ class Detail extends React.Component {
                   <span> 총 0원 </span>
                 </div>
                 <div className="cartButton">
-                  <button
-                  // onClick={this.goToCart}
-                  >
-                    {' '}
-                    장바구니 담기
-                  </button>
+                  <button> 장바구니 담기</button>
                 </div>
               </div>
             </div>
