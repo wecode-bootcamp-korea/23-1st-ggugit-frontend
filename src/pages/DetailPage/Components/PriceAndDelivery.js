@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import './PriceAndDelivery.scss';
 import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
 class DishData extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       data: {},
-      mealKitInfoList: [],
     };
+
+    //props값 어디에 줘야 하지?
   }
   render() {
     const makeList = category =>
@@ -22,11 +23,12 @@ class DishData extends Component {
         );
       });
 
-    const { titleData } = this.props.mealKitInfoList;
+    // const { titleData } = this.props.mealKitInfoList;
     return (
       <div className="DishData">
         <div className="cookTime">
-          <TitleData mealKitInfoList />; 조리 + {titleData.cooking_time} +분
+          조리시간
+          {/* 조리시간 {titleData.cooking_time} */}
         </div>
         <div className="info priceInfo">{makeList('priceInfo')}</div>
         <div className="info">{makeList('discountInfo')}</div>

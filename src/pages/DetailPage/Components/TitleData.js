@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './TitleData.scss';
 
-class TitleData extends React.Component {
+class TitleData extends Component {
   constructor(props) {
     super(props);
     this.props = {

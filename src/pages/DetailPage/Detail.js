@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Detail.scss';
 import PriceAndDelivery from './Components/PriceAndDelivery';
 import TitleData from './Components/TitleData';
 import CartStickBar from './Components/CartStickBar';
 
-class Detail extends React.Component {
+class Detail extends Component {
   constructor() {
     super();
     this.state = {
       mealKitInfoList: [],
     };
   }
+
+  class;
+
   goToCart = () => {
     this.props.history.push('/Cart');
   };
