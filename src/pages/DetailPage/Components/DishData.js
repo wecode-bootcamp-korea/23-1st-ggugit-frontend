@@ -1,6 +1,6 @@
 import React from 'react';
 import './DishData.scss';
-import { INFO_DATA } from './INFORMATION_DATA';
+import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
 class DishData extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,7 @@ class DishData extends React.Component {
           </dl>
         );
       });
-    console.log(makeList);
+
     return (
       <div className="DishData">
         <div className="cookTime"> 조리 30분</div>

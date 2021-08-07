@@ -16,7 +16,7 @@ class Detail extends React.Component {
   };
 
   componentDidMount() {
-    fetch('../data/DetailPage/MockData.json')
+    fetch('../data/DetailPage/DetailInfoMockData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
