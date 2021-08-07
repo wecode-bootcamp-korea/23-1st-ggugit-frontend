@@ -1,6 +1,6 @@
 import React from 'react';
 import './Detail.scss';
-import DishData from './Components/DishData';
+import PriceAndDelivery from './Components/PriceAndDelivery';
 import TitleData from './Components/TitleData';
 import CartStickBar from './Components/CartStickBar';
 
@@ -16,7 +16,7 @@ class Detail extends React.Component {
   };
 
   componentDidMount() {
-    fetch('../data/DetailPage/DetailInfoMockData.json')
+    fetch('http://localhost:3000/data/DetailPage/TitleMockData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -43,9 +43,12 @@ class Detail extends React.Component {
               </div>
             </div>
             <div className="dishInfoWrap">
-              <TitleData />
-              <DishData />
-
+              {mealKitInfoList.map((mealKitInfoList, index) => {
+                return (
+                  <TitleData mealKitInfoList={mealKitInfoList} key={index} />
+                );
+              })}
+              <PriceAndDelivery />
               <div className="cartWrap">
                 <div className="totalPrice">
                   <span> 수량 :</span>

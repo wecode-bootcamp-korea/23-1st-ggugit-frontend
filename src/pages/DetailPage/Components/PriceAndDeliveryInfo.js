@@ -1,11 +1,12 @@
-import React from 'react';
-import './DishData.scss';
+import React, { Component } from 'react';
+import './PriceAndDelivery.scss';
 import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
-class DishData extends React.Component {
+class DishData extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {},
+      mealKitInfoList: [],
     };
   }
   render() {
@@ -21,9 +22,12 @@ class DishData extends React.Component {
         );
       });
 
+    const { titleData } = this.props.mealKitInfoList;
     return (
       <div className="DishData">
-        <div className="cookTime"> 조리 30분</div>
+        <div className="cookTime">
+          <TitleData mealKitInfoList />; 조리 + {titleData.cooking_time} +분
+        </div>
         <div className="info priceInfo">{makeList('priceInfo')}</div>
         <div className="info">{makeList('discountInfo')}</div>
         <div className="info">{makeList('deliveryInfo')}</div>

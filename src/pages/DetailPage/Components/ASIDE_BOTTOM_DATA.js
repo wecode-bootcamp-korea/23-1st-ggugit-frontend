@@ -1,6 +1,6 @@
 export const INFO_DATA = {
   priceInfo: [
-    { id: '1', title: '판매가', content: 'DATA' },
+    { id: '1', title: '판매가', content: '3000' },
     { id: '2', title: '할인가', content: 'DATA' },
   ],
   discountInfo: [
