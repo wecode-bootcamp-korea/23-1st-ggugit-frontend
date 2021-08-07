@@ -9,10 +9,8 @@ class Main extends React.Component {
     this.state = {
       imageCounter: 0,
       animation: {
-        animationName: ``,
-        animationDuration: ``,
-        animationDelay: ``,
         transform: 'translateX(+4800px)',
+        transition: '',
       },
     };
   }
@@ -22,34 +20,48 @@ class Main extends React.Component {
       const { imageCounter } = prevState;
       const newCounter = { ...prevState };
 
+      let slideX = 0;
+      let time = 2000 + `ms`;
+      let transition = `all ${time} cubic-bezier(0, 0.71, 0.58, 1)`;
+
       if (e.target.innerText.includes('<')) {
-        if (imageCounter > 0) {
+        if (imageCounter > -1) {
           newCounter.imageCounter = imageCounter - 1;
+          // slideX = -4800 + (arr.length - newCounter.imageCounter) * 1920;
+          slideX = -6720 + (arr.length - imageCounter + 1) * 1920;
         } else if (imageCounter === 0) {
-          newCounter.imageCounter = imageCounter + (arr.length - 1);
+          // newCounter.imageCounter = imageCounter + arr.length;
+          setTimeout(() => {
+            slideX = 4800;
+            newCounter.imageCounter = imageCounter + arr.length;
+          }, 5);
         }
+
         return {
           ...newCounter,
           animation: {
             ...newCounter.animation,
-            transform: `translateX(${4800 - (imageCounter + 1) * 1920 + 'px'})`,
+            transform: `translateX(${slideX + 'px'})`,
+            transition,
           },
         };
       }
 
       if (e.target.innerText.includes('>')) {
-        if (imageCounter < arr.length - 1) {
+        if (imageCounter < arr.length) {
           newCounter.imageCounter = imageCounter + 1;
-        } else if (imageCounter === 5) {
+          // slideX = 4800 - imageCounter * 1920;
+          slideX = 4800 - (imageCounter + 1) * 1920;
+        } else if (imageCounter === arr.length) {
           newCounter.imageCounter = imageCounter - (arr.length - 1);
+          slideX = 4800;
         }
         return {
           ...newCounter,
           animation: {
             ...newCounter.animation,
-            animationName: 'move',
-            animationDuration: `3s`,
-            animationDelay: `0`,
+            transform: `translateX(${slideX + 'px'})`,
+            transition,
           },
         };
       }
@@ -74,6 +86,7 @@ class Main extends React.Component {
     const buttonText = { left: '<', right: '>' };
     const imgSize = { width: '1920px', height: '640px' };
 
+    console.log(imageCounter);
     return (
       <section className="mainContainer">
         <div className="mainWrap">

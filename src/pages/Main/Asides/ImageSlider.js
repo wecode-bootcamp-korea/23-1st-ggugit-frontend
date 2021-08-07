@@ -11,10 +11,10 @@ class ImageSlider extends React.Component {
 
       return (
         <div
-          key={idx}
-          // className={idx === imageCounter ? 'imgWrap flex' : 'imgWrap none'}
+          key={idx + 1}
+          // className={idx+1 === imageCounter ? 'imgWrap flex' : 'imgWrap none'}
           className={'imgWrap'}
-          aria-hidden={idx === imageCounter ? 'false' : 'true'}
+          aria-hidden={idx + 1 === imageCounter ? 'false' : 'true'}
           style={animation}
         >
           <img
@@ -50,18 +50,16 @@ class ImageSlider extends React.Component {
         );
       }
     };
+    console.log(imageCounter);
 
-    console.log(_imageList, imageCounter);
     return (
       <div className="imgSliderWrap">
         <div className="imgSlider">
-          {/* <div
+          <div
             key={-1}
             className="imgWrap"
             aria-hidden={imageCounter === -1 ? 'false' : 'true'}
-            style={
-              imageCounter === -1 ? { display: 'flex' } : { display: 'none' }
-            }
+            style={animation}
           >
             <img
               alt={imageList[imageList.length - 1].name}
@@ -69,8 +67,21 @@ class ImageSlider extends React.Component {
               width={imgSize.width}
               height={imgSize.height}
             />
-          </div> */}
+          </div>
           {_imageList}
+          <div
+            key={imageList.length}
+            className="imgWrap"
+            aria-hidden={imageCounter === imageList.length ? 'false' : 'true'}
+            style={animation}
+          >
+            <img
+              alt={imageList[0].name}
+              src={imageList[0].url}
+              width={imgSize.width}
+              height={imgSize.height}
+            />
+          </div>
           {children}
         </div>
         {button(buttonRender)}
