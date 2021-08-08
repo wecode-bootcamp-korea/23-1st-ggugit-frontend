@@ -4,37 +4,40 @@ import './TitleData.scss';
 class TitleData extends Component {
   constructor(props) {
     super(props);
-    this.props = {
-      mealKitInfoList: [],
-    };
+    this.state = [];
   }
 
   render() {
     const titleData = this.props.mealKitInfoList;
-    console.log(titleData);
+    // const titleNewData = this.setState.mealKitInfoList; //바뀌었을떄?
+    // const isLimited = this.props.isLimited;
+
     return (
-      <>
+      <React.Fragment>
         <div className="titleWrap" key={titleData.id}>
           <div className="flagWrap">
-            <span className="flagDeal">{titleData.limited}</span>
-            <span className="flagNew">{titleData.new}</span>
+            {titleData.limited ? (
+              <>
+                <span className="flagDeal">한정수량</span>
+                <span className="flagNew">NEW</span>
+              </>
+            ) : null}
           </div>
           <h1 className="subTitle">{titleData.sub_name}</h1>
           <h1 className="title">{titleData.name}</h1>
           <h2 className="originInfo">원산지 : 상품정보 참조</h2>
         </div>
-        <select>
-          {Object.keys(titleData.date).map((date, index) => (
-            <option key={index}>
-              <div>{date.month}</div>
-              <div>{date.day}</div>
-            </option>
-          ))}
-        </select>
-      </>
+      </React.Fragment>
     );
   }
 }
+
+// {
+//   수량.length > 5 ? 마감임박 : 컴포넌트;
+// }
+// {
+//   수량.length > 0 ? 마감 : 컴포넌트;
+// }
 
 export default TitleData;
 
