@@ -12,71 +12,100 @@ class Main extends React.Component {
         transform: 'translateX(+4800px)',
         transition: '',
       },
+      animationInfo: {
+        slideX: 0,
+        time: `2000ms`,
+      },
     };
   }
 
   setImageCounter = (e, arr) => {
     this.setState(prevState => {
       const { imageCounter } = prevState;
-      const newCounter = { ...prevState };
+      const newState = { ...prevState };
 
       let slideX = 0;
       let time = 2000 + `ms`;
       let transition = `all ${time} cubic-bezier(0, 0.71, 0.58, 1)`;
 
-      if (e.target.innerText.includes('<')) {
-        if (imageCounter > -1) {
-          newCounter.imageCounter = imageCounter - 1;
-          // slideX = -4800 + (arr.length - newCounter.imageCounter) * 1920;
-          slideX = -6720 + (arr.length - imageCounter + 1) * 1920;
-        } else if (imageCounter === 0) {
-          // newCounter.imageCounter = imageCounter + arr.length;
-          setTimeout(() => {
-            slideX = 4800;
-            newCounter.imageCounter = imageCounter + arr.length;
-          }, 5);
-        }
+      if (e.target.innerText.includes('<') && imageCounter > -1) {
+        newState.imageCounter = imageCounter - 1;
+        slideX = -6720 + (arr.length - imageCounter + 1) * 1920;
 
         return {
-          ...newCounter,
+          ...newState,
           animation: {
-            ...newCounter.animation,
             transform: `translateX(${slideX + 'px'})`,
             transition,
+          },
+          animationInfo: {
+            slideX,
+            time,
           },
         };
       }
 
-      if (e.target.innerText.includes('>')) {
-        if (imageCounter < arr.length) {
-          newCounter.imageCounter = imageCounter + 1;
-          // slideX = 4800 - imageCounter * 1920;
-          slideX = 4800 - (imageCounter + 1) * 1920;
-        } else if (imageCounter === arr.length) {
-          newCounter.imageCounter = imageCounter - (arr.length - 1);
-          slideX = 4800;
-        }
+      if (e.target.innerText.includes('>') && imageCounter < arr.length) {
+        newState.imageCounter = imageCounter + 1;
+        slideX = 4800 - (imageCounter + 1) * 1920;
+
         return {
-          ...newCounter,
+          ...newState,
           animation: {
-            ...newCounter.animation,
+            ...newState.animation,
             transform: `translateX(${slideX + 'px'})`,
             transition,
+          },
+          animationInfo: {
+            slideX,
+            time,
           },
         };
       }
 
-      return newCounter;
+      return newState;
     });
   };
 
-  // resetImageSlide = (arr, imageCounter) => {
-  //   if (imageCounter < 0) {
-  //     this.setState({ imageCounter: arr.length - 1 });
-  //   } else if (imageCounter > arr.length - 1) {
-  //     this.setState({ imageCounter: 0 });
-  //   }
-  // };
+  componentDidUpdate() {
+    const { imageCounter, animation, animationInfo } = this.state;
+    if (imageCounter === -1) {
+      setTimeout(() => {
+        this.setState(prevState => {
+          let transition = '0ms';
+          let slideX = -4800;
+          let transform = `translateX(${slideX}px)`;
+          let newImageCounter = imageCounter + IMAGE_LIST.length;
+          console.log(slideX);
+
+          return {
+            ...prevState,
+            imageCounter: newImageCounter,
+            animation: { ...animation, transform, transition },
+            animationInfo: { ...animationInfo, slideX },
+          };
+        });
+      }, 2000);
+    }
+    if (imageCounter === 6) {
+      setTimeout(() => {
+        this.setState(prevState => {
+          let transition = '0ms';
+          let slideX = 4800;
+          let transform = `translateX(${slideX}px)`;
+          let newImageCounter = 0;
+          console.log(slideX);
+
+          return {
+            ...prevState,
+            imageCounter: newImageCounter,
+            animation: { ...animation, transform, transition },
+            animationInfo: { ...animationInfo, slideX },
+          };
+        });
+      }, 2000);
+    }
+  }
 
   render() {
     const { setImageCounter } = this;
@@ -86,7 +115,7 @@ class Main extends React.Component {
     const buttonText = { left: '<', right: '>' };
     const imgSize = { width: '1920px', height: '640px' };
 
-    console.log(imageCounter);
+    console.log(this.state);
     return (
       <section className="mainContainer">
         <div className="mainWrap">
@@ -95,7 +124,6 @@ class Main extends React.Component {
             imageCounter={imageCounter}
             handleClick={e => {
               setImageCounter(e, IMAGE_LIST);
-              // resetImageSlide(IMAGE_LIST, imageCounter);
             }}
             buttonRender={true}
             buttonWrapClassName="moveButtonWrap"
@@ -103,15 +131,7 @@ class Main extends React.Component {
             buttonText={buttonText}
             imgSize={imgSize}
             animation={animation}
-          >
-            <div className="imgDescription">
-              <span className="imgFlag">신메뉴 오픈</span>
-              <span className="imgDescTitle">
-                한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
-              </span>
-              <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
-            </div>
-          </ImageSlider>
+          ></ImageSlider>
           <div className="tasteRecommendWrap">
             <div className="tasteListBlock">
               <button>

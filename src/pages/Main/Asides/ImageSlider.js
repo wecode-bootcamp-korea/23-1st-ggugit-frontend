@@ -12,10 +12,8 @@ class ImageSlider extends React.Component {
       return (
         <div
           key={idx + 1}
-          // className={idx+1 === imageCounter ? 'imgWrap flex' : 'imgWrap none'}
           className={'imgWrap'}
           aria-hidden={idx + 1 === imageCounter ? 'false' : 'true'}
-          style={animation}
         >
           <img
             alt={name}
@@ -23,6 +21,13 @@ class ImageSlider extends React.Component {
             width={imgSize.width}
             height={imgSize.height}
           />
+          <div className="imgDescription">
+            <span className="imgFlag">신메뉴 오픈</span>
+            <span className="imgDescTitle">
+              한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
+            </span>
+            <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
+          </div>
         </div>
       );
     });
@@ -33,7 +38,6 @@ class ImageSlider extends React.Component {
       buttonWrapClassName,
       buttonClassName,
       buttonText,
-      children,
     } = this.props;
 
     const button = buttonRender => {
@@ -54,12 +58,11 @@ class ImageSlider extends React.Component {
 
     return (
       <div className="imgSliderWrap">
-        <div className="imgSlider">
+        <div className="imgSlider" style={animation}>
           <div
             key={-1}
             className="imgWrap"
             aria-hidden={imageCounter === -1 ? 'false' : 'true'}
-            style={animation}
           >
             <img
               alt={imageList[imageList.length - 1].name}
@@ -73,7 +76,6 @@ class ImageSlider extends React.Component {
             key={imageList.length}
             className="imgWrap"
             aria-hidden={imageCounter === imageList.length ? 'false' : 'true'}
-            style={animation}
           >
             <img
               alt={imageList[0].name}
@@ -82,7 +84,6 @@ class ImageSlider extends React.Component {
               height={imgSize.height}
             />
           </div>
-          {children}
         </div>
         {button(buttonRender)}
       </div>
