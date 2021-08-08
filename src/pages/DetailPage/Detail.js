@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import PriceAndDelivery from './Components/Delivery';
+import PriceAndDelivery from './Components/DishData';
 import TitleData from './Components/TitleData';
 import CartStickBar from './Components/CartStickBar';
 import CartButton from './Components/CartButton';

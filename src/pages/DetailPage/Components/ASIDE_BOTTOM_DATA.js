@@ -1,8 +1,8 @@
 export const INFO_DATA = {
-  // priceInfo: [
-  //   { id: '1', title: '판매가', content: '' },
-  //   { id: '2', title: '할인가', content: '' },
-  // ],
+  priceInfo: [
+    { id: '1', title: '판매가', content: '' },
+    { id: '2', title: '할인가', content: '' },
+  ],
   discountInfo: [
     { id: '3', title: '할인쿠폰', content: '할인쿠폰 적용가능' },
     { id: '4', title: '포인트적립', content: '포인트적립 가능' },
