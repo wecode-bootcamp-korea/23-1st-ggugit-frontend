@@ -1,14 +1,117 @@
 import React from 'react';
+import ImageSliderButton from './ImageSliderButton/ImageSliderButton';
 
 import './ImageSlider.scss';
 
 class ImageSlider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      imageCounter: 0,
+      animation: {
+        transform: `translateX(${-parseInt(this.props.imgSize.width, 10)}px)`,
+        transition: '',
+      },
+    };
+  }
+
+  isMoving = React.createRef();
+
+  setImageCounter = e => {
+    if (this.isMoving === true) return;
+
+    const { imageList, animationTime, imgSize, buttonText } = this.props;
+    this.isMoving = true;
+
+    setTimeout(() => {
+      this.isMoving = false;
+    }, animationTime);
+
+    this.setState(prevState => {
+      const { imageCounter } = prevState;
+      const newState = { ...prevState };
+
+      let width = parseInt(imgSize.width, 10);
+      let slideX = 0;
+
+      if (e.target.innerText.includes(buttonText.left) && imageCounter > -1) {
+        newState.imageCounter = imageCounter - 1;
+        slideX =
+          -(width * (imageList.length + 1)) +
+          (imageList.length - imageCounter + 1) * width;
+      }
+
+      if (
+        e.target.innerText.includes(buttonText.right) &&
+        imageCounter <= imageList.length
+      ) {
+        newState.imageCounter = imageCounter + 1;
+        slideX = -width - (imageCounter + 1) * width;
+      }
+
+      let transition = `all ${animationTime}ms cubic-bezier(0, 0.71, 0.58, 1)`;
+      let transform = `translateX(${slideX}px)`;
+
+      return {
+        ...newState,
+        animation: { transform, transition },
+      };
+    });
+  };
+
+  componentDidUpdate() {
+    const { imageCounter } = this.state;
+    const { imageList, imgSize, animationTime } = this.props;
+    let transition = '0ms';
+    let width = parseInt(imgSize.width, 10);
+
+    if (imageCounter === -1) {
+      setTimeout(() => {
+        this.setState(prevState => {
+          const newState = { ...prevState };
+
+          let xLocation = -(width * imageList.length);
+          let transform = `translateX(${xLocation}px)`;
+          let newImageCounter = imageCounter + imageList.length;
+
+          return {
+            ...newState,
+            imageCounter: newImageCounter,
+            animation: { transform, transition },
+          };
+        });
+      }, animationTime);
+    }
+
+    if (imageCounter === imageList.length) {
+      setTimeout(() => {
+        this.setState(prevState => {
+          const newState = { ...prevState };
+
+          let xLocation = -width;
+          let transform = `translateX(${xLocation}px)`;
+          let newImageCounter = 0;
+
+          return {
+            ...newState,
+            imageCounter: newImageCounter,
+            animation: { transform, transition },
+          };
+        });
+      }, animationTime);
+    }
+  }
+
   render() {
-    const { imageList, imageCounter, imgSize, animation } = this.props;
+    const { setImageCounter } = this;
+    const { animation, imageCounter } = this.state;
+    const { imageList, imgSize } = this.props;
+
+    const { buttonRender, buttonWrapClassName, buttonClassName, buttonText } =
+      this.props;
 
     const _imageList = imageList.map((image, idx) => {
       const { name, url } = image;
-
       return (
         <div
           key={idx + 1}
@@ -31,30 +134,6 @@ class ImageSlider extends React.Component {
         </div>
       );
     });
-
-    const {
-      handleClick,
-      buttonRender,
-      buttonWrapClassName,
-      buttonClassName,
-      buttonText,
-    } = this.props;
-
-    const button = buttonRender => {
-      if (buttonRender) {
-        return (
-          <div className={buttonWrapClassName}>
-            <button className={buttonClassName} onClick={handleClick}>
-              {buttonText.left}
-            </button>
-            <button className={buttonClassName} onClick={handleClick}>
-              {buttonText.right}
-            </button>
-          </div>
-        );
-      }
-    };
-    console.log(imageCounter);
 
     return (
       <div className="imgSliderWrap">
@@ -85,7 +164,15 @@ class ImageSlider extends React.Component {
             />
           </div>
         </div>
-        {button(buttonRender)}
+        <ImageSliderButton
+          buttonRender={buttonRender}
+          buttonWrapClassName={buttonWrapClassName}
+          buttonClassName={buttonClassName}
+          buttonText={buttonText}
+          handleClick={e => {
+            setImageCounter(e);
+          }}
+        />
       </div>
     );
   }

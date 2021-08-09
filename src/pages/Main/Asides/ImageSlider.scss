@@ -50,8 +50,9 @@
   overflow: hidden;
 
   .imgSlider {
-    @include flex-set(center, center, row);
+    @include flex-set(flex-start, center, row);
     flex-wrap: nowrap;
+    width: 100%;
 
     .imgWrap {
       @include size(100%, 100%);
