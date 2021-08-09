@@ -4,9 +4,6 @@ import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
 class DishData extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      asideData: {},
-    };
   }
 
   render() {
