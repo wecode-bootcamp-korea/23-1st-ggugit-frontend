@@ -7,6 +7,7 @@ import Main from './pages/Main/Main';
 import Detail from './pages/DetailPage/Detail';
 import Login from './pages/Login/Login';
 import SignUp from './pages/SignUp/SignUp';
+import Menu from './pages/Menu/Menu';
 
 class Routes extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/detail" component={Detail} />
+          <Route exact path="/menu" component={Menu} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
         </Switch>
