@@ -2,7 +2,7 @@ import React from 'react';
 import './Detail.scss';
 import DishData from './Components/DishData';
 import TitleData from './Components/TitleData';
-import CartStickBar from './Components/CartStickBar';
+import CartStickBar from './Components/CartStickyBar';
 
 class Detail extends React.Component {
   render() {

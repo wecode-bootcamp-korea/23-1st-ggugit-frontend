@@ -2,9 +2,7 @@
 
 .cartWrap {
   .totalPrice {
-    @include flex-set(initial, initial, column);
-    display: flex;
-    justify-content: space-between;
+    @include flex-set(space-between, initial, initia);
 
     span {
       padding: 10px 5px 0 0;
