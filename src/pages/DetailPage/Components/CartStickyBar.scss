@@ -1,0 +1,39 @@
+@import '../../../styles/variables.scss';
+
+.cartStickBar {
+  @include size(376px, 400px);
+  position: sticky;
+  top: 150px;
+  margin: 100px 0 0 20px;
+  border: solid 1px #dbdbdb;
+  text-align: center;
+
+  .deliveryDateNotification {
+    .notiTitle {
+      padding: 40px 0;
+      border-bottom: solid 1px #dbdbdb;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .notiContent {
+      padding-top: 100px;
+      color: #606060;
+      font-size: 12px;
+    }
+  }
+
+  .stickyCartButton {
+    padding: 50px 10px 0 10px;
+
+    button {
+      @include size(310px, initial);
+      padding: 15px;
+      right: 100px;
+      border: 1px solid transparent;
+      background-color: #bed619;
+      font-size: 20px;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
