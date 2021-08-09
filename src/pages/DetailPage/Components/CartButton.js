@@ -8,8 +8,8 @@ class CartButton extends Component {
 
   render() {
     const titleData = this.props.mealKitInfoList;
-    const productPrice = titleData.price.toLocaleString('');
-    const discountedPrice = titleData.sales.toLocaleString('');
+    const productPrice = Number(titleData.price);
+    const discountedPrice = Number(titleData.sales);
 
     return (
       <div className="cartWrap">
@@ -19,16 +19,10 @@ class CartButton extends Component {
           ) : (
             <span> 수량 : 마감임박!</span>
           )}
-          <span>총{productPrice - discountedPrice}원</span>
+          <span>
+            총 {(productPrice - discountedPrice + 3000).toLocaleString()}원
+          </span>
         </div>
-        {/* <select>
-          {Object.keys(titleData).map((key, index) => (
-            <option key={index}>
-              <div>{titleData[key].month}</div>
-              <div>{titleData[key].day}</div>
-            </option>
-          ))}
-        </select> */}
         <div className="cartButton">
           <button
           // onClick={this.goToCart}
