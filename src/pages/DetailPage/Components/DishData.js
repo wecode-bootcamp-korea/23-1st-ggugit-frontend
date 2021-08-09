@@ -27,7 +27,8 @@ class DishData extends React.Component {
         <div className="cookTime"> 조리 {titleData.cooking_time}분</div>
         <div className="info priceInfo">{makeList('priceInfo')}</div>
         <div className="info">{makeList('discountInfo')}</div>
-        <div className="info">{makeList('deliveryInfo')}</div>
+        {/* <div className="info">{makeList('deliveryInfo')}</div> 3000원으로 고정값 넣기 */}
+        {/* 해당부분 하드코딩을 하는것으로 생ㅇ각 (위엣 끌어오기) */}
       </div>
     );
   }

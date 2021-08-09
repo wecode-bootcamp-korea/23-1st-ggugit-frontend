@@ -12,13 +12,13 @@ class CartButton extends Component {
     return (
       <div className="cartWrap">
         <div className="totalPrice">
-          {titleData.stock >= 50 ? (
+          {titleData.stock >= 30 ? (
             <span> 수량 : {titleData.stock}</span>
           ) : (
             <span> 수량 : 마감임박!</span>
           )}
           {/* <span> 수량 : {titleData.stock}</span> */}
-          <span> 총 0 원 </span>
+          <span> 총 {}원 </span>
         </div>
         {/* <select>
           {Object.keys(titleData).map((key, index) => (
