@@ -12,15 +12,15 @@ class Main extends React.Component {
       <section className="mainContainer">
         <div className="mainWrap">
           <ImageSlider
-            ref={this.isMoving}
             imageList={IMAGE_LIST}
+            imgSize={imgSize}
+            animationTime={2000}
+            description={true}
             buttonRender={true}
             buttonWrapClassName="moveButtonWrap"
             buttonClassName="moveButton"
             buttonText={buttonText}
-            imgSize={imgSize}
-            animationTime={2000}
-          ></ImageSlider>
+          />
           <div className="tasteRecommendWrap">
             <div className="tasteListBlock">
               <button>

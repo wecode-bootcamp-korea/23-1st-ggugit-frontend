@@ -105,10 +105,20 @@ class ImageSlider extends React.Component {
   render() {
     const { setImageCounter } = this;
     const { animation, imageCounter } = this.state;
-    const { imageList, imgSize } = this.props;
+    const { imageList, imgSize, description } = this.props;
 
     const { buttonRender, buttonWrapClassName, buttonClassName, buttonText } =
       this.props;
+
+    const imageDescription = description ? (
+      <div className="imgDescription">
+        <span className="imgFlag">신메뉴 오픈</span>
+        <span className="imgDescTitle">
+          한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
+        </span>
+        <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
+      </div>
+    ) : null;
 
     const _imageList = imageList.map((image, idx) => {
       const { name, url } = image;
@@ -124,13 +134,7 @@ class ImageSlider extends React.Component {
             width={imgSize.width}
             height={imgSize.height}
           />
-          <div className="imgDescription">
-            <span className="imgFlag">신메뉴 오픈</span>
-            <span className="imgDescTitle">
-              한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
-            </span>
-            <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
-          </div>
+          {imageDescription}
         </div>
       );
     });
@@ -164,15 +168,17 @@ class ImageSlider extends React.Component {
             />
           </div>
         </div>
-        <ImageSliderButton
-          buttonRender={buttonRender}
-          buttonWrapClassName={buttonWrapClassName}
-          buttonClassName={buttonClassName}
-          buttonText={buttonText}
-          handleClick={e => {
-            setImageCounter(e);
-          }}
-        />
+        {buttonRender ? (
+          <ImageSliderButton
+            buttonRender={buttonRender}
+            buttonWrapClassName={buttonWrapClassName}
+            buttonClassName={buttonClassName}
+            buttonText={buttonText}
+            handleClick={e => {
+              setImageCounter(e);
+            }}
+          />
+        ) : null}
       </div>
     );
   }
