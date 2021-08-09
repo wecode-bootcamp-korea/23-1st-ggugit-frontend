@@ -1,14 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 import './CommonForm.scss';
 
 class CommonForm extends React.Component {
   render() {
-    const { cases } = this.props;
+    const { cases, handleSubmit } = this.props;
     return (
       <div className="CommonFormBlock">
         <h1 className="CommonFormTitle">{cases}</h1>
-        <form className="CommonForm">
+        <form className="CommonForm" onSubmit={handleSubmit}>
           {this.props.children}
           <button className="CommonFormButton">{cases}</button>
         </form>
@@ -17,4 +18,4 @@ class CommonForm extends React.Component {
   }
 }
 
-export default CommonForm;
+export default withRouter(CommonForm);

@@ -1,0 +1,91 @@
+@import '../../styles/variables.scss';
+
+.menu {
+  width: 1180px;
+  margin: auto;
+  padding-top: 160px;
+
+  .menuWrap {
+    .title1 {
+      padding: 15px 0;
+      width: 100%;
+      @include fontsize(40px, 800);
+      word-spacing: 5px;
+    }
+
+    .categoriesFlexBox {
+      @include flex-set(space-between, center);
+      height: 70px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #ebebeb;
+
+      .titleFont {
+        @include fontsize(24px);
+        text-decoration: none;
+        color: #606060;
+      }
+
+      .category {
+        display: flex;
+        line-height: 70px;
+
+        .font {
+          @include fontsize(20px);
+          width: 60px;
+          text-align: center;
+          text-decoration: none;
+          color: #606060;
+        }
+
+        .categoriesBox {
+          display: flex;
+
+          a {
+            margin: 0 12px;
+            @include fontsize();
+            text-decoration: none;
+            color: #606060;
+          }
+        }
+      }
+
+      .categoriesBtn {
+        button {
+          width: 20px;
+          margin: 0 10px;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.filterWrap {
+  padding-top: 48px;
+
+  .title2 {
+    @include fontsize(28px, 800);
+    line-height: 42px;
+  }
+
+  .filterMenuBox {
+    @include flex-set(space-between, center, row);
+    padding-top: 8px;
+
+    .desc {
+      @include fontsize(18px);
+      line-height: 25px;
+    }
+  }
+  .filterMenu {
+    font-size: 16px;
+    @include flex-set(space-between, center, row);
+
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #212121;
+    }
+  }
+}
