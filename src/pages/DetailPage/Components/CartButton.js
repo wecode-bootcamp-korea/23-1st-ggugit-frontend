@@ -2,22 +2,21 @@ import React, { Component } from 'react';
 import './CartButton.scss';
 
 class CartButton extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   render() {
-    const titleData = this.props.mealKitInfoList;
+    const stock = this.props.mealKitInfoList;
 
     return (
       <div className="cartWrap">
         <div className="totalPrice">
-          {titleData.stock >= 30 ? (
-            <span> 수량 : {titleData.stock}</span>
+          {stock.stock >= 30 ? (
+            <span> 수량 : {stock.stock} 개</span>
           ) : (
             <span> 수량 : 마감임박!</span>
           )}
-          {/* <span> 수량 : {titleData.stock}</span> */}
           <span> 총 {}원 </span>
         </div>
         {/* <select>

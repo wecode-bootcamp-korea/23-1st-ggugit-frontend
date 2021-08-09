@@ -10,26 +10,7 @@
     "cooking_time": "30",
     "price": 29800,
     "sales": 198,
-    "stock": 13,
-    "total_amount": "추후업데이트",
-    "date": {
-      "month": 12,
-      "day": 25
-    }
-  },
-
-  {
-    "id": 2,
-    "image_url": "https://images.unsplash.com/photo-1594373606301-5b66f999f62b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGtvcmVhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    "des_image_url": "https://images.unsplash.com/photo-1594373606301-5b66f999f62b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGtvcmVhbiUyMGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    "des_text": "‘치밥’은 양념치킨을 밥과 함께 비벼 먹는 요리를 의미하는데요. 갓 튀겨낸 치킨과 쿡킷 비법양념으로 만든 간장치킨, 고소한 반숙 계란프라이 그리고 아삭한 대파채 토핑까지. 다양한 재료들이 조화롭게 어우러져 맛은 물론 식감까지 만족스러우실 수 있도록 오랜 고민 끝에 완성한 메뉴랍니다. 치킨은 어떻게 먹어도 진리라지만 쿡킷으로 더욱 특별한 ‘치밥’을 경험해보시는 건 어떨까요?",
-    "limited": true,
-    "sub_name": "둘이먹다 하나 죽어도 모르는",
-    "name": "부침개",
-    "cooking_time": "30",
-    "price": 29800,
-    "sales": 198,
-    "stock": 13,
+    "stock": 33,
     "total_amount": "추후업데이트",
     "date": {
       "month": 12,
