@@ -4,21 +4,6 @@ import ImageSlider from './Asides/ImageSlider';
 import './Main.scss';
 
 class Main extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.isMoving = React.createRef();
-  // }
-  // ref -> UI변화애는 연관되지 않는 데 관리해야 하는 값
-
-  // moveSlide = () => {
-  //   if (isMoving) return;
-
-  //   isMoving = true;
-  //   setTimeout(() => {
-  //     isMoving = false;
-  //   }, 300);
-  // };
-
   render() {
     const buttonText = { left: '<', right: '>' };
     const imgSize = { width: '1920px', height: '640px' };
