@@ -56,8 +56,8 @@ class Detail extends Component {
               <div className="tabWrap">상세설명</div>
               <div className="infoWrap">
                 <div className="infoDetail">
-                  <MainContent />
-                  <CartStickBar />
+                  <MainContent mealKitInfoList={mealKitInfoList} />
+                  <CartStickBar mealKitInfoList={mealKitInfoList} />
                 </div>
               </div>
             </div>
