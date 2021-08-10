@@ -20,8 +20,7 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/DetailPage/TitleMockData.json')
-      // 'http://10.58.3.132:8000/products/2'
+    fetch('http://10.58.3.132:8000/products/2')
       .then(res => res.json())
       .then(data => {
         this.setState({
