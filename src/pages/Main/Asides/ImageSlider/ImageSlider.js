@@ -1,5 +1,6 @@
 import React from 'react';
-import ImageSliderButton from './ImageSliderButton/ImageSliderButton';
+import ImageSliderButton from '../ImageSliderButton/ImageSliderButton';
+import RealImageRender from '../RealImageRender/RealImageRender';
 
 import './ImageSlider.scss';
 
@@ -68,14 +69,12 @@ class ImageSlider extends React.Component {
     if (imageCounter === -1) {
       setTimeout(() => {
         this.setState(prevState => {
-          const newState = { ...prevState };
-
           let xLocation = -(width * imageList.length);
           let transform = `translateX(${xLocation}px)`;
           let newImageCounter = imageCounter + imageList.length;
 
           return {
-            ...newState,
+            ...prevState,
             imageCounter: newImageCounter,
             animation: { transform, transition },
           };
@@ -86,14 +85,12 @@ class ImageSlider extends React.Component {
     if (imageCounter === imageList.length) {
       setTimeout(() => {
         this.setState(prevState => {
-          const newState = { ...prevState };
-
           let xLocation = -width;
           let transform = `translateX(${xLocation}px)`;
           let newImageCounter = 0;
 
           return {
-            ...newState,
+            ...prevState,
             imageCounter: newImageCounter,
             animation: { transform, transition },
           };
@@ -110,38 +107,10 @@ class ImageSlider extends React.Component {
     const { buttonRender, buttonWrapClassName, buttonClassName, buttonText } =
       this.props;
 
-    const imageDescription = description ? (
-      <div className="imgDescription">
-        <span className="imgFlag">신메뉴 오픈</span>
-        <span className="imgDescTitle">
-          한 여름의 힐링캠핑 어쩌구 저저구 꾸깃 어쩌
-        </span>
-        <span className="imgDescText">꾸깃이 발행하는 웹 매거진</span>
-      </div>
-    ) : null;
-
-    const _imageList = imageList.map((image, idx) => {
-      const { name, url } = image;
-      return (
-        <div
-          key={idx + 1}
-          className={'imgWrap'}
-          aria-hidden={idx + 1 === imageCounter ? 'false' : 'true'}
-        >
-          <img
-            alt={name}
-            src={url}
-            width={imgSize.width}
-            height={imgSize.height}
-          />
-          {imageDescription}
-        </div>
-      );
-    });
-
     return (
       <div className="imgSliderWrap">
         <div className="imgSlider" style={animation}>
+          {/* FakeImage left */}
           <div
             key={-1}
             className="imgWrap"
@@ -154,7 +123,13 @@ class ImageSlider extends React.Component {
               height={imgSize.height}
             />
           </div>
-          {_imageList}
+          <RealImageRender
+            imageList={imageList}
+            imageCounter={imageCounter}
+            imgSize={imgSize}
+            description={description}
+          />
+          {/* FakeImage right */}
           <div
             key={imageList.length}
             className="imgWrap"
@@ -168,17 +143,15 @@ class ImageSlider extends React.Component {
             />
           </div>
         </div>
-        {buttonRender ? (
+        {buttonRender && (
           <ImageSliderButton
             buttonRender={buttonRender}
             buttonWrapClassName={buttonWrapClassName}
             buttonClassName={buttonClassName}
             buttonText={buttonText}
-            handleClick={e => {
-              setImageCounter(e);
-            }}
+            handleClick={setImageCounter}
           />
-        ) : null}
+        )}
       </div>
     );
   }

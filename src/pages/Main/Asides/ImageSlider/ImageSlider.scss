@@ -1,4 +1,4 @@
-@import '../../../styles/variables.scss';
+@import '../../../../styles/variables.scss';
 
 @mixin animation($delay, $duration, $name) {
   animation-delay: $delay;

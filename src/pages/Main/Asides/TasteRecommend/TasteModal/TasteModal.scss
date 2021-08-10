@@ -1,0 +1,22 @@
+@import '../../../../../styles/variables.scss';
+
+.tasteModal {
+  @include flex-set(center, center, column);
+  position: absolute;
+  top: 204px;
+  width: 183px;
+  background-color: white;
+  border: 1px solid black;
+
+  .tasteButton {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    padding: 10px;
+
+    &:hover {
+      border-bottom: 1px solid black;
+    }
+  }
+}
