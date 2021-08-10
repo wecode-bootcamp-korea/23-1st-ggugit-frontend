@@ -4,7 +4,6 @@ import './CartButton.scss';
 class CartButton extends Component {
   render() {
     const titleData = this.props.mealKitInfoList;
-    const productPrice = Number(titleData.price);
     const discountedPrice = Number(titleData.discount);
 
     return (
