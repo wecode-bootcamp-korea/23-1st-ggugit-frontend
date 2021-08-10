@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import PriceAndDelivery from './Components/DishData';
 import TitleData from './Components/TitleData';
 import CartStickBar from './Components/CartStickBar';
 import CartButton from './Components/CartButton';
 import MainContent from './Components/MainContent';
+import DishData from './Components/DishData';
+import ImgSlider from './Components/ImgSlider';
 
 class Detail extends Component {
   constructor() {
@@ -19,50 +20,41 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/DetailPage/TitleMockData.json')
+    fetch('http://10.58.3.151:8000/products/2')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          mealKitInfoList: data,
+          mealKitInfoList: data.results,
         });
       });
   }
   render() {
     const { mealKitInfoList } = this.state;
+    console.log(mealKitInfoList);
     return (
       <main className="wholeWrap">
-        {mealKitInfoList.map((mealKitInfoList, index) => {
-          return (
-            <div className="detailWrap" key={index}>
-              <div className="topInfo">
-                <div className="imgDetailWrap">
-                  <img
-                    src="/images/DetailPage/pasta_above.jpeg"
-                    alt="파스타"
-                    witdh="600px;"
-                    height="600px;"
-                  />
-
-                  <div className="dishCarousel">
-                    {/* 추가적으로 carousel 구현 예정입니다! */}
+        {mealKitInfoList &&
+          mealKitInfoList.map((mealKitInfoList, index) => {
+            return (
+              <div className="detailWrap" key={index}>
+                <div className="topInfo">
+                  <ImgSlider mealKitInfoList={mealKitInfoList} />
+                  <div className="dishInfoWrap">
+                    <TitleData mealKitInfoList={mealKitInfoList} />
+                    <DishData mealKitInfoList={mealKitInfoList} />
+                    <CartButton mealKitInfoList={mealKitInfoList} />
                   </div>
                 </div>
-                <div className="dishInfoWrap">
-                  <TitleData mealKitInfoList={mealKitInfoList} />
-                  <PriceAndDelivery mealKitInfoList={mealKitInfoList} />
-                  <CartButton mealKitInfoList={mealKitInfoList} />
+                <div className="tabWrap">상세설명</div>
+                <div className="infoWrap">
+                  <div className="infoDetail">
+                    <MainContent mealKitInfoList={mealKitInfoList} />
+                    <CartStickBar mealKitInfoList={mealKitInfoList} />
+                  </div>
                 </div>
               </div>
-              <div className="tabWrap">상세설명</div>
-              <div className="infoWrap">
-                <div className="infoDetail">
-                  <MainContent mealKitInfoList={mealKitInfoList} />
-                  <CartStickBar mealKitInfoList={mealKitInfoList} />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
       </main>
     );
   }

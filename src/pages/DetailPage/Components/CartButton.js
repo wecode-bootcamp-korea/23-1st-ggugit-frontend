@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import './CartButton.scss';
 
 class CartButton extends Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const titleData = this.props.mealKitInfoList;
     const productPrice = Number(titleData.price);
-    const discountedPrice = Number(titleData.sales);
+    const discountedPrice = Number(titleData.discount);
 
     return (
       <div className="cartWrap">
@@ -19,9 +15,7 @@ class CartButton extends Component {
           ) : (
             <span> 수량 : 마감임박!</span>
           )}
-          <span>
-            총 {(productPrice - discountedPrice + 3000).toLocaleString()}원
-          </span>
+          <span>총 {(discountedPrice + 3000).toLocaleString()}원</span>
         </div>
         <div className="cartButton">
           <button
