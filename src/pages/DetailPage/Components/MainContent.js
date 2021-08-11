@@ -12,6 +12,7 @@ class MainContent extends Component {
             src={titleData[0] && titleData[0].description_image[1]}
             alt="키트 상세설명을 위한 파스타 사진"
           ></img>
+
           {/* <img
             src={'titleData.description_image2'}
             alt="키트 상세설명을 위한 파스타 사진"

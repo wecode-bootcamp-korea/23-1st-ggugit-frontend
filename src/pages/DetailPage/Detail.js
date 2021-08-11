@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import TitleData from '../../component/DetailPage/TitleData';
-import CartStickBar from '../../component/DetailPage/CartStickBar';
-import CartButton from '../../component/DetailPage/CartButton';
-import MainContent from '../../component/DetailPage/MainContent';
-import DishData from '../../component/DetailPage/DishData';
+import TitleData from '../Components/TitleData';
+import CartStickBar from '../Components/CartStickBar';
+import CartButton from '../Components/CartButton';
+import MainContent from '../Components/MainContent';
+import DishData from '../Components/DishData';
 // import ImgSlider from './Components/ImgSlider';
 
 class Detail extends Component {
