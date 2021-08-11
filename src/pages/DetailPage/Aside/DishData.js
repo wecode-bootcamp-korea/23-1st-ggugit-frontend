@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './DishData.scss';
 import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
-import PriceInfo from './PriceInfo';
+// import PriceInfo from './PriceInfo';
 
 class DishData extends Component {
   constructor(props) {

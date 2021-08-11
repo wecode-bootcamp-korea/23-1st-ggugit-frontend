@@ -5,7 +5,7 @@ import CartStickBar from './Aside/CartStickBar';
 import CartButton from './Aside/CartButton';
 import MainContent from './Aside/MainContent';
 import DishData from './Aside/DishData';
-// import ImgSlider from './Aside/ImgSlider';
+import ImgAlbum from './Aside/ImgAlbum';
 
 class Detail extends Component {
   constructor() {
@@ -38,7 +38,7 @@ class Detail extends Component {
             return (
               <div className="detailWrap" key={index}>
                 <div className="topInfo">
-                  {/* <ImgSlider mealKitInfoList={mealKitInfoList} /> */}
+                  <ImgAlbum mealKitInfoList={mealKitInfoList} />
                   <div className="dishInfoWrap">
                     <TitleData mealKitInfoList={mealKitInfoList} />
                     <DishData mealKitInfoList={mealKitInfoList} />

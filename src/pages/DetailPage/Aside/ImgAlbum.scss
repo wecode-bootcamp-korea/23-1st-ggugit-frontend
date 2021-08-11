@@ -93,14 +93,9 @@
 //   }
 // }
 
-.SliderWrap {
-  width: 600px;
-  height: 600px;
-
-  .imgSlideAlbum {
-    padding: 10px;
-    width: 570px;
-    height: 570px;
-    overflow: hidden;
+.wrapper {
+  img {
+    width: 600px;
+    height: 600px;
   }
 }
