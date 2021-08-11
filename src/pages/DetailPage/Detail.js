@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import TitleData from './Components/TitleData';
-import CartStickBar from './Components/CartStickBar';
-import CartButton from './Components/CartButton';
-import MainContent from './Components/MainContent';
-import DishData from './Components/DishData';
+import TitleData from './Aside/TitleData';
+import CartStickBar from './Aside/CartStickBar';
+import CartButton from './Aside/CartButton';
+import MainContent from './Aside/MainContent';
+import DishData from './Aside/DishData';
 // import ImgSlider from './Components/ImgSlider';
 
 class Detail extends Component {
@@ -28,6 +28,7 @@ class Detail extends Component {
         });
       });
   }
+
   render() {
     const { mealKitInfoList } = this.state;
     console.log(mealKitInfoList);
