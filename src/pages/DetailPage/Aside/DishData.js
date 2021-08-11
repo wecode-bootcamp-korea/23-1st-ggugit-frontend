@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './DishData.scss';
 import { INFO_DATA } from './ASIDE_BOTTOM_DATA';
-// import PriceInfo from './Components/PriceInfo';
+import PriceInfo from './PriceInfo';
+
 class DishData extends Component {
   constructor(props) {
     super(props);
@@ -18,20 +19,20 @@ class DishData extends Component {
             <dd>
               <span className="ttxt">
                 {asideData.content === true
-                  ? this.props.mealKitInfoList[asideData.name]
-                  : asideData.content}
+                  ? this.props.mealKitInfoList[asideData.name].toLocaleString()
+                  : asideData.content.toLocaleString()}
               </span>
             </dd>
           </dl>
         );
       });
     const titleData = this.props.mealKitInfoList;
-
     return (
       <div className="DishData">
         <div className="cookTime"> 조리 {titleData.cooking_time}분</div>
         <div className="info priceInfo">{makeList('priceInfo')}</div>
         <div className="info">{makeList('discountInfo')} </div>
+        {/* <PriceInfo mealKitInfoList={this.props.mealKitInfoList} /> */}
         <div className="info">{makeList('deliveryInfo')}</div>
       </div>
     );

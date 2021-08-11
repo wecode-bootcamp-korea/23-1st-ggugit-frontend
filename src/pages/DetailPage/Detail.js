@@ -5,8 +5,7 @@ import CartStickBar from './Aside/CartStickBar';
 import CartButton from './Aside/CartButton';
 import MainContent from './Aside/MainContent';
 import DishData from './Aside/DishData';
-import ImgSlider from './Aside/ImgSlider';
-// import ImgSlider from './Components/ImgSlider';
+// import ImgSlider from './Aside/ImgSlider';
 
 class Detail extends Component {
   constructor() {
@@ -31,17 +30,15 @@ class Detail extends Component {
   }
 
   render() {
-    console.log(this.props);
     const { mealKitInfoList } = this.state;
-    console.log(mealKitInfoList);
     return (
       <main className="wholeWrap">
-        {mealKitInfoList &&
+        {mealKitInfoList.length &&
           mealKitInfoList.map((mealKitInfoList, index) => {
             return (
               <div className="detailWrap" key={index}>
                 <div className="topInfo">
-                  <ImgSlider mealKitInfoList={mealKitInfoList} />
+                  {/* <ImgSlider mealKitInfoList={mealKitInfoList} /> */}
                   <div className="dishInfoWrap">
                     <TitleData mealKitInfoList={mealKitInfoList} />
                     <DishData mealKitInfoList={mealKitInfoList} />

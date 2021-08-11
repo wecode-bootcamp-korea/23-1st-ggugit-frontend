@@ -11,17 +11,17 @@ class MainContent extends Component {
         <div className="dishImages">
           <img
             className="dish"
-            src={Object.values(titleData.description_image)[0]}
+            src={Object.values(titleData.description_images)[0]}
             alt="키트 상세설명을 위한 파스타 사진"
           ></img>
           <img
             className="ingredients"
-            src={Object.values(titleData.description_image)[1]}
+            src={Object.values(titleData.description_images)[1]}
             alt="키트 상세설명을 위한 재료 사진"
           ></img>
           <img
             className="cook"
-            src={Object.values(titleData.description_image)[2]}
+            src={Object.values(titleData.description_images)[2]}
             alt="조리 사진"
           ></img>
         </div>

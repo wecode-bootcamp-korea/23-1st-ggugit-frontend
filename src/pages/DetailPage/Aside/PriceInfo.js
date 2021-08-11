@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+// import TitleData from './TitleData';
 
 class PriceInfo extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
+    console.log(this.props.mealKitInfoList);
     return (
       <>
-        <div className="info priceInfo">{'priceInfo.toLocaleStirng()'}</div>
-        <div className="info">{'discountInfo.toLocaleStirng()'}</div>
+        <div className="info priceInfo">
+          {this.props.mealKitInfoList.price.toLocaleString()}
+        </div>
+        <div className="info">
+          {this.props.mealKitInfoList.discount.toLocaleString()}
+        </div>
       </>
     );
   }
