@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { MENU_LIST_TYPE } from '../MenuList/MENU_LIST';
 import { MENU_LIST_TASTE } from '../MenuList/MENU_LIST';
 

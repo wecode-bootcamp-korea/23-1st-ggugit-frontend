@@ -1,13 +1,11 @@
 import React from 'react';
-
 import './Menu.scss';
-
 import MenuCategory from './MenuCategory/MenuCategory';
 import MenuContainer from './MenuContainer/MenuContainer';
-import { API } from '../../config/config';
 import { ORDER_LIST } from './MenuList/MENU_LIST';
 import { MENU_LIST_TASTE } from './MenuList/MENU_LIST';
 import { MENU_LIST_TYPE } from './MenuList/MENU_LIST';
+import { API } from '../../config/config';
 
 class Menu extends React.Component {
   constructor() {
