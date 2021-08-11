@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import './TitleData.scss';
 
 class TitleData extends Component {
-  constructor(props) {
-    super(props);
-    this.state = [];
-  }
-
   render() {
     const titleData = this.props.mealKitInfoList;
     // const titleNewData = this.setState.mealKitInfoList; //바뀌었을떄?

@@ -37,7 +37,7 @@ class ImgAlbum extends Component {
     });
   };
   render() {
-    const { images, viewImage } = this.state;
+    // const { images, viewImage } = this.state;
     const titleData = this.props.mealKitInfoList;
 
     return (
@@ -50,11 +50,14 @@ class ImgAlbum extends Component {
           />
         </button>
         <div className="imageContainer">
-          <img
-            className="dishPictures"
-            src={images[viewImage]}
-            alt="background"
-          />
+          <>
+            <img
+              className="dishPictures"
+              // src={images[viewImage]}
+              src={Object.values(titleData.description_images)[0]}
+              alt="background"
+            />
+          </>
         </div>
         <button onClick={() => this.handleSlider(1)}>
           <img
