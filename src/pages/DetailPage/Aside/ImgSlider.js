@@ -1,48 +1,66 @@
 import React, { Component } from 'react';
 import './ImgSlider.scss';
-
 class ImgSlider extends Component {
+  constructor() {
+    super();
+    this.state = {
+      imageAlbum: [], //빈 배열
+    };
+  }
   render() {
-    const imgData = this.props.mealKitInfoList;
-    return (
-      <div className="section">
-        <input type="radio" name="slide" id="slide01" checked />
-        <input type="radio" name="slide" id="slide02" />
-        <input type="radio" name="slide" id="slide03" />
-        <div className="slidewrap">
-          <ul className="slidelist">
-            <li>
-              <a>
-                <img src={'imgData.description_image1'} />
-              </a>
-            </li>
-            <li>
-              <a>
-                <img src="../data/images/DetailPage/pasta_above.jpeg" />
-              </a>
-            </li>
-            <li>
-              <a>
-                <img src="../data/images/DetailPage/pasta_above.jpeg" />
-              </a>
-            </li>
-          </ul>
+    function selectIndex() {}
+    // moveButton = n => {
+    //   let currentIndex = this.state.slideIndex;
+    //   let imageLength = this.state.slideImage.length;
+    //   n = currentIndex + n;
+    //   if (currentIndex === 0) {
+    //     n = imageLength - 1;
+    //   } else if (currentIndex > imageLength) {
+    //     n = 0;
+    //   }
 
-          <div className="slide-control">
-            <div className="control01">
-              <label for="slide03" className="left"></label>
-              <label for="slide02" className="right"></label>
-            </div>
-            <div className="control02">
-              <label for="slide01" className="left"></label>
-              <label for="slide03" className="right"></label>
-            </div>
-            <div className="control03">
-              <label for="slide02" className="left"></label>
-              <label for="slide01" className="right"></label>
-            </div>
+    //   //  handelClick = (n) => {
+    //   //    this.setState ={
+
+    //   //    }
+    // };
+    const titleData = this.props.mealKitInfoList;
+
+    return (
+      <div className="SliderWrap">
+        <div className="imgSlideAlbum">
+          <div className="inner">
+            <img
+              className="slide_dish"
+              src={Object.values(titleData.description_image)[0]}
+              alt="키트 상세설명을 위한 파스타 사진"
+              // {Object.values(titleData.description_image)[0] ? (
+              //   .prevBotton = disable
+              // ) : null}
+              // button 자체를 불가능하게 만들기
+            />
+          </div>
+          <div className="inner">
+            <img
+              className="slide_ingredients"
+              src={Object.values(titleData.description_image)[1]}
+              alt="키트 상세설명을 위한 재료 사진"
+            />
+          </div>
+          <div className="inner">
+            <img
+              className="slide_cook"
+              src={Object.values(titleData.description_image)[2]}
+              alt="조리 사진"
+            />
           </div>
         </div>
+        <button className="prevBotton" onClick={this.selectIndex - 1}>
+          <img src="../public/images/DetailPage/left.png" alt="왼쪽버튼" />
+        </button>
+        <button className="nextButton" onClick={this.selectIndex + 1}>
+          <img src="../public/images/DetailPage/right.png" alt="왼쪽버튼" />
+        </button>
       </div>
     );
   }
