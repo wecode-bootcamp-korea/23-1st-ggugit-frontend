@@ -1,5 +1,5 @@
-import './CartStickyBar.scss';
 import React from 'react';
+import './CartStickyBar.scss';
 
 class CartStickyBar extends React.Component {
   render() {
