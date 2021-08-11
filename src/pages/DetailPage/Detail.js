@@ -20,11 +20,12 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.3.132:8000/products/2')
+    fetch('http://10.58.5.216:8000/products/1')
+      // fetch('/data/DetailPage/TitleMockData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
-          mealKitInfoList: data.results,
+          mealKitInfoList: data.result,
         });
       });
   }
