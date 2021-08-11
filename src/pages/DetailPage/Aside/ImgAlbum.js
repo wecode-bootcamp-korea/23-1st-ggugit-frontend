@@ -39,22 +39,27 @@ class ImgAlbum extends Component {
   render() {
     const { images, viewImage } = this.state;
     const titleData = this.props.mealKitInfoList;
-    // console.log(“현재 이미지 번호“, viewImage)
+
     return (
       <div className="wrapper">
         <button onClick={() => this.handleSlider(-1)}>
-          {' '}
           <img
-            src={'../../../../public/images/DetailPage/left.png'}
+            className="leftArrow"
+            src={'../images/DetailPage/left.png'}
             alt={'left arrow'}
           />
         </button>
         <div className="imageContainer">
-          <img src={images[viewImage]} alt="background" />
+          <img
+            className="dishPictures"
+            src={images[viewImage]}
+            alt="background"
+          />
         </div>
         <button onClick={() => this.handleSlider(1)}>
           <img
-            src={'../../../../public/images/DetailPage/right.png'}
+            className="rightArrow"
+            src={'../images/DetailPage/right.png'}
             alt={'right arrow'}
           />
         </button>

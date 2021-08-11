@@ -15,12 +15,9 @@ class Detail extends Component {
     };
   }
 
-  goToCart = () => {
-    this.props.history.push('/Cart');
-  };
-
   componentDidMount() {
-    fetch('http://10.58.5.216:8000/products/1')
+    fetch('http://localhost:3000/data/DetailPage/TitleMockData.json')
+      // 훈태님: http://10.58.5.216:8000/products/1
       .then(res => res.json())
       .then(data => {
         this.setState({
