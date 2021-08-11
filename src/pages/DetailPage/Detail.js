@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import TitleData from './Components/TitleData';
-import CartStickBar from './Components/CartStickBar';
-import CartButton from './Components/CartButton';
-import MainContent from './Components/MainContent';
-import DishData from './Components/DishData';
-import ImgSlider from './Components/ImgSlider';
+import TitleData from '../../component/DetailPage/TitleData';
+import CartStickBar from '../../component/DetailPage/CartStickBar';
+import CartButton from '../../component/DetailPage/CartButton';
+import MainContent from '../../component/DetailPage/MainContent';
+import DishData from '../../component/DetailPage/DishData';
+// import ImgSlider from './Components/ImgSlider';
 
 class Detail extends Component {
   constructor() {
@@ -20,8 +20,7 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.5.216:8000/products/1')
-      // fetch('/data/DetailPage/TitleMockData.json')
+    fetch('http://10.58.3.151:8000/products/1')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -39,7 +38,7 @@ class Detail extends Component {
             return (
               <div className="detailWrap" key={index}>
                 <div className="topInfo">
-                  <ImgSlider mealKitInfoList={mealKitInfoList} />
+                  {/* <ImgSlider mealKitInfoList={mealKitInfoList} /> */}
                   <div className="dishInfoWrap">
                     <TitleData mealKitInfoList={mealKitInfoList} />
                     <DishData mealKitInfoList={mealKitInfoList} />

@@ -7,8 +7,8 @@ class PriceInfo extends Component {
   render() {
     return (
       <>
-        <div className="info priceInfo">{'priceInfo'}</div>
-        <div className="info">{'discountInfo'}</div>
+        <div className="info priceInfo">{'priceInfo.toLocaleStirng()'}</div>
+        <div className="info">{'discountInfo.toLocaleStirng()'}</div>
       </>
     );
   }

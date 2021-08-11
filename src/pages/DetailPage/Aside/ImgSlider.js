@@ -3,6 +3,7 @@ import './ImgSlider.scss';
 
 class ImgSlider extends Component {
   render() {
+    const imgData = this.props.mealKitInfoList;
     return (
       <div className="section">
         <input type="radio" name="slide" id="slide01" checked />
@@ -12,17 +13,17 @@ class ImgSlider extends Component {
           <ul className="slidelist">
             <li>
               <a>
-                <img src="./img/slide01.jpg" />
+                <img src={'imgData.description_image1'} />
               </a>
             </li>
             <li>
               <a>
-                <img src="./img/slide02.jpg" />
+                <img src="../data/images/DetailPage/pasta_above.jpeg" />
               </a>
             </li>
             <li>
               <a>
-                <img src="./img/slide03.jpg" />
+                <img src="../data/images/DetailPage/pasta_above.jpeg" />
               </a>
             </li>
           </ul>
