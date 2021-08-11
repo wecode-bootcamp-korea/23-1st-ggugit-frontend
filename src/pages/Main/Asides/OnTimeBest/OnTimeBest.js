@@ -4,7 +4,7 @@ import { BEST_PRODUCTS_API } from '../../../../config';
 
 import './OnTimeBest.scss';
 
-class OnTimeBest extends React.Component {
+class OnTimeBest extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { bestProducts: [] };
@@ -14,7 +14,6 @@ class OnTimeBest extends React.Component {
     fetch(BEST_PRODUCTS_API)
       .then(res => res.json())
       .then(data => {
-        console.log(`hi`);
         let newData = [];
         data.results.forEach(
           ({ name, image_url, price, cooking_time }, idx) => {
@@ -33,8 +32,9 @@ class OnTimeBest extends React.Component {
   }
 
   render() {
+    console.log(`render`);
+
     const { bestProducts } = this.state;
-    console.log(bestProducts);
     return (
       bestProducts && (
         <div className="onTimeBestWrap">

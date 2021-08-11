@@ -7,6 +7,7 @@ import './Main.scss';
 
 class Main extends React.Component {
   render() {
+    console.log(`render`);
     const buttonText = { left: '<', right: '>' };
     const imgSize = { width: '1920px', height: '640px' };
 

@@ -4,7 +4,7 @@ import RealImageRender from '../RealImageRender/RealImageRender';
 
 import './ImageSlider.scss';
 
-class ImageSlider extends React.Component {
+class ImageSlider extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,11 +60,16 @@ class ImageSlider extends React.Component {
     });
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(_, prevState) {
     const { imageCounter } = this.state;
-    const { imageList, imgSize, animationTime } = this.props;
+    const { imageList, imgSize, animationTime, passToImageCounter } =
+      this.props;
     let transition = '0ms';
     let width = parseInt(imgSize.width, 10);
+
+    if (prevState.imageCounter !== imageCounter && passToImageCounter) {
+      passToImageCounter(imageCounter);
+    }
 
     if (imageCounter === -1) {
       setTimeout(() => {
@@ -106,6 +111,7 @@ class ImageSlider extends React.Component {
 
     const { buttonRender, buttonWrapClassName, buttonClassName, buttonText } =
       this.props;
+    console.log(`render`);
 
     return (
       <div className="imgSliderWrap">
@@ -149,9 +155,13 @@ class ImageSlider extends React.Component {
             buttonWrapClassName={buttonWrapClassName}
             buttonClassName={buttonClassName}
             buttonText={buttonText}
-            handleClick={setImageCounter}
+            disabled={this.isMoving}
+            handleClick={e => {
+              setImageCounter(e);
+            }}
           />
         )}
+        {this.props.children}
       </div>
     );
   }

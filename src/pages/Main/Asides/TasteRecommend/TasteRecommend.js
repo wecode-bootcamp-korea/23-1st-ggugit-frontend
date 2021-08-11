@@ -13,6 +13,7 @@ class TasteRecommend extends React.Component {
       recommendTaste: '',
       tasteList: '',
       productsInfo: '',
+      imageCounter: 0,
     };
   }
 
@@ -62,9 +63,27 @@ class TasteRecommend extends React.Component {
       });
   };
 
+  handleCountUpdate = count => {
+    this.setState(prevState => {
+      const { productsInfo } = prevState;
+      let newImageCounter = 0;
+      if (count !== -1 && count !== productsInfo.length) {
+        newImageCounter = count;
+      } else if (count === -1) {
+        newImageCounter = productsInfo.length - 1;
+      } else if (count === productsInfo.length) {
+        newImageCounter = 0;
+      }
+
+      return { ...prevState, imageCounter: newImageCounter };
+    });
+  };
+
   render() {
-    const { handleModalClick } = this;
-    const { tasteList, productsInfo, recommendTaste } = this.state;
+    const { handleModalClick, handleCountUpdate } = this;
+    const { tasteList, productsInfo, recommendTaste, imageCounter } =
+      this.state;
+    console.log(`render`);
 
     return tasteList && productsInfo ? (
       <div className="tasteRecommendWrap">
@@ -99,17 +118,24 @@ class TasteRecommend extends React.Component {
             buttonWrapClassName="tasteBlockMoveButtonWrap"
             buttonClassName="tasteBlockMoveButton"
             buttonText={{ left: '<', right: '>' }}
+            passToImageCounter={handleCountUpdate}
           />
-          <div className="recommendImgDescription">
-            <div className="productTitle">
-              <span>쩌는 스테끼</span>
+          {productsInfo[imageCounter].name && (
+            <div className="recommendImgDescription">
+              <div className="productTitle">
+                <span>GGUIGIT {productsInfo[imageCounter].name}</span>
+              </div>
+              <div className="productDescription">
+                <span className="productPrice">
+                  {productsInfo[imageCounter].price.toLocaleString()}원
+                </span>
+                <span className="productServing">
+                  {productsInfo[imageCounter].cooking_time}분
+                </span>
+                <i className="fas fa-cart-plus"></i>
+              </div>
             </div>
-            <div className="productDescription">
-              <span className="productPrice">10억원</span>
-              <span className="productServing">1인분</span>
-              <i className="fas fa-cart-plus"></i>
-            </div>
-          </div>
+          )}
           <div className="shader"></div>
         </div>
       </div>

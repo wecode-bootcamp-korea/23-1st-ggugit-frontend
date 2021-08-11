@@ -2,10 +2,10 @@ import React from 'react';
 
 import './TasteModal.scss';
 
-class TasteModal extends React.Component {
+class TasteModal extends React.PureComponent {
   render() {
     const { tasteList, handleModalClick } = this.props;
-    const tasteButton = tasteList.map((taste, idx) => {
+    const tasteButton = tasteList.map(taste => {
       return (
         <button
           key={taste.id}

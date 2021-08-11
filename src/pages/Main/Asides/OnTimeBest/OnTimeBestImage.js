@@ -28,12 +28,3 @@ class OnTimeBestImage extends React.Component {
 }
 
 export default OnTimeBestImage;
-
-const IMAGE_LIST = [
-  { name: 'stake', url: '/images/Main/stake.jpg' },
-  { name: 'stake', url: '/images/Main/food2.jpg' },
-  { name: 'stake', url: '/images/Main/food3.jpg' },
-  { name: 'stake', url: '/images/Main/stake.jpg' },
-  { name: 'stake', url: '/images/Main/food2.jpg' },
-  { name: 'stake', url: '/images/Main/food3.jpg' },
-];
