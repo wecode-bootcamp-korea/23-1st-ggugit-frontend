@@ -4,7 +4,7 @@ import './TitleData.scss';
 class TitleData extends Component {
   constructor(props) {
     super(props);
-    this.state = [];
+    this.state = {};
   }
 
   render() {
@@ -16,12 +16,12 @@ class TitleData extends Component {
       <>
         <div className="titleWrap" key={titleData.id}>
           <div className="flagWrap">
-            {titleData.limited ? (
+            {titleData.limited && (
               <>
                 <span className="flagDeal">한정수량</span>
                 <span className="flagNew">NEW</span>
               </>
-            ) : null}
+            )}
           </div>
           <h1 className="subTitle">{titleData.sub_name}</h1>
           <h1 className="title">{titleData.name}</h1>

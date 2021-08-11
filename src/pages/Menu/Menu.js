@@ -1,7 +1,8 @@
 import React from 'react';
 import List from './List/List';
+import { withRouter, Link } from 'react-router-dom';
+
 import './Menu.scss';
-import { Link } from 'react-router-dom';
 
 class Menu extends React.Component {
   render() {
@@ -82,4 +83,4 @@ class Menu extends React.Component {
   }
 }
 
-export default Menu;
+export default withRouter(Menu);

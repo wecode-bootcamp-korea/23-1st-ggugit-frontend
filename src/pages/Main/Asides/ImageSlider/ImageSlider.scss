@@ -1,0 +1,66 @@
+@import '../../../../styles/variables.scss';
+
+@mixin animation($delay, $duration, $name) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $name;
+}
+
+@mixin keyframes($animation_name) {
+  @keyframes #{$animation_name} {
+    @content;
+  }
+}
+
+@include keyframes(move) {
+  0% {
+    transform: translateX(1920px);
+    display: flex;
+  }
+  100% {
+    transform: translateX(0px);
+    display: none;
+  }
+}
+
+@include keyframes(move2) {
+  0% {
+    transform: translateX(-1920px);
+    display: flex;
+  }
+  100% {
+    transform: translateX(0px);
+    display: none;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.imgSliderWrap {
+  @include flex-set(center, center, row);
+  position: relative;
+  width: calc(100vw - (100vw - 100%));
+  max-width: 1920px;
+  overflow: hidden;
+
+  .imgSlider {
+    @include flex-set(flex-start, center, row);
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .imgWrap {
+      @include size(100%, 100%);
+      position: relative;
+
+      > img {
+        object-fit: fill;
+      }
+    }
+  }
+}
