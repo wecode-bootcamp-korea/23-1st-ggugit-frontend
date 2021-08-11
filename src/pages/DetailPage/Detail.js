@@ -25,7 +25,7 @@ class Detail extends Component {
       .then(res => res.json())
       .then(data => {
         this.setState({
-          mealKitInfoList: data.result,
+          mealKitInfoList: data.results,
         });
       });
   }
