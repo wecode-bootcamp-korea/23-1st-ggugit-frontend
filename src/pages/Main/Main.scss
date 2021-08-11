@@ -51,7 +51,23 @@
       }
     }
 
-    .imgSlider {
+    .eventBannerMargin {
+      margin-top: 50px;
+    }
+    .eventBannerButtonWrap {
+      @include flex-set(space-around, center);
+      @include size(200px, 50px);
+      position: absolute;
+      border-radius: 50px;
+      top: 210px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      .eventBannerButton {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 40px;
+      }
     }
     .onTimeBest {
     }

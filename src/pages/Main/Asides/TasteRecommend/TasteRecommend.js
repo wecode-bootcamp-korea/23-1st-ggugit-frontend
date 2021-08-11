@@ -21,10 +21,12 @@ class TasteRecommend extends React.Component {
       .then(res => res.json())
       .then(data => {
         const randNum = Math.floor(Math.random() * data.results.length);
+        let tasteList = [];
+        tasteList = data;
 
-        const tasteList = [...data];
-
-        fetch(`${PRODUCTS_API}?theme=taste&number=${tasteList[randNum]}`)
+        fetch(
+          `${PRODUCTS_API}?theme=taste&number=${tasteList.results[randNum].id}`
+        )
           .then(res => res.json())
           .then(data => {
             let newList = data.results.map(food => ({
@@ -44,22 +46,6 @@ class TasteRecommend extends React.Component {
       });
   }
 
-  // componentDidUpdate (_,prevState){
-  //   if (prevProps.)
-  //         fetch(`${PRODUCTS_API}?theme=taste&number=${randNum + 1}`)
-  //           .then(res => res.json())
-  //           .then(data => {
-  //             let newList = [];
-  //             data.results.forEach(food => {
-  //               newList.push({ url: food.image_url.toString() });
-  //             });
-  //             this.setState(prevState => {
-  //               let newState = { ...prevState, imageList: newList };
-  //               return newState;
-  //             });
-  //           });
-  // }
-
   handleModalClick = name => {
     fetch(`${PRODUCTS_API}?theme=taste&number=${name}`)
       .then(res => res.json())
@@ -71,7 +57,7 @@ class TasteRecommend extends React.Component {
           return {
             ...prevState,
             imageList: newList,
-            recommendTaste: data.results[0].taste,
+            recommendTaste: newList[0].taste,
           };
         });
       });
@@ -80,8 +66,6 @@ class TasteRecommend extends React.Component {
   render() {
     const { handleModalClick } = this;
     const { tasteList, imageList, recommendTaste } = this.state;
-
-    console.log(imageList);
 
     return tasteList && imageList ? (
       <div className="tasteRecommendWrap">

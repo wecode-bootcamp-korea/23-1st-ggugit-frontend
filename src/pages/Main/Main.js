@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageSlider from './Asides/ImageSlider/ImageSlider';
 import TasteRecommend from './Asides/TasteRecommend/TasteRecommend';
+import OnTimeBest from './Asides/OnTimeBest/OnTimeBest';
 
 import './Main.scss';
 
@@ -23,8 +24,17 @@ class Main extends React.Component {
             buttonText={buttonText}
           />
           <TasteRecommend />
-          <div className="imgSlider"></div>
-          <div className="onTimeBest"></div>
+          <div className="eventBannerMargin"></div>
+          <ImageSlider
+            imageList={IMAGE_LIST}
+            imgSize={{ width: '1920px', height: '280px' }}
+            animationTime={2000}
+            buttonRender={true}
+            buttonWrapClassName="eventBannerButtonWrap"
+            buttonClassName="eventBannerButton"
+            buttonText={buttonText}
+          />
+          <OnTimeBest />
           <div className="onTimeReview"></div>
           <div className="productWrap">
             <div className="pdLeftWrap"></div>
