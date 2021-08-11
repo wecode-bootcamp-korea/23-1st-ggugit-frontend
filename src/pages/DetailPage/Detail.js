@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './Detail.scss';
-import TitleData from '../Components/TitleData';
-import CartStickBar from '../Components/CartStickBar';
-import CartButton from '../Components/CartButton';
-import MainContent from '../Components/MainContent';
-import DishData from '../Components/DishData';
+import TitleData from './Components/TitleData';
+import CartStickBar from './Components/CartStickBar';
+import CartButton from './Components/CartButton';
+import MainContent from './Components/MainContent';
+import DishData from './Components/DishData';
 // import ImgSlider from './Components/ImgSlider';
 
 class Detail extends Component {
@@ -20,7 +20,7 @@ class Detail extends Component {
   };
 
   componentDidMount() {
-    fetch('http://10.58.3.151:8000/products/1')
+    fetch('http://10.58.5.216:8000/products/1')
       .then(res => res.json())
       .then(data => {
         this.setState({
