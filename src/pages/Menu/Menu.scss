@@ -27,6 +27,11 @@
         text-decoration: none;
         color: #606060;
       }
+
+      .clicked {
+        color: black;
+        border-bottom: 3px solid black;
+      }
     }
 
     .category {
@@ -41,6 +46,10 @@
         color: #606060;
       }
 
+      .clicked {
+        color: black;
+      }
+
       .categoriesBox {
         display: flex;
 
@@ -49,6 +58,11 @@
           @include fontsize();
           text-decoration: none;
           color: #606060;
+        }
+
+        .clicked {
+          color: black;
+          font-weight: 700;
         }
       }
     }
@@ -87,7 +101,11 @@
         a {
           margin: 0 10px;
           text-decoration: none;
-          color: #212121;
+          color: #606060;
+        }
+        .clicked {
+          color: black;
+          font-weight: 700;
         }
       }
     }
@@ -96,5 +114,6 @@
   .productListBox {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 200px;
   }
 }

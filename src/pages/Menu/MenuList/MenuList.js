@@ -3,7 +3,9 @@ import './MenuList.scss';
 
 class MenuList extends React.Component {
   render() {
-    const { name, image_url, cooking_time, price } = this.props;
+    const { limited, name, image_url, cooking_time, price, discount, sales } =
+      this.props;
+
     return (
       <li className="listContainer">
         <div className="listImg">
@@ -11,23 +13,38 @@ class MenuList extends React.Component {
         </div>
         <div className="listInfoContainer">
           <div className="newBox">
-            <span>한정수량</span>
-            <span>NEW</span>
+            {limited ? (
+              <>
+                <span>한정수량</span>
+                <span>NEW</span>
+              </>
+            ) : null}
           </div>
           <div className="listInfo">
-            <span className="makingTime">조리시간{cooking_time}</span>
+            <span className="makingTime">조리시간 {cooking_time}분</span>
             <span className="menuName">{name}</span>
-            <span className="menuPrice">{price}원</span>
+            <div className="discountFlex">
+              <span className="menuPrice">
+                <del>{price}원</del>
+              </span>
+              <span className="discount">{discount}원</span>
+            </div>
             <div>
-              <span className="starRivew">별별별별별</span>
-              <span className="rivew">리뷰0</span>
+              <span className="starRivew">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star-half-alt"></i>
+              </span>
+              <span className="rivew">리뷰{sales}</span>
             </div>
             <div className="goToLikeContainer">
               <button>
-                <i class="far fa-heart" />
+                <i className="far fa-heart" />
               </button>
               <button>
-                <i class="fas fa-cart-arrow-down" />
+                <i className="fas fa-cart-arrow-down" />
               </button>
             </div>
           </div>

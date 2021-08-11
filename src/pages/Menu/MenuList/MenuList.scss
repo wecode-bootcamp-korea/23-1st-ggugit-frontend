@@ -58,16 +58,24 @@
         @include fontsize(17px);
         line-height: 24px;
       }
-
-      .menuPrice {
-        width: 100%;
-        margin: 8px 0;
-        @include fontsize(20px, 800);
-        line-height: 27px;
+      .discountFlex {
+        display: flex;
+        .menuPrice {
+          color: #606060;
+          width: 110px;
+          margin-top: 10px;
+        }
+        .discount {
+          width: 100%;
+          margin: 8px 0;
+          @include fontsize(25px, 800);
+          line-height: 27px;
+        }
       }
 
       .starRivew {
         @include size(88px, 16px);
+        color: #008a00;
       }
 
       .rivew {
