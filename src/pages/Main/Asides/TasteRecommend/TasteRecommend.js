@@ -12,7 +12,7 @@ class TasteRecommend extends React.Component {
       modalToggle: false,
       recommendTaste: '',
       tasteList: '',
-      imageList: '',
+      productsInfo: '',
     };
   }
 
@@ -33,11 +33,10 @@ class TasteRecommend extends React.Component {
               ...food,
               url: food.image_url.toString(),
             }));
-
             this.setState(prevState => {
               return {
                 ...prevState,
-                imageList: newList,
+                productsInfo: newList,
                 tasteList,
                 recommendTaste: tasteList.results[randNum].taste,
               };
@@ -56,7 +55,7 @@ class TasteRecommend extends React.Component {
         this.setState(prevState => {
           return {
             ...prevState,
-            imageList: newList,
+            productsInfo: newList,
             recommendTaste: newList[0].taste,
           };
         });
@@ -65,9 +64,9 @@ class TasteRecommend extends React.Component {
 
   render() {
     const { handleModalClick } = this;
-    const { tasteList, imageList, recommendTaste } = this.state;
+    const { tasteList, productsInfo, recommendTaste } = this.state;
 
-    return tasteList && imageList ? (
+    return tasteList && productsInfo ? (
       <div className="tasteRecommendWrap">
         <div className="tasteListBlock">
           <button
@@ -93,7 +92,7 @@ class TasteRecommend extends React.Component {
         </div>
         <div className="tasteListImgBlock">
           <ImageSlider
-            imageList={imageList}
+            imageList={productsInfo}
             imgSize={{ width: '520px', height: '520px' }}
             animationTime={1000}
             buttonRender={true}

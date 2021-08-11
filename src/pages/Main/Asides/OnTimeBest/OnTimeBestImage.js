@@ -1,26 +1,29 @@
 import React from 'react';
 
-import './OnTimeBestImage';
+import './OnTimeBestImage.scss';
 
 class OnTimeBestImage extends React.Component {
   render() {
-    const imageList = IMAGE_LIST.map(elem => {
-      return (
-        <div className="onTimeBestImage">
-          <div className="rank">
-            <span>1</span>
+    const { imageList } = this.props;
+    const _imageList = imageList.map(
+      ({ name, url, price, cookingTime }, idx) => {
+        return (
+          <div key={idx} className="onTimeBestImage">
+            <div className="rank">
+              <span>{idx + 1}</span>
+            </div>
+            <img alt={name} src={url} />
+            <span>GGUGIT {name}</span>
+            <div className="priceInfo">
+              <span className="price">{price.toLocaleString()}원</span>
+              <span className="serving">{cookingTime}분</span>
+            </div>
           </div>
-          <img alt={elem.name} src={elem.url} />
-          <span>부채살 찹스테이크</span>
-          <div className="priceInfo">
-            <span className="price">Prices</span>
-            <span className="serving">2인분</span>
-          </div>
-        </div>
-      );
-    });
+        );
+      }
+    );
 
-    return <>{imageList}</>;
+    return <div className="onTimeBestImageWrap">{_imageList}</div>;
   }
 }
 

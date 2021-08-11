@@ -24,16 +24,17 @@ class Main extends React.Component {
             buttonText={buttonText}
           />
           <TasteRecommend />
-          <div className="eventBannerMargin"></div>
-          <ImageSlider
-            imageList={IMAGE_LIST}
-            imgSize={{ width: '1920px', height: '280px' }}
-            animationTime={2000}
-            buttonRender={true}
-            buttonWrapClassName="eventBannerButtonWrap"
-            buttonClassName="eventBannerButton"
-            buttonText={buttonText}
-          />
+          <div className="eventBannerMargin">
+            <ImageSlider
+              imageList={IMAGE_LIST}
+              imgSize={{ width: '1920px', height: '280px' }}
+              animationTime={2000}
+              buttonRender={true}
+              buttonWrapClassName="eventBannerButtonWrap"
+              buttonClassName="eventBannerButton"
+              buttonText={buttonText}
+            />
+          </div>
           <OnTimeBest />
           <div className="onTimeReview"></div>
           <div className="productWrap">

@@ -1,26 +1,49 @@
 import React from 'react';
 import OnTimeBestImage from './OnTimeBestImage';
+import { BEST_PRODUCTS_API } from '../../../../config';
 
 import './OnTimeBest.scss';
 
 class OnTimeBest extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      bestProducts: {},
-    };
+    this.state = { bestProducts: [] };
+  }
+
+  componentDidMount() {
+    fetch(BEST_PRODUCTS_API)
+      .then(res => res.json())
+      .then(data => {
+        console.log(`hi`);
+        let newData = [];
+        data.results.forEach(
+          ({ name, image_url, price, cooking_time }, idx) => {
+            if (idx <= 8) {
+              newData.push({
+                name,
+                url: image_url,
+                price,
+                cookingTime: cooking_time,
+              });
+            }
+          }
+        );
+        this.setState({ bestProducts: newData });
+      });
   }
 
   render() {
+    const { bestProducts } = this.state;
+    console.log(bestProducts);
     return (
-      <div className="onTimeBestWrap">
-        <div className="onTimeBestTitle">
-          <h1>실시간 베스트</h1>
+      bestProducts && (
+        <div className="onTimeBestWrap">
+          <div className="onTimeBestTitle">
+            <h1>실시간 베스트</h1>
+          </div>
+          <OnTimeBestImage imageList={bestProducts} />
         </div>
-        <div className="onTimeBestImageWrap">
-          <OnTimeBestImage />
-        </div>
-      </div>
+      )
     );
   }
 }
