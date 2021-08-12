@@ -25,6 +25,7 @@ class DishData extends Component {
         });
       });
   }
+
   render() {
     const makeList = category =>
       INFO_DATA[category].map(asideData => {

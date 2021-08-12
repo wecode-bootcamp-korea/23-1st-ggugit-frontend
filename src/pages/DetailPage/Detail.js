@@ -12,11 +12,12 @@ class Detail extends Component {
     super();
     this.state = {
       mealKitInfoList: [],
+      // idData: [],
     };
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.132:8000/products/1')
+    fetch('http://10.58.0.132:8000/products/6')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -25,8 +26,27 @@ class Detail extends Component {
       });
   }
 
+  // componentDidMount() {
+  //   fetch(`${PRODUCTS_API}/${this.props.match.params.product_id}`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       this.setState(
+  //         { idData: data }
+
+  //   prevState => {
+  //   console.log(`${PRODUCTS_API}/${this.props.match.params.product_id}`);
+  //   return {
+  //     ...prevState,
+  //     priceInfo: [data.results[0].price, data.results[0].discount],
+  //   };
+  // }
+  // );
+  //     });
+  // }
+
   render() {
     const { mealKitInfoList } = this.state;
+    console.log(this.props);
     return (
       <main className="wholeWrap">
         {mealKitInfoList.length &&
