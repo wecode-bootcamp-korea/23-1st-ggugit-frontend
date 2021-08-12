@@ -47,7 +47,7 @@ class DishData extends Component {
       <div className="DishData">
         <div className="cookTime"> 조리 {titleData.cooking_time}분</div>
         <div className="info priceInfo">{makeList('priceInfo')}</div>
-        <div className="info">{makeList('discountInfo')} </div>
+        <div className="info">{makeList('discountInfo')}</div>
         <div className="info">{makeList('deliveryInfo')}</div>
       </div>
     );
