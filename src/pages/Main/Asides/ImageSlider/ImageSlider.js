@@ -110,7 +110,7 @@ class ImageSlider extends React.PureComponent {
 
     const { buttonRender, buttonWrapClassName, buttonClassName, buttonText } =
       this.props;
-    console.log(`hi`);
+
     return (
       <div className="imgSliderWrap">
         {imageList !== undefined && (

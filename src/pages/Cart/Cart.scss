@@ -1,0 +1,203 @@
+@import '../../styles/variables.scss';
+
+.cart {
+  @include flex-set(center, center, column);
+  width: calc(100vw - (100vw - 100%));
+
+  button {
+    cursor: pointer;
+  }
+
+  .cartWrap {
+    @include flex-set(center, flex-start, column);
+    width: 100%;
+    max-width: 1180px;
+    margin-top: 117px;
+    padding-top: 70px;
+  }
+
+  .cartTitle {
+    @include flex-set(flex-start, center, row);
+    height: 130px;
+    font-size: 40px;
+  }
+
+  .cartLoginNotice {
+    @include flex-set(space-between, center, row);
+    width: 100%;
+    padding: 26px 32px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+
+    > button {
+      @include size(240px, 44px);
+      border: 1px solid #bdd61a;
+      background-color: #bdd61a;
+      font-size: 18px;
+    }
+  }
+
+  .listCheckBox {
+    margin-top: 60px;
+    height: 50px;
+
+    .listCheck {
+      margin-right: 15px;
+      font-size: 22px;
+      font-weight: 700;
+      > input {
+        margin-right: 15px;
+      }
+    }
+
+    > button {
+      @include size(108px, 32px);
+      border: 1px solid #bdd61a;
+      background-color: #bdd61a;
+    }
+  }
+
+  .deliveryBox {
+    @include flex-set(center, flex-start, column);
+    width: 100%;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    border: 1px solid gray;
+
+    .deliveryDate {
+      padding: 0 30px;
+      margin-bottom: 30px;
+
+      .listCheck {
+        > input {
+          margin-right: 15px;
+        }
+      }
+      > span {
+        font-size: 22px;
+        font-weight: 700;
+      }
+    }
+
+    .listWrap {
+      width: 100%;
+      padding-top: 20px;
+      border: 1px solid gray;
+
+      .cartList {
+        @include flex-set(center, flex-start, column);
+        width: 100%;
+        padding: 0 30px;
+        margin-bottom: 30px;
+
+        .listItem {
+          @include flex-set(space-between, center, row);
+          width: 100%;
+          margin-bottom: 20px;
+
+          .productInfo {
+            @include flex-set(center, center, row);
+
+            .listCheck {
+              > input {
+                margin-right: 15px;
+              }
+            }
+
+            .productImg {
+              @include size(80px, 80px);
+              margin-right: 15px;
+            }
+
+            .productDesc {
+              @include flex-set(center, flex-start, column);
+
+              .productName {
+                font-size: 17px;
+                margin-bottom: 20px;
+              }
+
+              .productPrice {
+                font-size: 18px;
+              }
+            }
+          }
+
+          .productCountBox {
+            @include flex-set(center, center, row);
+
+            .productCount {
+              @include flex-set(center, center, row);
+              margin-right: 40px;
+              border: 1px solid black;
+              > button {
+                @include size(32px, 32px);
+                border: none;
+                background-color: white;
+                font-size: 18px;
+              }
+
+              > span {
+                @include flex-set(center, center, row);
+                @include size(40px, 30px);
+                border: none;
+                background-color: white;
+                text-align: center;
+                font-size: 18px;
+              }
+            }
+            > span {
+              font-size: 18px;
+              font-weight: 600;
+              margin-right: 40px;
+            }
+            .deleteItem {
+              border: none;
+              background-color: white;
+              color: gray;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+      .priceInfo {
+        @include flex-set(center, center, column);
+        padding: 30px 0;
+        background-color: #f7f7f7;
+
+        .totalPrice {
+          padding: 15px 0;
+          font-size: 18px;
+
+          > span {
+            margin-right: 20px;
+          }
+        }
+
+        > span {
+          color: gray;
+        }
+      }
+
+      .finalPrice {
+        @include flex-set(space-around, center, row);
+        margin-top: 55px;
+        padding: 35px;
+        border-top: 1px solid gray;
+
+        .priceDesc {
+          @include flex-set(center, center, column);
+          font-size: 16px;
+
+          .price {
+            margin-top: 20px;
+            font-size: 32px;
+          }
+        }
+        .priceOperator {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}

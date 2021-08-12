@@ -55,6 +55,11 @@
       .logo {
         font-size: 40px;
         font-weight: 800;
+
+        > a {
+          text-decoration: none;
+          color: black;
+        }
       }
 
       .bottomList {
@@ -72,6 +77,15 @@
               color: black;
             }
           }
+        }
+      }
+
+      .cartLink {
+        margin-right: 15px;
+
+        > a {
+          text-decoration: none;
+          color: black;
         }
       }
     }

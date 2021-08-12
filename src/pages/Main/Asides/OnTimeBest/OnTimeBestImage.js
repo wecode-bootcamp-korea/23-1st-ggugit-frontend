@@ -5,7 +5,7 @@ import './OnTimeBestImage.scss';
 
 class OnTimeBestImage extends React.Component {
   render() {
-    const { imageList } = this.props;
+    const { imageList, cartClick } = this.props;
     const _imageList = imageList.map(
       ({ id, name, url, price, cookingTime }, idx) => {
         return (
@@ -25,6 +25,9 @@ class OnTimeBestImage extends React.Component {
               <span className="price">{price.toLocaleString()}원</span>
               <span className="serving">{cookingTime}분</span>
             </div>
+            <button name={id} onClick={cartClick}>
+              장바구니
+            </button>
           </div>
         );
       }
