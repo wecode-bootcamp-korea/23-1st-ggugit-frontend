@@ -18,6 +18,7 @@
 
       .dishInfoWrap {
         @include size(580px, initial);
+
         padding: 27px 0 0 91px;
 
         .totalPrice {

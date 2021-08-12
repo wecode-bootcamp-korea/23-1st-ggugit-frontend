@@ -1,7 +1,7 @@
-import './CartStickyBar.scss';
+import './CartStickBar.scss';
 import React from 'react';
 
-class CartStickyBar extends React.Component {
+class CartStickBar extends React.Component {
   render() {
     return (
       <div className="cartStickBar">
@@ -20,4 +20,4 @@ class CartStickyBar extends React.Component {
   }
 }
 
-export default CartStickyBar;
+export default CartStickBar;
