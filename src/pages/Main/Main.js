@@ -20,11 +20,11 @@ class Main extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => {
-          let newTopImage = data.result1.map(elem => {
-            return { name: `상단배너`, url: elem };
+          let newTopImage = data.result1.map(imageUrl => {
+            return { name: `상단배너`, url: imageUrl };
           });
-          let newBottomImage = data.result2.map(elem => {
-            return { name: `하단배너`, url: elem };
+          let newBottomImage = data.result2.map(ImageUrl => {
+            return { name: `하단배너`, url: ImageUrl };
           });
           return {
             ...prevState,
@@ -50,9 +50,7 @@ class Main extends React.Component {
               buttonWrapClassName="moveButtonWrap"
               buttonClassName="moveButton"
               buttonText={buttonText}
-              imageOnClick={() => {
-                return false;
-              }}
+              imageOnClick={false}
             />
           )}
           <SearchBar />
@@ -67,9 +65,7 @@ class Main extends React.Component {
                 buttonWrapClassName="eventBannerButtonWrap"
                 buttonClassName="eventBannerButton"
                 buttonText={buttonText}
-                imageOnClick={() => {
-                  return false;
-                }}
+                imageOnClick={false}
               />
             )}
           </div>

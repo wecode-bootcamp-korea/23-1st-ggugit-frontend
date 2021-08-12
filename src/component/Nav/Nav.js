@@ -7,26 +7,28 @@ import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
-    const topList = NAV_LIST_TOP.map(elem => {
+    const topList = NAV_LIST_TOP.map(topNavText => {
       return (
-        <li key={`bottomNav${elem.id}`}>
+        <li key={`bottomNav${topNavText.id}`}>
           <Link
             to={
-              elem.id === 2 && localStorage.getItem(TOKEN_KEY) ? '/' : elem.url
+              topNavText.id === 2 && localStorage.getItem(TOKEN_KEY)
+                ? '/'
+                : topNavText.url
             }
           >
-            {elem.id === 2 && localStorage.getItem(TOKEN_KEY)
+            {topNavText.id === 2 && localStorage.getItem(TOKEN_KEY)
               ? `환영합니다!`
-              : elem.text}
+              : topNavText.text}
           </Link>
         </li>
       );
     });
 
-    const bottomList = NAV_LIST_BOTTOM.map(elem => {
+    const bottomList = NAV_LIST_BOTTOM.map(bottomNavText => {
       return (
-        <li key={`bottomNav${elem.id}`}>
-          <Link to={elem.url}>{elem.text}</Link>
+        <li key={`bottomNav${bottomNavText.id}`}>
+          <Link to={bottomNavText.url}>{bottomNavText.text}</Link>
         </li>
       );
     });
