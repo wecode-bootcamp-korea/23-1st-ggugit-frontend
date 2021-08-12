@@ -2,9 +2,17 @@
 
 .listContainer {
   width: 268px;
-  min-height: 540px;
+  height: 540px;
   margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: 36px;
+
+  &:nth-child(1) {
+    margin-left: 0;
+  }
+  &:nth-child(4n + 1) {
+    margin-left: 0;
+  }
 
   .listImg {
     @include size(268px, 320px);
@@ -37,36 +45,43 @@
     }
 
     .listInfo {
+      @include flex-set(initial, initial, column);
+
       .makingTime {
-        display: inline-block;
         margin: 10px 0;
         color: #212121;
         font-size: 13px;
       }
 
       .menuName {
-        display: inline-block;
         width: 100%;
         @include fontsize(17px);
         line-height: 24px;
       }
-
-      .menuPrice {
-        display: inline-block;
-        width: 100%;
-        margin: 8px 0;
-        @include fontsize(20px, 800);
-        line-height: 27px;
+      .discountFlex {
+        display: flex;
+        .menuPrice {
+          color: #606060;
+          width: 110px;
+          margin-top: 10px;
+        }
+        .discount {
+          width: 100%;
+          margin: 8px 0;
+          @include fontsize(25px, 800);
+          line-height: 27px;
+        }
       }
 
       .starRivew {
-        display: inline-block;
         @include size(88px, 16px);
+        color: #008a00;
       }
 
       .rivew {
-        width: 70px;
-        display: inline-block;
+        width: 100px;
+        margin-left: 10px;
+        padding-left: 10px;
         color: #212121;
         font-size: 14px;
         border-left: 1px solid #e0e0e0;
