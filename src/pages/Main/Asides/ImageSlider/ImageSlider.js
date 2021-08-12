@@ -14,18 +14,17 @@ class ImageSlider extends React.PureComponent {
         transition: '',
       },
     };
+    this.isMoving = React.createRef();
   }
 
-  isMoving = React.createRef();
-
   setImageCounter = e => {
-    if (this.isMoving === true) return;
+    if (this.isMoving.current) return;
 
     const { imageList, animationTime, imgSize, buttonText } = this.props;
-    this.isMoving = true;
+    this.isMoving.current = true;
 
     setTimeout(() => {
-      this.isMoving = false;
+      this.isMoving.current = false;
     }, animationTime);
 
     this.setState(prevState => {
@@ -158,9 +157,7 @@ class ImageSlider extends React.PureComponent {
             buttonClassName={buttonClassName}
             buttonText={buttonText}
             disabled={this.isMoving}
-            handleClick={e => {
-              setImageCounter(e);
-            }}
+            handleClick={setImageCounter}
           />
         )}
         {this.props.children}
