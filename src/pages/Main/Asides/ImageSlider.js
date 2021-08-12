@@ -138,8 +138,6 @@ class ImageSlider extends React.Component {
       );
     });
 
-    console.log(this.isMoving.current);
-
     return (
       <div className="imgSliderWrap">
         <div className="imgSlider" style={animation}>
