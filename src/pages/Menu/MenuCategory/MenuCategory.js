@@ -3,10 +3,13 @@ import { MENU_LIST_TYPE } from '../MenuList/MENU_LIST';
 import { MENU_LIST_TASTE } from '../MenuList/MENU_LIST';
 
 class MenuCategory extends React.Component {
+  goToDetail = () => {
+    this.props.history.push('/detail/:id');
+  };
   render() {
-    const { title, subMenu } = this.props;
+    const { selectedTaste, subMenu } = this.props;
 
-    const menuList = title ? MENU_LIST_TASTE : MENU_LIST_TYPE;
+    const menuList = selectedTaste ? MENU_LIST_TASTE : MENU_LIST_TYPE;
 
     return (
       <div className="menuWrap">
@@ -16,7 +19,7 @@ class MenuCategory extends React.Component {
             <a
               href="#none"
               name="taste"
-              className={`titleFont ${title ? 'clicked' : ''}`}
+              className={`titleFont ${selectedTaste ? 'clicked' : ''}`}
               onClick={this.props.onChangeMenu}
             >
               맛별
@@ -24,7 +27,7 @@ class MenuCategory extends React.Component {
             <a
               href="#none"
               name="type"
-              className={`titleFont ${title ? '' : 'clicked'}`}
+              className={`titleFont ${selectedTaste ? '' : 'clicked'}`}
               onClick={this.props.onChangeMenu}
             >
               나라별
@@ -33,7 +36,7 @@ class MenuCategory extends React.Component {
           <div className="category">
             <a
               href="#none"
-              className={`font ${subMenu === null ? 'clicked' : ''}`}
+              className={`font ${!subMenu && 'clicked'}`}
               onClick={() => this.props.onChangeSubMenu(null)}
             >
               전체
@@ -45,7 +48,7 @@ class MenuCategory extends React.Component {
                   <li key={menu.id}>
                     <a
                       href="#none"
-                      className={isClicked ? 'clicked' : ''}
+                      className={isClicked && 'clicked'}
                       onClick={() => this.props.onChangeSubMenu(menu)}
                     >
                       {menu.listName}
