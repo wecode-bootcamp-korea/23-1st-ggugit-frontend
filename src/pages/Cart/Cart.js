@@ -22,32 +22,34 @@ class Cart extends React.Component {
             </label>
             <button>선택삭제</button>
           </div>
-          <div className="deliveryDateBox">
-            <div className="deliveryData">
+          <div className="deliveryBox">
+            <div className="deliveryDate">
               <label className="listCheck">
                 <input type="checkbox" />
               </label>
               <span>2021-08-18(수) 도착예정</span>
             </div>
-            <div>
-              <div>
-                <label>
-                  <input type="checkbox" />
-                </label>
-                <img alt="" src="#" />
-                <div>
-                  <span>부채살 찹스테이크</span>
-                  <span>20,800억원</span>
-                </div>
-                <div>
-                  <div>
-                    <button></button>
-                    <span>부채살 찹스테이크</span>
-                    <button></button>
+            <div className="listWrap">
+              <ul className="cartList">
+                <li className="listItem">
+                  <div className="productInfo">
+                    <label className="listCheck">
+                      <input type="checkbox" />
+                    </label>
+                    <img className="productImg" alt="" src="#" />
+                    <span className="productName">부채살 찹스테이크</span>
+                    <span className="productPrice">20,800원</span>
                   </div>
-                  <span>20,800억원</span>
-                </div>
-              </div>
+                  <div className="productCount">
+                    <div>
+                      <button>+</button>
+                      <span>1</span>
+                      <button>-</button>
+                    </div>
+                    <span>20,800원</span>
+                  </div>
+                </li>
+              </ul>
               <div>
                 <div>
                   <span>상품금액 20,600원</span>

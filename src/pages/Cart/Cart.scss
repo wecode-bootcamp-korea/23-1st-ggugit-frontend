@@ -52,14 +52,42 @@
     }
   }
 
-  .deliveryDateBox {
+  .deliveryBox {
+    @include flex-set(center, flex-start, column);
+    width: 100%;
+    padding: 20px 30px;
+    border: 1px solid gray;
+
     .deliveryDate {
       .listCheck {
-        margin-right: 15px;
-        font-size: 22px;
-        font-weight: 700;
         > input {
           margin-right: 15px;
+        }
+      }
+      > span {
+        font-size: 22px;
+        font-weight: 700;
+      }
+    }
+
+    .listWrap {
+      width: 100%;
+
+      .cartList {
+        @include flex-set(center, flex-start, column);
+        width: 100%;
+
+        .listItem {
+          @include flex-set(space-between, center, row);
+          width: 100%;
+
+          .productInfo {
+            .listCheck {
+              > input {
+                margin-right: 15px;
+              }
+            }
+          }
         }
       }
     }
