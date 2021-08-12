@@ -1,62 +1,75 @@
 import React from 'react';
-import ImageSlider from './Asides/ImageSlider';
+import ImageSlider from './Asides/ImageSlider/ImageSlider';
+import TasteRecommend from './Asides/TasteRecommend/TasteRecommend';
+import OnTimeBest from './Asides/OnTimeBest/OnTimeBest';
+import SearchBar from './Asides/SearchBar/SearchBar';
+import Timer from './Asides/Timer/Timer';
+
+import { MAIN_API } from '../../config';
 
 import './Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  componentDidMount() {
+    fetch(`${MAIN_API}`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState(prevState => {
+          let newTopImage = data.first_banner.map(imageUrl => {
+            return { name: `상단배너`, url: imageUrl };
+          });
+          let newBottomImage = data.second_banner.map(ImageUrl => {
+            return { name: `하단배너`, url: ImageUrl };
+          });
+          return {
+            ...prevState,
+            topImageList: newTopImage,
+            bottomImageList: newBottomImage,
+          };
+        });
+      });
+  }
   render() {
-    const buttonText = { left: '<', right: '>' };
-    const imgSize = { width: '1920px', height: '640px' };
+    const { topImageList, bottomImageList } = this.state;
 
     return (
       <section className="mainContainer">
         <div className="mainWrap">
-          <ImageSlider
-            imageList={IMAGE_LIST}
-            imgSize={imgSize}
-            animationTime={2000}
-            description={true}
-            buttonRender={true}
-            buttonWrapClassName="moveButtonWrap"
-            buttonClassName="moveButton"
-            buttonText={buttonText}
-          />
-          <div className="tasteRecommendWrap">
-            <div className="tasteListBlock">
-              <button>
-                이국적인맛 <i className="fas fa-chevron-down"></i>
-              </button>
-              <span>메뉴</span>
-              <span>추천드려요</span>
-              <p>
-                로그인하시면 고객님의 구매내역과 맛취향에 따라 딱맞는 맛있는
-                메뉴를 추천드려요
-              </p>
-            </div>
-            <div className="imgSlider">
-              <div className="imgBlock">
-                <img
-                  alt="stake"
-                  src="/images/Main/stake.jpg"
-                  width="520px"
-                  height="520px"
-                />
-                <div className="recommendImgDescription">
-                  <div className="productTitle">
-                    <span>쩌는 스테끼</span>
-                  </div>
-                  <div className="productDescription">
-                    <span className="productPrice">10억원</span>
-                    <span className="productServing">1인분</span>
-                    <i className="fas fa-cart-plus"></i>
-                  </div>
-                </div>
-              </div>
-              <div className="shader"></div>
-            </div>
+          {topImageList && (
+            <ImageSlider
+              imageList={topImageList}
+              imgSize={imgSize}
+              animationTime={2000}
+              description={true}
+              buttonRender={true}
+              buttonWrapClassName="moveButtonWrap"
+              buttonClassName="moveButton"
+              buttonText={buttonText}
+              imageOnClick={() => {}}
+            />
+          )}
+          <SearchBar />
+          <TasteRecommend />
+          <div className="eventBannerMargin">
+            {bottomImageList && (
+              <ImageSlider
+                imageList={bottomImageList}
+                imgSize={bottomImgSize}
+                animationTime={2000}
+                buttonRender={true}
+                buttonWrapClassName="eventBannerButtonWrap"
+                buttonClassName="eventBannerButton"
+                buttonText={buttonText}
+                imageOnClick={() => {}}
+              />
+            )}
           </div>
-          <div className="imgSlider"></div>
-          <div className="onTimeBest"></div>
+          <OnTimeBest />
           <div className="onTimeReview"></div>
           <div className="productWrap">
             <div className="pdLeftWrap"></div>
@@ -64,6 +77,7 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="mainTimer"></div>
+        <Timer />
       </section>
     );
   }
@@ -71,11 +85,6 @@ class Main extends React.Component {
 
 export default Main;
 
-const IMAGE_LIST = [
-  { name: 'stake', url: '/images/Main/stake.jpg' },
-  { name: 'stake', url: '/images/Main/food2.jpg' },
-  { name: 'stake', url: '/images/Main/food3.jpg' },
-  { name: 'stake', url: '/images/Main/stake.jpg' },
-  { name: 'stake', url: '/images/Main/food2.jpg' },
-  { name: 'stake', url: '/images/Main/food3.jpg' },
-];
+const imgSize = { width: '1920px', height: '640px' };
+const bottomImgSize = { width: '1920px', height: '280px' };
+const buttonText = { left: '<', right: '>' };

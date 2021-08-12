@@ -6,8 +6,8 @@ import './Footer.scss';
 
 class Footer extends React.Component {
   render() {
-    const topList = FOOTER_LIST_TOP.map(elem => {
-      const { id, text, url } = elem;
+    const topList = FOOTER_LIST_TOP.map(footerText => {
+      const { id, text, url } = footerText;
       return (
         <li key={id}>
           <Link to={url}>{text}</Link>
@@ -15,10 +15,10 @@ class Footer extends React.Component {
       );
     });
 
-    const bottomList = FOOTER_LIST_BOTTOM.map((elem, idx) => {
+    const bottomList = FOOTER_LIST_BOTTOM.map((footerBottomText, idx) => {
       return (
         <li key={idx}>
-          <span>{elem}</span>
+          <span>{footerBottomText}</span>
         </li>
       );
     });
