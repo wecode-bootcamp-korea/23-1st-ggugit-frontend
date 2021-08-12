@@ -1,6 +1,5 @@
 import React from 'react';
 import { ORDER_LIST } from '../MenuList/MENU_LIST';
-// import { Link } from 'react-router-dom';
 import MenuList from '../MenuList/MenuList';
 
 class MenuContainer extends React.Component {
