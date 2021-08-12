@@ -13,12 +13,11 @@ class ImageSlider extends React.Component {
         transition: '',
       },
     };
+    this.isMoving = React.createRef();
   }
 
-  isMoving = React.createRef();
-
   setImageCounter = e => {
-    if (this.isMoving.current === true) return;
+    if (this.isMoving.current) return;
 
     const { imageList, animationTime, imgSize, buttonText } = this.props;
     this.isMoving.current = true;
