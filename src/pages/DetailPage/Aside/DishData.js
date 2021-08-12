@@ -13,11 +13,11 @@ class DishData extends Component {
     };
   }
   componentDidMount() {
-    fetch(`${PRODUCTS_API}/${this.props.match.params.product_id}`)
+    fetch(`${PRODUCTS_API}/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => {
-          console.log(`${PRODUCTS_API}/${this.props.match.params.product_id}`);
+          console.log(`${PRODUCTS_API}/${this.props.match.params.id}`);
           return {
             ...prevState,
             priceInfo: [data.results[0].price, data.results[0].discount],

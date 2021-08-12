@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './Detail.scss';
 import TitleData from './Aside/TitleData';
 import CartStickBar from './Aside/CartStickBar';
@@ -17,7 +18,7 @@ class Detail extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://10.58.0.132:8000/products/6')
+    fetch(`http://10.58.0.132:8000/products/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -58,4 +59,4 @@ class Detail extends React.Component {
   }
 }
 
-export default Detail;
+export default withRouter(Detail);
