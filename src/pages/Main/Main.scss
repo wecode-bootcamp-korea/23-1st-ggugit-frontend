@@ -1,0 +1,83 @@
+@import '../../styles/variables.scss';
+
+.mainContainer {
+  @include flex-set(flex-start, stretch, column);
+  width: calc(100vw - (100vw - 100%));
+
+  .mainWrap {
+    @include flex-set(center, center, column);
+    margin-top: 117px;
+
+    .imgDescription {
+      @include flex-set(flex-start, flex-start, column);
+      position: absolute;
+      width: 600px;
+      top: 80px;
+      left: 360px;
+
+      .imgFlag {
+        display: block;
+        padding: 5px 18px;
+        margin-bottom: 35px;
+        background-color: black;
+        color: white;
+        font-size: 22px;
+      }
+
+      .imgDescTitle {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 68px;
+      }
+
+      .imgDescText {
+        color: white;
+        font-size: 24px;
+      }
+    }
+
+    .moveButtonWrap {
+      @include flex-set(space-between, center, row);
+      position: absolute;
+      width: 100%;
+
+      .moveButton {
+        @include size(62px, 80px);
+        margin: 0 200px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 70px;
+      }
+    }
+
+    .eventBannerMargin {
+      margin-top: 50px;
+    }
+    .eventBannerButtonWrap {
+      @include flex-set(space-around, center);
+      @include size(200px, 50px);
+      position: absolute;
+      border-radius: 50px;
+      top: 210px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      .eventBannerButton {
+        border: none;
+        background-color: transparent;
+        color: white;
+        font-size: 40px;
+      }
+    }
+    .onTimeBest {
+    }
+    .onTimeReview {
+    }
+    .productWrap {
+    }
+    .pdLeftWrap {
+    }
+    .pdRightWrap {
+    }
+  }
+}

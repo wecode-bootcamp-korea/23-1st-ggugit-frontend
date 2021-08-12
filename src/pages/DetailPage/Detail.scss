@@ -1,0 +1,88 @@
+@import '../../styles/variables.scss';
+
+.wholeWrap {
+  max-width: 1180px;
+  padding-top: 180px;
+  margin: 0 auto;
+  z-index: -1;
+
+  .detailWrap {
+    .topInfo {
+      display: flex;
+      position: relative;
+
+      .imgDetailWrap {
+        @include flex-set(initial, initial, column);
+        position: relative;
+      }
+
+      .dishInfoWrap {
+        @include size(580px, initial);
+
+        padding: 27px 0 0 91px;
+
+        .totalPrice {
+          display: flex;
+          justify-content: space-between;
+
+          span {
+            padding: 10px 5px 0 0;
+            color: #ee0700;
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: 700;
+          }
+        }
+        .cartButton {
+          padding-top: 19px;
+
+          button {
+            @include size(490px, initial);
+            padding: 15px;
+            border: 1px solid transparent;
+            background-color: #bed619;
+            font-size: 20px;
+            color: black;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .tabWrap {
+      padding: 30px 0 10px 30px;
+      border-bottom: solid 1px #dbdbdb;
+      font-size: 30px;
+      font-weight: 700;
+
+      &:after,
+      &:before {
+        margin: -7px 3px 0 5px;
+        content: '|';
+        color: black;
+        font-size: 30px;
+      }
+    }
+  }
+
+  .infoWrap {
+    .infoDetail {
+      display: flex;
+
+      .detailDescriptionBox {
+        min-height: 100vh;
+        margin-top: 100px;
+
+        .subTitle {
+          padding-top: 60px;
+          font-size: 40px;
+          text-align: center;
+        }
+        .subText {
+          padding: 24px 0 80px 0;
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

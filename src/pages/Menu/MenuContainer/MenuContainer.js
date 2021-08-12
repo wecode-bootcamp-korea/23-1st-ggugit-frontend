@@ -1,6 +1,6 @@
 import React from 'react';
-import { ORDER_LIST } from '../MenuList/MENU_LIST';
 import MenuList from '../MenuList/MenuList';
+import { ORDER_LIST } from '../MenuList/MENU_LIST';
 
 class MenuContainer extends React.Component {
   render() {
