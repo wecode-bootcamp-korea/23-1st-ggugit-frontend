@@ -1,0 +1,139 @@
+@import '../../styles/variables.scss';
+
+.mainContainer {
+  @include flex-set(flex-start, stretch, column);
+  width: calc(100vw - (100vw - 100%));
+
+  .mainWrap {
+    @include flex-set(center, center, column);
+    margin-top: 117px;
+
+    .imgDescription {
+      @include flex-set(flex-start, flex-start, column);
+      position: absolute;
+      width: 600px;
+      top: 80px;
+      left: 360px;
+
+      .imgFlag {
+        display: block;
+        padding: 5px 18px;
+        margin-bottom: 35px;
+        background-color: black;
+        color: white;
+        font-size: 22px;
+      }
+
+      .imgDescTitle {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 68px;
+      }
+
+      .imgDescText {
+        color: white;
+        font-size: 24px;
+      }
+    }
+
+    .moveButtonWrap {
+      @include flex-set(space-between, center, row);
+      position: absolute;
+      width: 100%;
+
+      .moveButton {
+        @include size(62px, 80px);
+        margin: 0 200px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 70px;
+      }
+    }
+
+    .tasteRecommendWrap {
+      @include flex-set(flex-start, center, row);
+      width: 100%;
+      max-width: 1180px;
+      margin-top: 80px;
+      position: relative;
+
+      .tasteListBlock {
+        @include flex-set(center, flex-start, column);
+        width: 339px;
+        margin-right: 65px;
+
+        > button {
+          border: none;
+          background-color: white;
+          border-bottom: 2px solid black;
+          font-size: 40px;
+
+          > i {
+            margin-left: 40px;
+          }
+          margin-bottom: 15px;
+        }
+
+        > span {
+          margin-bottom: 15px;
+          font-size: 40px;
+        }
+
+        > p {
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+
+      .imgSlider {
+        @include flex-set(center, center, row);
+
+        .imgBlock {
+          @include flex-set(center, center, row);
+
+          .recommendImgDescription {
+            @include flex-set(center, flex-start, column);
+            margin-left: 20px;
+
+            .productTitle {
+              font-size: 20px;
+            }
+
+            .productDescription {
+              margin-top: 40px;
+              font-size: 20px;
+
+              > span {
+                margin-right: 10px;
+              }
+
+              .productPrice {
+                font-size: 28px;
+              }
+
+              .productServing {
+                color: #606060;
+              }
+
+              .productServing:before {
+                content: '/';
+                margin-right: 3px;
+              }
+
+              i {
+                color: #606060;
+              }
+            }
+          }
+        }
+      }
+
+      .shader {
+        @include size(424px, 520px);
+        position: absolute;
+        right: -424px;
+      }
+    }
+  }
+}

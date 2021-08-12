@@ -1,0 +1,32 @@
+@import '../../../styles/variables.scss';
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.imgSliderWrap {
+  @include flex-set(center, center, row);
+  position: relative;
+  width: calc(100vw - (100vw - 100%));
+  max-width: 1920px;
+  overflow: hidden;
+
+  .imgSlider {
+    @include flex-set(flex-start, center, row);
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .imgWrap {
+      @include size(100%, 100%);
+      position: relative;
+
+      > img {
+        object-fit: fill;
+      }
+    }
+  }
+}

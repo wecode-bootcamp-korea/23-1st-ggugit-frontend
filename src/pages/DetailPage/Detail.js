@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Detail.scss';
 import TitleData from './Aside/TitleData';
 import CartStickBar from './Aside/CartStickBar';
@@ -25,24 +25,6 @@ class Detail extends Component {
         });
       });
   }
-
-  // componentDidMount() {
-  //   fetch(`${PRODUCTS_API}/${this.props.match.params.product_id}`)
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       this.setState(
-  //         { idData: data }
-
-  //   prevState => {
-  //   console.log(`${PRODUCTS_API}/${this.props.match.params.product_id}`);
-  //   return {
-  //     ...prevState,
-  //     priceInfo: [data.results[0].price, data.results[0].discount],
-  //   };
-  // }
-  // );
-  //     });
-  // }
 
   render() {
     const { mealKitInfoList } = this.state;
