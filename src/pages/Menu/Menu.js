@@ -52,8 +52,6 @@ class Menu extends React.Component {
 
     let changedTitle = prevState.selectedTaste !== this.state.selectedTaste;
 
-    console.log({ thisId, prevId, thisOrder, prevOrder, changedTitle });
-
     if (changedTitle || thisId !== prevId || thisOrder !== prevOrder) {
       console.log(this.getProductsUrl());
       fetch(this.getProductsUrl())
