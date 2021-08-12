@@ -11,3 +11,5 @@ export const TASTE_API = `${API_IP}/products?main=1`;
 export const BEST_PRODUCTS_API = `${API_IP}/products?order=2`;
 
 export const MAIN_API = `${API_IP}/products/main`;
+
+const TEST;
