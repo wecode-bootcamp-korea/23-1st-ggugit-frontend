@@ -15,8 +15,6 @@ class MainContent extends Component {
             src={Object.values(titleData.description_images)[0]}
             alt="키트 상세설명을 위한 파스타 사진"
           ></img>
-
-          {/* //이 사진을 맵을 사용하여 가져오고 싶음 && ImgAlbum 도 함께 수정! */}
           <img
             className="ingredients"
             src={Object.values(titleData.description_images)[1]}

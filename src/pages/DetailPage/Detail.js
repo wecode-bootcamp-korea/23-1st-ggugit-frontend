@@ -18,6 +18,7 @@ class Detail extends Component {
   componentDidMount() {
     fetch('http://10.58.3.151:8000/products/1')
       // 훈태님: http://10.58.5.216:8000/products/1
+      // 이준님: http://10.58.3.151:8000/products/1
       // ('http://localhost:3000/data/DetailPage/TitleMockData.json')
       .then(res => res.json())
       .then(data => {
