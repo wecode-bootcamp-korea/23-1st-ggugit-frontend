@@ -20,10 +20,10 @@ class Main extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState(prevState => {
-          let newTopImage = data.result1.map(imageUrl => {
+          let newTopImage = data.first_banner.map(imageUrl => {
             return { name: `상단배너`, url: imageUrl };
           });
-          let newBottomImage = data.result2.map(ImageUrl => {
+          let newBottomImage = data.second_banner.map(ImageUrl => {
             return { name: `하단배너`, url: ImageUrl };
           });
           return {
