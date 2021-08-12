@@ -80,19 +80,12 @@
         }
       }
 
-      .bottomRightSide {
-        @include flex-set(center, center, row);
+      .cartLink {
+        margin-right: 15px;
 
-        .cart {
-          > a {
-            text-decoration: none;
-            color: black;
-          }
-        }
-
-        .menuSearch {
-          @include flex-set(center, center, row);
-          // margin-right: 20px;
+        > a {
+          text-decoration: none;
+          color: black;
         }
       }
     }

@@ -93,6 +93,7 @@
         .listItem {
           @include flex-set(space-between, center, row);
           width: 100%;
+          margin-bottom: 20px;
 
           .productInfo {
             @include flex-set(center, center, row);

@@ -4,13 +4,10 @@ import './CartList.scss';
 
 class CartList extends React.Component {
   render() {
-    const { cartList } = this.props.cartList;
-    console.log('cartList', cartList);
-
-    // return null;
+    const { cartList, setQuantity } = this.props;
 
     const _cartList = cartList.map(
-      ({ name, image_url, price, discount, quantity }) => {
+      ({ cart_id, name, image_url, price, discount, quantity }) => {
         return (
           <li key={name} className="listItem">
             <div className="productInfo">
@@ -25,9 +22,9 @@ class CartList extends React.Component {
             </div>
             <div className="productCountBox">
               <div className="productCount">
-                <button>-</button>
+                <button name={cart_id}>-</button>
                 <span>{quantity}</span>
-                <button>+</button>
+                <button name={cart_id}>+</button>
               </div>
               <span>{discount}</span>
               <button className="deleteItem">x</button>

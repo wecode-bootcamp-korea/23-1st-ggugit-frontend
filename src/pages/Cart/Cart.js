@@ -17,14 +17,39 @@ class Cart extends React.Component {
       .then(res => res.json())
       .then(data => {
         console.log(data.results);
+        let sumPrice = 0,
+          sumDisCount = 0;
+        data.results.forEach(({ price, discount }) => {
+          sumPrice = sumPrice + price;
+          sumDisCount = sumDisCount + discount;
+        });
+
         this.setState(prevState => {
-          return { ...prevState, cartList: data.results };
+          return {
+            ...prevState,
+            cartList: data.results,
+            price: sumPrice,
+            discount: sumDisCount,
+          };
         });
       });
   }
 
+  setQuantity = e => {
+    if (e.target.innerText === '+') {
+      fetch(`${CART_API}/${e.target.name}`, {
+        method: 'PATCH',
+        headers: { Authorization: localStorage.getItem(TOKEN_KEY) },
+        body: JSON.stringify({
+          quantity: +1,
+        }),
+      });
+    }
+  };
+
   render() {
-    const cartList = this.state;
+    const { cartList, price, discount, setQuantity } = this.state;
+
     return this.state.cartList ? (
       <section className="cart">
         <div className="cartWrap">
@@ -54,42 +79,51 @@ class Cart extends React.Component {
               <span>2021-08-18(수) 도착예정</span>
             </div>
             <div className="listWrap">
-              <CartList cartList={cartList} />
+              <CartList cartList={cartList} setQuantity={setQuantity} />
               <div className="priceInfo">
                 <div className="totalPrice">
-                  <span>상품금액 20,600원</span>
+                  <span>{discount.toLocaleString()}원</span>
                   <span>+</span>
                   <span>배송비 3,000원</span>
                   <span>=</span>
-                  <span>10억원</span>
+                  <span>{(discount + 3000).toLocaleString()}원</span>
                 </div>
-                <span>원 더 구매 시 무료배송 해드려요</span>
+                {price < 15000 && (
+                  <span>
+                    {(15000 - price).toLocaleString()}원 더 구매 시 무료배송
+                    해드려요
+                  </span>
+                )}
               </div>
               <div className="finalPrice">
                 <div className="priceDesc">
                   <span>총 상품금액</span>
-                  <span className="price">20,800원</span>
+                  <span className="price">{price.toLocaleString()}원</span>
                 </div>
                 <div className="priceOperator">
                   <span>-</span>
                 </div>
                 <div className="priceDesc">
                   <span>총 할인금액</span>
-                  <span className="price">20,800원</span>
+                  <span className="price">
+                    {(price - discount).toLocaleString()}
+                  </span>
                 </div>
                 <div className="priceOperator">
                   <span>+</span>
                 </div>
                 <div className="priceDesc">
                   <span>총 배송비</span>
-                  <span className="price">20,800원</span>
+                  <span className="price">3,000원</span>
                 </div>
                 <div className="priceOperator">
                   <span>=</span>
                 </div>
                 <div className="priceDesc">
                   <span>총 결제예정금액</span>
-                  <span className="price">20,800원</span>
+                  <span className="price">
+                    {(discount + 3000).toLocaleString()}원
+                  </span>
                 </div>
               </div>
             </div>
