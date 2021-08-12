@@ -3,6 +3,7 @@ import ImageSlider from './Asides/ImageSlider/ImageSlider';
 import TasteRecommend from './Asides/TasteRecommend/TasteRecommend';
 import OnTimeBest from './Asides/OnTimeBest/OnTimeBest';
 import SearchBar from './Asides/SearchBar/SearchBar';
+import Timer from './Asides/Timer/Timer';
 
 import { MAIN_API } from '../../config';
 
@@ -80,6 +81,7 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="mainTimer"></div>
+        <Timer />
       </section>
     );
   }

@@ -1,7 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import CommonForm from '../../../../component/Form/CommonForm';
-import CommonInput from '../../../../component/Input/CommonInput';
 
 import './SearchBar.scss';
 
@@ -29,7 +27,7 @@ class SearchBar extends React.Component {
       <div className="searchBox">
         <form className="searchForm" onSubmit={goToMenu}>
           <label className="searchLabel">
-            <h1 className="searchTitle">검색어를 입력해주세요!</h1>
+            <h1 className="searchTitle">검색어를 입력해주세요</h1>
             <div className="searchInputBox">
               <input
                 className="searchInput"
