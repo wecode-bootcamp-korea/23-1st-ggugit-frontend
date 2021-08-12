@@ -5,14 +5,14 @@ import MenuContainer from './MenuContainer/MenuContainer';
 import { ORDER_LIST } from './MenuList/MENU_LIST';
 import { MENU_LIST_TASTE } from './MenuList/MENU_LIST';
 import { MENU_LIST_TYPE } from './MenuList/MENU_LIST';
-import { API } from '../../config/config';
+import { API } from '../../config';
 
 class Menu extends React.Component {
   constructor() {
     super();
     this.state = {
       lists: [],
-      title: true,
+      selectedTaste: true,
       selectedSubMenu: MENU_LIST_TASTE[0],
       orderlist: ORDER_LIST[0],
     };
@@ -33,7 +33,7 @@ class Menu extends React.Component {
     const order = this.state.orderlist;
     let url = API.PRODUCT;
     if (subMenu !== null) {
-      url += `?theme=${this.state.title ? 'taste' : 'type'}&number=${
+      url += `?theme=${this.state.selectedTaste ? 'taste' : 'country'}&number=${
         subMenu.id
       }&order=${order.id}`;
     }
@@ -50,11 +50,10 @@ class Menu extends React.Component {
 
     let prevOrder = prevState.orderlist === null ? '' : prevState.orderlist.id;
 
-    let changedTitle = prevState.title !== this.state.title;
-
-    console.log({ thisId, prevId, thisOrder, prevOrder, changedTitle });
+    let changedTitle = prevState.selectedTaste !== this.state.selectedTaste;
 
     if (changedTitle || thisId !== prevId || thisOrder !== prevOrder) {
+      console.log(this.getProductsUrl());
       fetch(this.getProductsUrl())
         .then(res => {
           return res.json();
@@ -68,17 +67,13 @@ class Menu extends React.Component {
   onChangeMenu = event => {
     event.preventDefault();
     const { name } = event.target;
-    name === 'taste'
-      ? this.setState({
-          title: true,
-          selectedSubMenu: MENU_LIST_TASTE[0],
-          orderlist: ORDER_LIST[0],
-        })
-      : this.setState({
-          title: false,
-          selectedSubMenu: MENU_LIST_TYPE[0],
-          orderlist: ORDER_LIST[0],
-        });
+
+    this.setState({
+      selectedTaste: name === 'taste',
+      selectedSubMenu:
+        name === 'taste' ? MENU_LIST_TASTE[0] : MENU_LIST_TYPE[0],
+      orderlist: ORDER_LIST[0],
+    });
   };
 
   onChangeSubMenu = subMenu => {
@@ -94,7 +89,7 @@ class Menu extends React.Component {
       <nav>
         <div className="menu">
           <MenuCategory
-            title={this.state.title}
+            selectedTaste={this.state.selectedTaste}
             subMenu={this.state.selectedSubMenu}
             onChangeMenu={this.onChangeMenu}
             onChangeSubMenu={this.onChangeSubMenu}
