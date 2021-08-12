@@ -10,7 +10,7 @@ class Timer extends React.Component {
     };
   }
 
-  componentDidUpdate() {
+  setCountDown = () => {
     setInterval(() => {
       let date = new Date();
 
@@ -40,14 +40,14 @@ class Timer extends React.Component {
       let countDown = nextDay - today;
 
       let countDownHours = Math.floor(countDown / (3600 * 1000));
-      let countDownMinutes = Math.floor(countDown / (60 * 1000) / 24);
-      let countDownSeconds = Math.floor(countDown / 1000 / 24 / 60);
+      let countDownMinutes = Math.floor((countDown / (60 * 1000)) % 60);
+      let countDownSeconds = Math.floor((countDown / 1000) % 60);
 
       this.setState({
         countDown: `${countDownHours} : ${countDownMinutes} : ${countDownSeconds}`,
       });
     }, 1000);
-  }
+  };
 
   render() {
     const { countDown } = this.state;
@@ -55,6 +55,9 @@ class Timer extends React.Component {
     const dayString = `${date.getMonth() + 1}월 ${date.getDate() + 1}일(${day(
       date.getDay() + 1
     )})`;
+
+    this.setCountDown();
+    // console.log(this.state);
 
     return (
       <div className="timerBox">

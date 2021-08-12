@@ -5,7 +5,18 @@ import { withRouter, Link } from 'react-router-dom';
 import './Menu.scss';
 
 class Menu extends React.Component {
+  componentDidMount() {
+    fetch(
+      `http://10.58.3.151:8000/products/search${this.props.location.search}`
+    )
+      .then(res => {
+        res.json();
+      })
+      .then(data => {});
+  }
   render() {
+    console.log(this.props.location.search);
+
     return (
       <nav>
         <div className="menu">

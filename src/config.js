@@ -1,4 +1,4 @@
-const API_IP = 'http://10.58.5.216:8000';
+const API_IP = 'http://10.58.0.132:8000';
 
 export const SIGNUP_API = `${API_IP}/users/signup`;
 
