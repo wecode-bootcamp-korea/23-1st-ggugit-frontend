@@ -5,7 +5,7 @@ import MenuContainer from './MenuContainer/MenuContainer';
 import { ORDER_LIST } from './MenuList/MENU_LIST';
 import { MENU_LIST_TASTE } from './MenuList/MENU_LIST';
 import { MENU_LIST_TYPE } from './MenuList/MENU_LIST';
-import { API } from '../../config/config';
+import { API } from '../../config';
 
 class Menu extends React.Component {
   constructor() {
