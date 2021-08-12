@@ -49,14 +49,16 @@ class Timer extends React.Component {
     }, 1000);
   };
 
+  componentDidMount() {
+    this.setCountDown();
+  }
+
   render() {
     const { countDown } = this.state;
     const date = new Date();
     const dayString = `${date.getMonth() + 1}월 ${date.getDate() + 1}일(${day(
       date.getDay() + 1
     )})`;
-
-    this.setCountDown();
     // console.log(this.state);
 
     return (
