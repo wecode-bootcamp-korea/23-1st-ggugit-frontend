@@ -51,33 +51,89 @@
       }
     }
 
-    .eventBannerMargin {
-      margin-top: 50px;
-    }
-    .eventBannerButtonWrap {
-      @include flex-set(space-around, center);
-      @include size(200px, 50px);
-      position: absolute;
-      border-radius: 50px;
-      top: 210px;
-      left: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-      .eventBannerButton {
-        border: none;
-        background-color: transparent;
-        color: white;
-        font-size: 40px;
+    .tasteRecommendWrap {
+      @include flex-set(flex-start, center, row);
+      width: 100%;
+      max-width: 1180px;
+      margin-top: 80px;
+      position: relative;
+
+      .tasteListBlock {
+        @include flex-set(center, flex-start, column);
+        width: 339px;
+        margin-right: 65px;
+
+        > button {
+          border: none;
+          background-color: white;
+          border-bottom: 2px solid black;
+          font-size: 40px;
+
+          > i {
+            margin-left: 40px;
+          }
+          margin-bottom: 15px;
+        }
+
+        > span {
+          margin-bottom: 15px;
+          font-size: 40px;
+        }
+
+        > p {
+          font-size: 15px;
+          line-height: 20px;
+        }
       }
-    }
-    .onTimeBest {
-    }
-    .onTimeReview {
-    }
-    .productWrap {
-    }
-    .pdLeftWrap {
-    }
-    .pdRightWrap {
+
+      .imgSlider {
+        @include flex-set(center, center, row);
+
+        .imgBlock {
+          @include flex-set(center, center, row);
+
+          .recommendImgDescription {
+            @include flex-set(center, flex-start, column);
+            margin-left: 20px;
+
+            .productTitle {
+              font-size: 20px;
+            }
+
+            .productDescription {
+              margin-top: 40px;
+              font-size: 20px;
+
+              > span {
+                margin-right: 10px;
+              }
+
+              .productPrice {
+                font-size: 28px;
+              }
+
+              .productServing {
+                color: #606060;
+              }
+
+              .productServing:before {
+                content: '/';
+                margin-right: 3px;
+              }
+
+              i {
+                color: #606060;
+              }
+            }
+          }
+        }
+      }
+
+      .shader {
+        @include size(424px, 520px);
+        position: absolute;
+        right: -424px;
+      }
     }
   }
 }
