@@ -1,9 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import './MenuList.scss';
 
 class MenuList extends React.Component {
   goToDetail = () => {
-    this.props.history.push('/detail/:id');
+    this.props.history.push(`/detail/${this.props.id}`);
   };
   render() {
     const { limited, name, image_url, cooking_time, price, discount, sales } =
@@ -56,4 +57,4 @@ class MenuList extends React.Component {
     );
   }
 }
-export default MenuList;
+export default withRouter(MenuList);

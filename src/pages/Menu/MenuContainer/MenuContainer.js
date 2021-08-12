@@ -38,6 +38,7 @@ class MenuContainer extends React.Component {
               return (
                 <MenuList
                   key={list.id}
+                  id={list.id}
                   limited={list.limited}
                   new={list.new}
                   name={list.name}
