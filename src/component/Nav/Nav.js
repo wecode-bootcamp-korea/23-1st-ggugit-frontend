@@ -48,7 +48,7 @@ class Nav extends React.Component {
             </div>
             <div>
               <span className="cartLink">
-                <Link to="/cart">장바구니</Link>
+                <Link to="/">장바구니</Link>
               </span>
               <span>메뉴찾기</span>
             </div>
