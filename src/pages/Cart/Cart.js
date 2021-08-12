@@ -7,9 +7,7 @@ import './Cart.scss';
 class Cart extends React.Component {
   constructor() {
     super();
-    this.state = {
-      cartList: [],
-    };
+    this.state = {};
   }
   componentDidMount() {
     fetch(CART_API, {
@@ -18,18 +16,16 @@ class Cart extends React.Component {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data.results);
         this.setState(prevState => {
-          const { cartList } = this.state;
-          return {
-            ...prevState,
-            cartList: [...cartList, data.results],
-          };
+          return { ...prevState, cartList: data.results };
         });
       });
   }
 
   render() {
-    return (
+    const cartList = this.state;
+    return this.state.cartList ? (
       <section className="cart">
         <div className="cartWrap">
           <div className="cartTitle">
@@ -58,7 +54,7 @@ class Cart extends React.Component {
               <span>2021-08-18(수) 도착예정</span>
             </div>
             <div className="listWrap">
-              <CartList />
+              <CartList cartList={cartList} />
               <div className="priceInfo">
                 <div className="totalPrice">
                   <span>상품금액 20,600원</span>
@@ -100,7 +96,7 @@ class Cart extends React.Component {
           </div>
         </div>
       </section>
-    );
+    ) : null;
   }
 }
 
