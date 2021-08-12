@@ -67,6 +67,6 @@ class LoginForm extends React.Component {
   }
 }
 
-export const TOKEN_KEY = 'loginToken';
+const TOKEN_KEY = 'loginToken';
 
 export default withRouter(LoginForm);

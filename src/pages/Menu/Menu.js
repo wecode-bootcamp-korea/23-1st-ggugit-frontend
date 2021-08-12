@@ -1,22 +1,10 @@
 import React from 'react';
 import List from './List/List';
-import { withRouter, Link } from 'react-router-dom';
-
 import './Menu.scss';
+import { Link } from 'react-router-dom';
 
 class Menu extends React.Component {
-  componentDidMount() {
-    fetch(
-      `http://10.58.3.151:8000/products/search${this.props.location.search}`
-    )
-      .then(res => {
-        res.json();
-      })
-      .then(data => {});
-  }
   render() {
-    console.log(this.props.location.search);
-
     return (
       <nav>
         <div className="menu">
@@ -94,4 +82,4 @@ class Menu extends React.Component {
   }
 }
 
-export default withRouter(Menu);
+export default Menu;
