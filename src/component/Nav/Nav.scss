@@ -55,6 +55,11 @@
       .logo {
         font-size: 40px;
         font-weight: 800;
+
+        > a {
+          text-decoration: none;
+          color: black;
+        }
       }
 
       .bottomList {
@@ -72,6 +77,22 @@
               color: black;
             }
           }
+        }
+      }
+
+      .bottomRightSide {
+        @include flex-set(center, center, row);
+
+        .cart {
+          > a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+
+        .menuSearch {
+          @include flex-set(center, center, row);
+          // margin-right: 20px;
         }
       }
     }

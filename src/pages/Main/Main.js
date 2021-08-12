@@ -6,9 +6,9 @@ import SearchBar from './Asides/SearchBar/SearchBar';
 import Timer from './Asides/Timer/Timer';
 
 import { MAIN_API, CART_API } from '../../config';
+import { TOKEN_KEY } from '../Login/LoginForm/LoginForm';
 
 import './Main.scss';
-import { TOKEN_KEY } from '../Login/LoginForm/LoginForm';
 
 class Main extends React.Component {
   constructor() {
