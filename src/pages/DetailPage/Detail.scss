@@ -18,37 +18,7 @@
 
       .dishInfoWrap {
         @include size(580px, initial);
-<<<<<<< HEAD
         padding: 53px 0 0 91px;
-=======
-        padding: 27px 0 0 91px;
-
-        .totalPrice {
-          display: flex;
-          justify-content: space-between;
-
-          span {
-            padding: 10px 5px 0 0;
-            color: #ee0700;
-            font-size: 32px;
-            line-height: 48px;
-            font-weight: 700;
-          }
-        }
-        .cartButton {
-          padding-top: 19px;
-
-          button {
-            @include size(490px, initial);
-            padding: 15px;
-            border: 1px solid transparent;
-            background-color: #bed619;
-            font-size: 20px;
-            color: black;
-            cursor: pointer;
-          }
-        }
->>>>>>> main
       }
     }
     .tabWrap {

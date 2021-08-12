@@ -8,10 +8,12 @@
   align-items: $align-items;
   flex-direction: $flex-direction;
 }
+
 @mixin size($width: 0px, $height: 0px) {
   width: $width;
   height: $height;
 }
+
 @mixin translateCenter() {
   top: 50%;
   left: 50%;
