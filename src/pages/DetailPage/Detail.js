@@ -7,7 +7,7 @@ import MainContent from './Aside/MainContent';
 import DishData from './Aside/DishData';
 import ImgAlbum from './Aside/ImgAlbum';
 
-class Detail extends Component {
+class Detail extends React.Component {
   constructor() {
     super();
     this.state = {
