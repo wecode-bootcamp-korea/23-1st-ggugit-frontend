@@ -5,15 +5,32 @@ import OnTimeBest from './Asides/OnTimeBest/OnTimeBest';
 import SearchBar from './Asides/SearchBar/SearchBar';
 import Timer from './Asides/Timer/Timer';
 
-import { MAIN_API } from '../../config';
+import { MAIN_API, CART_API } from '../../config';
 
 import './Main.scss';
+import { TOKEN_KEY } from '../Login/LoginForm/LoginForm';
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
+
+  cartClick = e => {
+    const loginToken = localStorage.getItem(TOKEN_KEY);
+    fetch(CART_API, {
+      method: 'POST',
+      headers: { Authorization: loginToken },
+      body: JSON.stringify({
+        product_id: e.target.name,
+        quantity: 1,
+      }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log('data>>>>>>>>>>', data);
+      });
+  };
 
   componentDidMount() {
     fetch(`${MAIN_API}`)
@@ -35,6 +52,7 @@ class Main extends React.Component {
       });
   }
   render() {
+    const { cartClick } = this;
     const { topImageList, bottomImageList } = this.state;
 
     return (
@@ -69,7 +87,7 @@ class Main extends React.Component {
               />
             )}
           </div>
-          <OnTimeBest />
+          <OnTimeBest cartClick={cartClick} />
           <div className="onTimeReview"></div>
           <div className="productWrap">
             <div className="pdLeftWrap"></div>

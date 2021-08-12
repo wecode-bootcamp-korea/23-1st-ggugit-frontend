@@ -34,13 +34,15 @@ class OnTimeBest extends React.PureComponent {
 
   render() {
     const { bestProducts } = this.state;
+    const { cartClick } = this.props;
+
     return (
       bestProducts && (
         <div className="onTimeBestWrap">
           <div className="onTimeBestTitle">
             <h1>실시간 베스트</h1>
           </div>
-          <OnTimeBestImage imageList={bestProducts} />
+          <OnTimeBestImage imageList={bestProducts} cartClick={cartClick} />
         </div>
       )
     );
