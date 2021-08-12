@@ -1,0 +1,13 @@
+@import '../../../../styles/variables.scss';
+
+.onTimeBestWrap {
+  @include flex-set(center, flex-start, column);
+  width: 1180px;
+  margin: 140px auto 0 auto;
+
+  .onTimeBestTitle {
+    font-size: 40px;
+    font-weight: 700;
+    margin-left: 26px;
+  }
+}
