@@ -18,13 +18,13 @@ class ImageSlider extends React.Component {
   isMoving = React.createRef();
 
   setImageCounter = e => {
-    if (this.isMoving === true) return;
+    if (this.isMoving.current === true) return;
 
     const { imageList, animationTime, imgSize, buttonText } = this.props;
-    this.isMoving = true;
+    this.isMoving.current = true;
 
     setTimeout(() => {
-      this.isMoving = false;
+      this.isMoving.current = false;
     }, animationTime);
 
     this.setState(prevState => {
@@ -139,6 +139,8 @@ class ImageSlider extends React.Component {
       );
     });
 
+    console.log(this.isMoving.current);
+
     return (
       <div className="imgSliderWrap">
         <div className="imgSlider" style={animation}>
@@ -168,17 +170,15 @@ class ImageSlider extends React.Component {
             />
           </div>
         </div>
-        {buttonRender ? (
+        {buttonRender && (
           <ImageSliderButton
             buttonRender={buttonRender}
             buttonWrapClassName={buttonWrapClassName}
             buttonClassName={buttonClassName}
             buttonText={buttonText}
-            handleClick={e => {
-              setImageCounter(e);
-            }}
+            handleClick={setImageCounter}
           />
-        ) : null}
+        )}
       </div>
     );
   }
