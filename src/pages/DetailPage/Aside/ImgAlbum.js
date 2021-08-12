@@ -10,16 +10,22 @@ class ImgAlbum extends Component {
     };
   }
 
-  ImageData = [
-    'https://www.w3schools.com/howto/img_nature_wide.jpg',
-    'https://www.w3schools.com/howto/img_snow_wide.jpg',
-    'https://www.w3schools.com/howto/img_lights_wide.jpg',
-    'https://www.w3schools.com/howto/img_mountains_wide.jpg',
-  ];
+  // ImageData = [
+  //   'https://www.w3schools.com/howto/img_nature_wide.jpg',
+  //   'https://www.w3schools.com/howto/img_snow_wide.jpg',
+  //   'https://www.w3schools.com/howto/img_lights_wide.jpg',
+  //   'https://www.w3schools.com/howto/img_mountains_wide.jpg',
+  // ];
+
   componentDidMount() {
-    const newImageData = this.ImageData;
+    // const newImageData = this.ImageData;
+    // this.setState({
+    //   images: newImageData,
+    // });
+    const titleData = this.props.mealKitInfoList;
+    const imageData = Object.values(titleData.description_images);
     this.setState({
-      images: newImageData,
+      images: imageData,
     });
   }
   handleSlider = n => {
@@ -37,8 +43,10 @@ class ImgAlbum extends Component {
     });
   };
   render() {
-    // const { images, viewImage } = this.state;
-    const titleData = this.props.mealKitInfoList;
+    const { images, viewImage } = this.state;
+    console.log('인덱스', viewImage);
+    console.log('images', images);
+    console.log('이미지 인덱스', images[viewImage]);
 
     return (
       <div className="wrapper">
@@ -50,14 +58,7 @@ class ImgAlbum extends Component {
           />
         </button>
         <div className="imageContainer">
-          <>
-            <img
-              className="dishPictures"
-              // src={images[viewImage]}
-              src={Object.values(titleData.description_images)[0]}
-              alt="background"
-            />
-          </>
+          <img src={images[viewImage]} alt="food" />
         </div>
         <button onClick={() => this.handleSlider(1)}>
           <img
