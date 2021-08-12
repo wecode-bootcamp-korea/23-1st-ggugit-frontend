@@ -50,7 +50,7 @@ class Main extends React.Component {
               buttonWrapClassName="moveButtonWrap"
               buttonClassName="moveButton"
               buttonText={buttonText}
-              imageOnClick={false}
+              imageOnClick={() => {}}
             />
           )}
           <SearchBar />
@@ -65,7 +65,7 @@ class Main extends React.Component {
                 buttonWrapClassName="eventBannerButtonWrap"
                 buttonClassName="eventBannerButton"
                 buttonText={buttonText}
-                imageOnClick={false}
+                imageOnClick={() => {}}
               />
             )}
           </div>
