@@ -2,6 +2,7 @@
 
 .wrapper {
   @include flex-set(initial, center, initial);
+
   button {
     width: 40px;
     height: 40px;
@@ -14,8 +15,10 @@
       height: 40px;
     }
   }
-  .imageContainer .dishPictures {
-    padding: 0 15px;
+  .imageContainer .sliderImages {
+    padding: 10px 15px;
+    padding-top: 70px;
+    bottom: 15px;
     width: 600px;
     height: 500px;
   }

@@ -58,7 +58,7 @@ class ImgAlbum extends Component {
           />
         </button>
         <div className="imageContainer">
-          <img src={images[viewImage]} alt="food" />
+          <img className="sliderImages" src={images[viewImage]} alt="food" />
         </div>
         <button onClick={() => this.handleSlider(1)}>
           <img
