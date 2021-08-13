@@ -22,7 +22,11 @@ class SignUpForm extends React.Component {
           phone_number: phoneNumber,
           birthday: birthDay,
         }),
-      }).then(res => res.json());
+      })
+        .then(res => res.json())
+        .then(() => {
+          alert(`회원가입 성공! 열심히 구매해주세요.`);
+        });
     } else {
       alert(`비밀번호를 확인해주세요`);
     }

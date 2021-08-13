@@ -7,6 +7,7 @@ import CartButton from './Aside/CartButton';
 import MainContent from './Aside/MainContent';
 import DishData from './Aside/DishData';
 import ImgAlbum from './Aside/ImgAlbum';
+import { PRODUCTS_API } from '../../config';
 
 class Detail extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class Detail extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.58.0.132:8000/products/${this.props.match.params.id}`)
+    fetch(`${PRODUCTS_API}/${this.props.match.params.id}`)
       .then(res => res.json())
       .then(data => {
         this.setState({

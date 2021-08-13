@@ -1,4 +1,4 @@
-const API_IP = 'http://10.58.0.132:8000';
+const API_IP = 'http://10.58.3.65:8000';
 
 export const SIGNUP_API = `${API_IP}/users/signup`;
 
@@ -14,6 +14,6 @@ export const MAIN_API = `${API_IP}/products/main`;
 
 export const CART_API = `${API_IP}/orders`;
 
-const BASE_URL = 'http://10.58.0.132:8000';
+const BASE_URL = 'http://10.58.3.65:8000';
 
 export const API = { PRODUCT: `${BASE_URL}/products` };

@@ -58,7 +58,7 @@ class Main extends React.Component {
     return (
       <section className="mainContainer">
         <div className="mainWrap">
-          {topImageList && (
+          {topImageList !== null ? (
             <ImageSlider
               imageList={topImageList}
               imgSize={imgSize}
@@ -69,11 +69,11 @@ class Main extends React.Component {
               buttonClassName="moveButton"
               buttonText={buttonText}
             />
-          )}
+          ) : null}
           <SearchBar />
           <TasteRecommend />
           <div className="eventBannerMargin">
-            {bottomImageList && (
+            {topImageList !== null ? (
               <ImageSlider
                 imageList={bottomImageList}
                 imgSize={bottomImgSize}
@@ -83,7 +83,7 @@ class Main extends React.Component {
                 buttonClassName="eventBannerButton"
                 buttonText={buttonText}
               />
-            )}
+            ) : null}
           </div>
           <OnTimeBest cartClick={cartClick} />
           <div className="onTimeReview"></div>
