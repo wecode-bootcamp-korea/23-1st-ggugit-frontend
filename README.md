@@ -1,9 +1,6 @@
-_프로젝트 소개는 아래를 참고해서 자유롭게 작성해주세요._ <br>
-_그대로 따라서 작성하면, 다른 프로젝트와 획일화 되어서 특별해보이지 않습니다. 나만의 언어로 나의 소중한 프로젝트를 특별하게 설명해주세요_
-
 ## GGUGIT 프로젝트 Front-end/Back-end 소개
 
-- 신개념 밀키트 판매 사이트 [GGUGIT](https://www.cjcookit.com/) 클론 프로젝트
+- 신개념 밀키트 판매 사이트 [COOKIT](https://www.cjcookit.com/) 클론 프로젝트
 - 짧은 프로젝트 기간동안 개발에 집중해야 하므로 페이지를 선택해 구현했습니다.
 - 개발은 초기 세팅부터 전부 직접 구현했으며, 아래 데모 영상에서 보이는 부분은 모두 백앤드와 연결하여 실제 사용할 수 있는 서비스 수준으로 개발한 것입니다.
 
@@ -15,7 +12,9 @@ _그대로 따라서 작성하면, 다른 프로젝트와 획일화 되어서 �
 
 ### 프로젝트 선정이유
 
--
+- 깔끔한 UI / 나쁘지 않은 UX
+- 팀 내 실제 이용자의 추천
+- 신선식품 배송 시스템이기 때문에 배송시간, 지역 등을 고려해볼 수 있을 것이라 판단
 
 ### 데모 영상(이미지 클릭)
 
@@ -27,9 +26,9 @@ _유투브 영상 링크나 캡쳐 이미지 넣어주세요._
 
 ### 적용 기술
 
-> - Front-End : React.js, sass, slick, react-modal
-> - Back-End : Python, Django web framework, Beautifulsoup, Selenium, Bcrypt, My SQL
-> - Common : KAKAO social login, AWS(EC2,RDS), RESTful API
+> - Front-End : React.js, sass, react-router-dom
+> - Back-End : Python, Django web framework, Bcrypt, My SQL
+> - Common : RESTful API
 
 ### 구현 기능
 
@@ -39,7 +38,11 @@ _유투브 영상 링크나 캡쳐 이미지 넣어주세요._
 
 #### 랜딩페이지
 
-- 베스트 상품, 이미지 슬라이더, 추천 상품 모두 각각 api 호출하여 구현
+- 베스트 상품, 이미지 슬라이더, 추천 상품 이미지 등 RESTful API 활용
+- 각각 맛별 필터기능이 있는 상품 추천
+- 라이브러리(slick) 없이 커스터마이징이 가능한 이미지 슬라이더 구현
+- 배송 countDown Timer 구현
+- DB data를 기반으로 판매량에 의한 인기상품 구현
 
 #### 메뉴페이지
 
@@ -65,6 +68,6 @@ _아래 Reference 부분은 README.md에 꼭 포함되어야 하는 내용입니
 
 ## Reference
 
-- 이 프로젝트는 [GGUGIT](https://www.cjcookit.com/) 사이트를 참조하여 학습목적으로 만들었습니다.
+- 이 프로젝트는 [COOKIT](https://www.cjcookit.com/) 사이트를 참조하여 학습목적으로 만들었습니다.
 - 실무수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제될 수 있습니다.
 - 이 프로젝트에서 사용하고 있는 사진 대부분은 위코드에서 구매한 것이므로 해당 프로젝트 외부인이 사용할 수 없습니다.
